@@ -23,25 +23,20 @@ const Index = () => {
         )}
       </AnimatePresence>
 
-      <AnimatePresence>
-        {!showIntro && (
-          <motion.div
-            key="main"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="min-h-screen bg-background"
-          >
-            <Header />
-            <HeroSection />
-            <PartnersSection />
-            <FeaturesSection />
-            <AboutSection />
-            <WaitlistSection />
-            <Footer />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: showIntro ? 0 : 1 }}
+        transition={{ duration: 0.8 }}
+        className="min-h-screen bg-background"
+      >
+        <Header />
+        <HeroSection />
+        <PartnersSection />
+        <FeaturesSection />
+        <AboutSection />
+        <WaitlistSection />
+        <Footer />
+      </motion.div>
     </>
   );
 };

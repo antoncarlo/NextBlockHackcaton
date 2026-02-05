@@ -25,7 +25,8 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
             <span className="text-gradient">Welcome to</span>
             <br />
-            <span className="text-foreground">the Future</span>
+            <span className="text-foreground">Next</span>
+            <span className="text-primary">Block</span>
           </h1>
           
           <motion.p
@@ -34,8 +35,8 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl"
           >
-            Stiamo costruendo qualcosa di straordinario. Unisciti alla waitlist 
-            per essere tra i primi a scoprire il nostro prodotto innovativo.
+            Stiamo costruendo il futuro della finanza decentralizzata. 
+            Unisciti alla waitlist per essere tra i primi a scoprire la rivoluzione.
           </motion.p>
 
           <motion.div
