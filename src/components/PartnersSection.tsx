@@ -1,46 +1,43 @@
 import { motion } from "framer-motion";
+import { Lock, Code, Globe, Eye } from "lucide-react";
 
-const partners = [
-  "TechCorp",
-  "Innovate",
-  "FutureHub",
-  "DataFlow",
-  "CloudSphere",
-  "NextGen",
-  "SmartScale",
-  "MetaVerse",
+const benefits = [
+  { icon: Lock, label: "Permissionless" },
+  { icon: Code, label: "Open-Source" },
+  { icon: Globe, label: "On-Chain" },
+  { icon: Eye, label: "Transparent" },
 ];
 
-const PartnersSection = () => {
+const KeyBenefitsSection = () => {
   return (
-    <section className="py-16 border-y border-border bg-secondary/30 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 mb-8">
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+    <section className="py-12 border-y border-border bg-secondary/30">
+      <div className="mx-auto max-w-7xl px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-sm text-muted-foreground uppercase tracking-widest"
+          transition={{ duration: 0.5 }}
+          className="flex flex-wrap items-center justify-center gap-8 md:gap-16"
         >
-          Supportato da leader del settore
-        </motion.p>
-      </div>
-      
-      <div className="relative">
-        <div className="flex animate-scroll">
-          {[...partners, ...partners].map((partner, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 px-12 py-4"
+          {benefits.map((benefit, index) => (
+            <motion.div
+              key={benefit.label}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="flex items-center gap-3"
             >
-              <span className="text-2xl font-bold text-muted-foreground/60 hover:text-muted-foreground transition-colors whitespace-nowrap">
-                {partner}
+              <benefit.icon className="w-5 h-5 text-primary" />
+              <span className="text-lg font-semibold text-foreground">
+                {benefit.label}
               </span>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default PartnersSection;
+export default KeyBenefitsSection;
