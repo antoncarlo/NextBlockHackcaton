@@ -4,9 +4,23 @@ import featuresDivider from "@/assets/features-divider.svg";
 const FeaturesSection = () => {
   return (
     <section id="how-it-works" className="relative">
-      {/* Problem & Solution Section */}
-      <div className="py-24 px-6">
-        <div className="mx-auto max-w-7xl">
+      {/* Problem & Solution Section with Background Image */}
+      <div className="relative py-24 px-6">
+        {/* Background image */}
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${featuresDivider})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+        
+        {/* Gradient overlay for readability */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-background via-background/80 to-background" />
+        
+        <div className="mx-auto max-w-7xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -14,7 +28,7 @@ const FeaturesSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 drop-shadow-lg">
               From Silos to a Liquid Marketplace
             </h2>
           </motion.div>
@@ -57,26 +71,6 @@ const FeaturesSection = () => {
             </motion.div>
           </div>
         </div>
-      </div>
-
-      {/* Divider Image with Gradient */}
-      <div className="relative h-[400px] md:h-[500px]">
-        {/* Background image */}
-        <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${featuresDivider})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
-        
-        {/* Top gradient overlay - fades from background to transparent */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-background via-background/60 to-transparent" />
-        
-        {/* Bottom gradient overlay - fades from transparent to background */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </div>
 
       {/* How It Works Section */}
