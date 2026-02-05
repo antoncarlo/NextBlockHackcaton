@@ -146,7 +146,7 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
 
               {/* Right half - BLOCK */}
               <motion.div
-                className="flex items-center justify-start -ml-6 md:-ml-10 lg:-ml-14"
+                className="flex items-center justify-start -ml-12 md:-ml-16 lg:-ml-24"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{
                   opacity: 1,
@@ -183,7 +183,7 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
                 }}
               />
 
-              {/* Left arrow */}
+              {/* Left arrow - elegant design */}
               <motion.div
                 className="absolute"
                 initial={{ x: 0, opacity: 0 }}
@@ -196,19 +196,35 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
                   ease: [0.4, 0, 0.2, 1],
                 }}
               >
-                <svg width="48" height="48" viewBox="0 0 48 48" className="text-primary">
+                <svg width="64" height="64" viewBox="0 0 64 64" className="drop-shadow-lg">
+                  <defs>
+                    <linearGradient id="arrowGradientLeft" x1="100%" y1="0%" x2="0%" y2="0%">
+                      <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="1" />
+                      <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
+                    </linearGradient>
+                  </defs>
                   <path
-                    d="M30 12 L12 24 L30 36"
+                    d="M44 8 L16 32 L44 56"
                     fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
+                    stroke="url(#arrowGradientLeft)"
+                    strokeWidth="4"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                  />
+                  <path
+                    d="M44 8 L16 32 L44 56"
+                    fill="none"
+                    stroke="hsl(var(--primary))"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    opacity="0.5"
+                    transform="translate(-4, 0)"
                   />
                 </svg>
               </motion.div>
 
-              {/* Right arrow */}
+              {/* Right arrow - elegant design */}
               <motion.div
                 className="absolute"
                 initial={{ x: 0, opacity: 0 }}
@@ -221,14 +237,30 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
                   ease: [0.4, 0, 0.2, 1],
                 }}
               >
-                <svg width="48" height="48" viewBox="0 0 48 48" className="text-primary">
+                <svg width="64" height="64" viewBox="0 0 64 64" className="drop-shadow-lg">
+                  <defs>
+                    <linearGradient id="arrowGradientRight" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="1" />
+                      <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
+                    </linearGradient>
+                  </defs>
                   <path
-                    d="M18 12 L36 24 L18 36"
+                    d="M20 8 L48 32 L20 56"
                     fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
+                    stroke="url(#arrowGradientRight)"
+                    strokeWidth="4"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                  />
+                  <path
+                    d="M20 8 L48 32 L20 56"
+                    fill="none"
+                    stroke="hsl(var(--primary))"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    opacity="0.5"
+                    transform="translate(4, 0)"
                   />
                 </svg>
               </motion.div>
