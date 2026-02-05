@@ -18,7 +18,7 @@ const FeaturesSection = () => {
         />
         
         {/* Gradient overlay for readability */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-background via-background/80 to-background" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-background/70 via-background/50 to-background/70" />
         
         <div className="mx-auto max-w-7xl relative z-10">
           <motion.div
