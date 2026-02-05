@@ -269,7 +269,7 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
 
           {/* Tagline */}
           <motion.p
-            className="absolute bottom-20 left-1/2 -translate-x-1/2 text-sm md:text-base tracking-widest uppercase font-heading text-center w-full px-4"
+            className="absolute bottom-20 inset-x-0 text-sm md:text-base tracking-widest uppercase font-heading text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{
               opacity: phase === "split" ? 0 : 1,
