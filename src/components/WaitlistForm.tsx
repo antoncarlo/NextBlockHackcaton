@@ -5,29 +5,40 @@ import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 
 const waitlistSchema = z.object({
-  email: z.string().trim().email({ message: "Inserisci un'email valida" }).max(255),
-  feedback: z.string().trim().max(1000, { message: "Il feedback deve essere inferiore a 1000 caratteri" }).optional(),
+  fullName: z.string().trim().min(1, { message: "Full name is required" }).max(100),
+  company: z.string().trim().min(1, { message: "Company is required" }).max(200),
+  email: z.string().trim().email({ message: "Please enter a valid email" }).max(255),
+  interest: z.enum(["curator", "investor", "partner"], { message: "Please select your interest" }),
+  message: z.string().trim().max(1000, { message: "Message must be under 1000 characters" }).optional(),
 });
 
 const WaitlistForm = () => {
-  const [email, setEmail] = useState("");
-  const [feedback, setFeedback] = useState("");
+  const [formData, setFormData] = useState({
+    fullName: "",
+    company: "",
+    email: "",
+    interest: "",
+    message: "",
+  });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState<{ email?: string; feedback?: string }>({});
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
     
-    const result = waitlistSchema.safeParse({ email, feedback: feedback || undefined });
+    const result = waitlistSchema.safeParse({
+      ...formData,
+      interest: formData.interest || undefined,
+      message: formData.message || undefined,
+    });
     
     if (!result.success) {
-      const fieldErrors: { email?: string; feedback?: string } = {};
+      const fieldErrors: Record<string, string> = {};
       result.error.errors.forEach((err) => {
-        if (err.path[0] === "email") fieldErrors.email = err.message;
-        if (err.path[0] === "feedback") fieldErrors.feedback = err.message;
+        if (err.path[0]) fieldErrors[err.path[0] as string] = err.message;
       });
       setErrors(fieldErrors);
       return;
@@ -42,8 +53,8 @@ const WaitlistForm = () => {
     setIsSubmitted(true);
     
     toast({
-      title: "Iscrizione completata!",
-      description: "Ti contatteremo presto con novità esclusive.",
+      title: "Request Submitted!",
+      description: "We'll be in touch soon with exclusive updates.",
     });
   };
 
@@ -63,29 +74,62 @@ const WaitlistForm = () => {
           <CheckCircle className="w-10 h-10 text-primary" />
         </motion.div>
         <h3 className="text-2xl font-bold text-foreground mb-2">
-          Sei nella lista!
+          You're on the list!
         </h3>
         <p className="text-muted-foreground">
-          Grazie per esserti iscritto. Ti terremo aggiornato.
+          Thank you for your interest. We'll keep you updated.
         </p>
       </motion.div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div>
+        <label htmlFor="fullName" className="block text-sm font-medium text-foreground mb-2">
+          Full Name *
+        </label>
+        <input
+          type="text"
+          id="fullName"
+          value={formData.fullName}
+          onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+          placeholder="John Doe"
+          className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:border-primary transition-colors"
+        />
+        {errors.fullName && (
+          <p className="mt-2 text-sm text-destructive">{errors.fullName}</p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+          Company / Organization *
+        </label>
+        <input
+          type="text"
+          id="company"
+          value={formData.company}
+          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+          placeholder="Your Company"
+          className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:border-primary transition-colors"
+        />
+        {errors.company && (
+          <p className="mt-2 text-sm text-destructive">{errors.company}</p>
+        )}
+      </div>
+
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-          Email *
+          Email Address *
         </label>
         <input
           type="email"
           id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="la-tua-email@esempio.com"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          placeholder="you@company.com"
           className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:border-primary transition-colors"
-          required
         />
         {errors.email && (
           <p className="mt-2 text-sm text-destructive">{errors.email}</p>
@@ -93,19 +137,39 @@ const WaitlistForm = () => {
       </div>
 
       <div>
-        <label htmlFor="feedback" className="block text-sm font-medium text-foreground mb-2">
-          Cosa ti aspetti dal nostro prodotto? (opzionale)
+        <label htmlFor="interest" className="block text-sm font-medium text-foreground mb-2">
+          I am interested as a... *
+        </label>
+        <select
+          id="interest"
+          value={formData.interest}
+          onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
+          className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground focus:border-primary transition-colors"
+        >
+          <option value="">Select your role</option>
+          <option value="curator">Curator</option>
+          <option value="investor">Investor</option>
+          <option value="partner">Partner</option>
+        </select>
+        {errors.interest && (
+          <p className="mt-2 text-sm text-destructive">{errors.interest}</p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+          Message (optional)
         </label>
         <textarea
-          id="feedback"
-          value={feedback}
-          onChange={(e) => setFeedback(e.target.value)}
-          placeholder="Condividi le tue aspettative e suggerimenti..."
-          rows={4}
+          id="message"
+          value={formData.message}
+          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          placeholder="Tell us about your interest in NextBlock..."
+          rows={3}
           className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:border-primary transition-colors resize-none"
         />
-        {errors.feedback && (
-          <p className="mt-2 text-sm text-destructive">{errors.feedback}</p>
+        {errors.message && (
+          <p className="mt-2 text-sm text-destructive">{errors.message}</p>
         )}
       </div>
 
@@ -125,13 +189,13 @@ const WaitlistForm = () => {
         ) : (
           <>
             <Send className="w-5 h-5" />
-            Unisciti alla Waitlist
+            Submit
           </>
         )}
       </motion.button>
 
       <p className="text-xs text-muted-foreground text-center">
-        Iscrivendoti accetti i nostri termini di servizio e la privacy policy.
+        By submitting, you agree to our terms of service and privacy policy.
       </p>
     </form>
   );
