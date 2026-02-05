@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoWhite from "@/assets/logo-white.svg";
+import logoBlack from "@/assets/logo-black.svg";
 
 interface IntroExperienceProps {
   onComplete: () => void;
@@ -27,6 +29,16 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
     }
   }, [phase, onComplete]);
 
+  // Generate stars with various sizes
+  const stars = [...Array(150)].map((_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    size: Math.random() * 3 + 1,
+    delay: Math.random() * 2,
+    duration: Math.random() * 2 + 2,
+  }));
+
   return (
     <AnimatePresence>
       {phase !== "reveal" && (
@@ -46,37 +58,80 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
             transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
           />
 
-          {/* Particle background */}
+          {/* Enhanced star field background */}
           <div className="absolute inset-0">
-            {[...Array(50)].map((_, i) => (
+            {stars.map((star) => (
               <motion.div
-                key={i}
-                className="absolute w-1 h-1 rounded-full"
-                style={{ backgroundColor: phase === "split" ? "rgba(0,0,0,0.2)" : "rgba(14, 165, 233, 0.3)" }}
-                initial={{
-                  x: Math.random() * window.innerWidth,
-                  y: Math.random() * window.innerHeight,
-                  scale: Math.random() * 0.5 + 0.5,
+                key={star.id}
+                className="absolute rounded-full"
+                style={{
+                  left: `${star.x}%`,
+                  top: `${star.y}%`,
+                  width: star.size,
+                  height: star.size,
+                  backgroundColor: phase === "split" ? "rgba(0,0,0,0.15)" : "rgba(255, 255, 255, 0.8)",
+                  boxShadow: phase === "split" 
+                    ? "none" 
+                    : `0 0 ${star.size * 2}px rgba(255, 255, 255, 0.5), 0 0 ${star.size * 4}px rgba(14, 165, 233, 0.3)`,
                 }}
+                initial={{ opacity: 0, scale: 0 }}
                 animate={{
+                  opacity: phase === "split" ? 0 : [0.4, 1, 0.4],
+                  scale: phase === "split" ? 0 : [1, 1.2, 1],
                   x: phase === "split" 
-                    ? (i % 2 === 0 ? -100 : window.innerWidth + 100)
-                    : Math.random() * window.innerWidth,
-                  y: Math.random() * window.innerHeight,
-                  opacity: phase === "split" ? 0 : [0.3, 0.7, 0.3],
+                    ? (star.id % 2 === 0 ? -200 : 200)
+                    : 0,
                 }}
                 transition={{
-                  duration: phase === "split" ? 1.5 : 3,
-                  repeat: phase === "split" ? 0 : Infinity,
-                  ease: "easeInOut",
+                  opacity: {
+                    duration: star.duration,
+                    repeat: phase === "split" ? 0 : Infinity,
+                    delay: star.delay,
+                    ease: "easeInOut",
+                  },
+                  scale: {
+                    duration: star.duration,
+                    repeat: phase === "split" ? 0 : Infinity,
+                    delay: star.delay,
+                    ease: "easeInOut",
+                  },
+                  x: {
+                    duration: 1.5,
+                    ease: [0.76, 0, 0.24, 1],
+                  },
                 }}
               />
             ))}
           </div>
 
-          {/* Center content */}
+          {/* Shooting stars */}
+          {[...Array(5)].map((_, i) => (
+            <motion.div
+              key={`shooting-${i}`}
+              className="absolute h-[1px] bg-gradient-to-r from-white via-primary to-transparent"
+              style={{
+                width: 80 + Math.random() * 60,
+                top: `${10 + Math.random() * 40}%`,
+                left: "-100px",
+                rotate: 25,
+              }}
+              animate={{
+                x: phase === "split" ? 0 : [0, window.innerWidth + 200],
+                opacity: phase === "split" ? 0 : [0, 1, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                delay: i * 1.2 + 0.5,
+                repeat: phase === "split" ? 0 : Infinity,
+                repeatDelay: 4,
+                ease: "easeOut",
+              }}
+            />
+          ))}
+
+          {/* Center content - Logo */}
           <div className="absolute inset-0 flex items-center justify-center">
-            {/* Left panel - NEXT */}
+            {/* Left panel - Left half of logo area */}
             <motion.div
               className="absolute left-0 top-0 w-1/2 h-full flex items-center justify-end overflow-hidden"
               animate={{
@@ -125,26 +180,33 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
                 </svg>
               </motion.div>
 
-              {/* NEXT text */}
-              <motion.span
-                className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter pr-4"
+              {/* Left half of logo (clipped) */}
+              <motion.div
+                className="relative overflow-hidden pr-0"
+                style={{ clipPath: "inset(0 0 0 0)" }}
                 initial={{ opacity: 0, x: 50 }}
                 animate={{
                   opacity: 1,
                   x: phase === "split" ? -100 : 0,
-                  color: phase === "split" ? "#1a1a1a" : "hsl(210, 40%, 98%)",
                 }}
                 transition={{
                   opacity: { duration: 0.5 },
                   x: { duration: 1.2, ease: [0.76, 0, 0.24, 1] },
-                  color: { duration: 1, ease: [0.76, 0, 0.24, 1] },
                 }}
               >
-                NEXT
-              </motion.span>
+                <motion.img
+                  src={phase === "split" ? logoBlack : logoWhite}
+                  alt="NextBlock"
+                  className="h-24 md:h-32 lg:h-40 w-auto"
+                  style={{ 
+                    clipPath: "inset(0 50% 0 0)",
+                    marginRight: "-50%",
+                  }}
+                />
+              </motion.div>
             </motion.div>
 
-            {/* Right panel - BLOCK */}
+            {/* Right panel - Right half of logo area */}
             <motion.div
               className="absolute right-0 top-0 w-1/2 h-full flex items-center justify-start overflow-hidden"
               animate={{
@@ -193,23 +255,30 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
                 </svg>
               </motion.div>
 
-              {/* BLOCK text */}
-              <motion.span
-                className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter pl-4"
+              {/* Right half of logo (clipped) */}
+              <motion.div
+                className="relative overflow-hidden pl-0"
+                style={{ clipPath: "inset(0 0 0 0)" }}
                 initial={{ opacity: 0, x: -50 }}
                 animate={{
                   opacity: 1,
                   x: phase === "split" ? 100 : 0,
-                  color: phase === "split" ? "#1a1a1a" : "hsl(210, 40%, 98%)",
                 }}
                 transition={{
                   opacity: { duration: 0.5 },
                   x: { duration: 1.2, ease: [0.76, 0, 0.24, 1] },
-                  color: { duration: 1, ease: [0.76, 0, 0.24, 1] },
                 }}
               >
-                BLOCK
-              </motion.span>
+                <motion.img
+                  src={phase === "split" ? logoBlack : logoWhite}
+                  alt="NextBlock"
+                  className="h-24 md:h-32 lg:h-40 w-auto"
+                  style={{ 
+                    clipPath: "inset(0 0 0 50%)",
+                    marginLeft: "-50%",
+                  }}
+                />
+              </motion.div>
             </motion.div>
 
             {/* Center divider glow */}
@@ -226,7 +295,7 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
 
           {/* Tagline */}
           <motion.p
-            className="absolute bottom-20 left-1/2 -translate-x-1/2 text-sm md:text-base tracking-widest uppercase"
+            className="absolute bottom-20 left-1/2 -translate-x-1/2 text-sm md:text-base tracking-widest uppercase font-heading"
             initial={{ opacity: 0, y: 20 }}
             animate={{
               opacity: phase === "split" ? 0 : 1,
@@ -237,18 +306,6 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
           >
             Il futuro della finanza
           </motion.p>
-
-          {/* Corner logo hint */}
-          <motion.div
-            className="absolute top-6 left-6 flex items-center gap-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.5 }}
-            transition={{ delay: 0.5 }}
-          >
-            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center border border-primary/30">
-              <span className="text-primary font-bold text-sm">NB</span>
-            </div>
-          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
