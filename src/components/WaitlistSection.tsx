@@ -45,9 +45,11 @@ const WaitlistSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="p-8 rounded-2xl bg-gradient-card border border-border shadow-card"
+            className="p-8 rounded-3xl liquid-glass"
           >
-            <WaitlistForm />
+            <div className="relative z-10">
+              <WaitlistForm />
+            </div>
           </motion.div>
         </div>
       </div>

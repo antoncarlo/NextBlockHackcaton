@@ -46,15 +46,15 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="text-center p-8 rounded-2xl bg-gradient-card border border-border"
+              className="text-center p-8 rounded-3xl liquid-glass liquid-glass-hover"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-3">
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-3 relative z-10">
                 {stat.value}
               </div>
-              <div className="text-lg font-semibold text-foreground mb-2">
+              <div className="text-lg font-semibold text-foreground mb-2 relative z-10">
                 {stat.label}
               </div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-sm text-muted-foreground relative z-10">
                 {stat.description}
               </div>
             </motion.div>
