@@ -17,6 +17,8 @@ const Footer = () => {
         }}
       />
       
+      {/* Gradient overlay for readability on top section */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-background via-background/80 to-transparent" />
       
       {/* Waitlist Section */}
       <div className="relative z-10">
