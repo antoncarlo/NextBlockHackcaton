@@ -118,8 +118,8 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
 
           {/* Center content - Split Logo */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="relative flex items-center justify-center">
-              {/* Left half - NEXTBLOCK */}
+            <div className="relative flex items-center justify-center gap-1">
+              {/* Left half - NEXT */}
               <motion.div
                 className="flex items-center justify-end"
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -137,16 +137,16 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
                 <img
                   src={logoLeftWhite}
                   alt="Next"
-                  className="h-16 md:h-24 lg:h-32 w-auto"
+                  className="h-32 md:h-48 lg:h-64 w-auto"
                   style={{
                     filter: phase === "split" ? "none" : "invert(1)",
                   }}
                 />
               </motion.div>
 
-              {/* Right half - BLOCKCR */}
+              {/* Right half - BLOCK */}
               <motion.div
-                className="flex items-center justify-start"
+                className="flex items-center justify-start -ml-2 md:-ml-3 lg:-ml-4"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{
                   opacity: 1,
@@ -162,7 +162,7 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
                 <img
                   src={logoRightWhite}
                   alt="Block"
-                  className="h-16 md:h-24 lg:h-32 w-auto"
+                  className="h-32 md:h-48 lg:h-64 w-auto"
                   style={{
                     filter: phase === "split" ? "none" : "invert(1)",
                   }}
