@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import problemSolutionDivider from "@/assets/problem-solution-divider.svg";
 
 const FeaturesSection = () => {
   return (
@@ -17,42 +18,66 @@ const FeaturesSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-24">
+        {/* Diagonal Layout with Image Divider */}
+        <div className="relative mb-24">
+          {/* The Problem - Top Left */}
+          <div className="grid md:grid-cols-2 gap-0">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="p-8 rounded-3xl liquid-glass liquid-glass-hover md:mr-8 mb-8 md:mb-0"
+            >
+              <h3 className="text-xl font-bold text-foreground mb-4 relative z-10">
+                The Problem
+              </h3>
+              <p className="text-lg font-semibold text-primary mb-3 relative z-10">
+                Trapped Capital, Opaque Risk
+              </p>
+              <p className="text-muted-foreground leading-relaxed relative z-10">
+                The traditional reinsurance market is capital-intensive, illiquid, and inaccessible. For reinsurers, billions in capital are trapped in inefficient structures. For investors, access to this stable, uncorrelated asset class is restricted to a select few.
+              </p>
+            </motion.div>
+            <div className="hidden md:block" />
+          </div>
+
+          {/* Image Divider - Full Width */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="p-8 rounded-3xl liquid-glass liquid-glass-hover"
+            transition={{ duration: 0.8 }}
+            className="my-8 md:my-0 md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[60%] z-10"
           >
-            <h3 className="text-xl font-bold text-foreground mb-4 relative z-10">
-              The Problem
-            </h3>
-            <p className="text-lg font-semibold text-primary mb-3 relative z-10">
-              Trapped Capital, Opaque Risk
-            </p>
-            <p className="text-muted-foreground leading-relaxed relative z-10">
-              The traditional reinsurance market is capital-intensive, illiquid, and inaccessible. For reinsurers, billions in capital are trapped in inefficient structures. For investors, access to this stable, uncorrelated asset class is restricted to a select few.
-            </p>
+            <img 
+              src={problemSolutionDivider} 
+              alt="Problem to Solution transition" 
+              className="w-full h-auto rounded-2xl shadow-2xl"
+            />
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="p-8 rounded-3xl liquid-glass liquid-glass-hover border-primary/20"
-          >
-            <h3 className="text-xl font-bold text-foreground mb-4 relative z-10">
-              The Solution
-            </h3>
-            <p className="text-lg font-semibold text-primary mb-3 relative z-10">
-              Permissionless Vaults, Composable Risk
-            </p>
-            <p className="text-muted-foreground leading-relaxed relative z-10">
-              NextBlock provides the open-source infrastructure to change this. We enable any entity—from established reinsurers to specialized asset managers—to curate and launch their own tokenized risk vaults. This transforms illiquid reinsurance risk into a liquid, transparent, and composable on-chain asset.
-            </p>
-          </motion.div>
+          {/* The Solution - Bottom Right */}
+          <div className="grid md:grid-cols-2 gap-0 md:mt-8">
+            <div className="hidden md:block" />
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="p-8 rounded-3xl liquid-glass liquid-glass-hover md:ml-8"
+            >
+              <h3 className="text-xl font-bold text-foreground mb-4 relative z-10">
+                The Solution
+              </h3>
+              <p className="text-lg font-semibold text-primary mb-3 relative z-10">
+                Permissionless Vaults, Composable Risk
+              </p>
+              <p className="text-muted-foreground leading-relaxed relative z-10">
+                NextBlock provides the open-source infrastructure to change this. We enable any entity—from established reinsurers to specialized asset managers—to curate and launch their own tokenized risk vaults. This transforms illiquid reinsurance risk into a liquid, transparent, and composable on-chain asset.
+              </p>
+            </motion.div>
+          </div>
         </div>
 
         {/* How It Works */}
