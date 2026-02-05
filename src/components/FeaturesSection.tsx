@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import problemSolutionDivider from "@/assets/problem-solution-divider.svg";
 
 const FeaturesSection = () => {
   return (
@@ -18,26 +17,13 @@ const FeaturesSection = () => {
           </h2>
         </motion.div>
 
-        {/* Diagonal Layout with Background Image */}
-        <div className="relative mb-24 min-h-[500px] md:min-h-[600px] rounded-3xl overflow-hidden">
-          {/* Background Image */}
-          <div 
-            className="absolute inset-0 z-0"
-            style={{
-              backgroundImage: `url(${problemSolutionDivider})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          />
-          
-          {/* The Problem - Top Left */}
+        <div className="grid md:grid-cols-2 gap-8 mb-24">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="absolute top-8 left-4 md:left-8 w-[calc(100%-2rem)] md:w-[45%] p-6 md:p-8 rounded-3xl liquid-glass z-10"
+            className="p-8 rounded-3xl liquid-glass liquid-glass-hover"
           >
             <h3 className="text-xl font-bold text-foreground mb-4 relative z-10">
               The Problem
@@ -45,18 +31,17 @@ const FeaturesSection = () => {
             <p className="text-lg font-semibold text-primary mb-3 relative z-10">
               Trapped Capital, Opaque Risk
             </p>
-            <p className="text-muted-foreground leading-relaxed relative z-10 text-sm md:text-base">
+            <p className="text-muted-foreground leading-relaxed relative z-10">
               The traditional reinsurance market is capital-intensive, illiquid, and inaccessible. For reinsurers, billions in capital are trapped in inefficient structures. For investors, access to this stable, uncorrelated asset class is restricted to a select few.
             </p>
           </motion.div>
 
-          {/* The Solution - Bottom Right */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="absolute bottom-8 right-4 md:right-8 w-[calc(100%-2rem)] md:w-[45%] p-6 md:p-8 rounded-3xl liquid-glass z-10"
+            transition={{ duration: 0.6 }}
+            className="p-8 rounded-3xl liquid-glass liquid-glass-hover border-primary/20"
           >
             <h3 className="text-xl font-bold text-foreground mb-4 relative z-10">
               The Solution
@@ -64,7 +49,7 @@ const FeaturesSection = () => {
             <p className="text-lg font-semibold text-primary mb-3 relative z-10">
               Permissionless Vaults, Composable Risk
             </p>
-            <p className="text-muted-foreground leading-relaxed relative z-10 text-sm md:text-base">
+            <p className="text-muted-foreground leading-relaxed relative z-10">
               NextBlock provides the open-source infrastructure to change this. We enable any entity—from established reinsurers to specialized asset managers—to curate and launch their own tokenized risk vaults. This transforms illiquid reinsurance risk into a liquid, transparent, and composable on-chain asset.
             </p>
           </motion.div>
