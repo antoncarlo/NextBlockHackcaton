@@ -269,7 +269,7 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
 
           {/* Tagline */}
           <motion.p
-            className="absolute bottom-20 left-1/2 -translate-x-1/2 text-sm md:text-base tracking-widest uppercase font-heading"
+            className="absolute bottom-20 left-1/2 -translate-x-1/2 text-sm md:text-base tracking-widest uppercase font-heading text-center w-full px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{
               opacity: phase === "split" ? 0 : 1,
@@ -282,7 +282,7 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
               ease: "easeOut"
             }}
           >
-            Il futuro della finanza
+            The future of insurance finance
           </motion.p>
         </motion.div>
       )}
