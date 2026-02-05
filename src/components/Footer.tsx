@@ -1,26 +1,37 @@
 import { motion } from "framer-motion";
 import logoBlack from "@/assets/logo-black.svg";
 import footerBg from "@/assets/footer-bg.svg";
+import WaitlistSection from "./WaitlistSection";
 
 const Footer = () => {
   return (
-    <motion.footer
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      className="w-full"
-    >
-      {/* Image section - cropped with max-height and object-cover */}
-      <div className="w-full h-48 md:h-64 lg:h-80 overflow-hidden">
-        <img 
-          src={footerBg} 
-          alt="" 
-          className="w-full h-full object-cover object-bottom"
-        />
+    <div className="relative">
+      {/* Background image spanning both sections */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${footerBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+      
+      {/* Gradient overlay for readability on top section */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-background via-background/80 to-transparent" />
+      
+      {/* Waitlist Section */}
+      <div className="relative z-10">
+        <WaitlistSection />
       </div>
       
-      {/* Content below the image */}
-      <div className="bg-[#eeebe3] py-8 px-6">
+      {/* Footer content */}
+      <motion.footer
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="relative z-10 py-8 px-6"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <a href="#" className="flex items-center">
@@ -44,8 +55,8 @@ const Footer = () => {
             </p>
           </div>
         </div>
-      </div>
-    </motion.footer>
+      </motion.footer>
+    </div>
   );
 };
 
