@@ -6,7 +6,6 @@ import HeroSection from "@/components/HeroSection";
 import KeyBenefitsSection from "@/components/KeyBenefitsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import AboutSection from "@/components/AboutSection";
-import WaitlistSection from "@/components/WaitlistSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -34,7 +33,6 @@ const Index = () => {
         <KeyBenefitsSection />
         <FeaturesSection />
         <AboutSection />
-        <WaitlistSection />
         <Footer />
       </motion.div>
     </>
