@@ -4,25 +4,63 @@ import featuresDivider from "@/assets/features-divider.svg";
 const FeaturesSection = () => {
   return (
     <section id="how-it-works" className="relative">
-      {/* Title Section */}
-      <div className="py-24 px-6 pb-12">
+      {/* Problem & Solution Section */}
+      <div className="py-24 px-6">
         <div className="mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               From Silos to a Liquid Marketplace
             </h2>
           </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="p-8 rounded-3xl liquid-glass liquid-glass-hover"
+            >
+              <h3 className="text-xl font-bold text-foreground mb-4 relative z-10">
+                The Problem
+              </h3>
+              <p className="text-lg font-semibold text-primary mb-3 relative z-10">
+                Trapped Capital, Opaque Risk
+              </p>
+              <p className="text-muted-foreground leading-relaxed relative z-10">
+                The traditional reinsurance market is capital-intensive, illiquid, and inaccessible. For reinsurers, billions in capital are trapped in inefficient structures. For investors, access to this stable, uncorrelated asset class is restricted to a select few.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="p-8 rounded-3xl liquid-glass liquid-glass-hover border-primary/20"
+            >
+              <h3 className="text-xl font-bold text-foreground mb-4 relative z-10">
+                The Solution
+              </h3>
+              <p className="text-lg font-semibold text-primary mb-3 relative z-10">
+                Permissionless Vaults, Composable Risk
+              </p>
+              <p className="text-muted-foreground leading-relaxed relative z-10">
+                NextBlock provides the open-source infrastructure to change this. We enable any entity—from established reinsurers to specialized asset managers—to curate and launch their own tokenized risk vaults. This transforms illiquid reinsurance risk into a liquid, transparent, and composable on-chain asset.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </div>
 
       {/* Divider Image with Gradient */}
-      <div className="relative h-[500px] md:h-[700px]">
+      <div className="relative h-[400px] md:h-[500px]">
         {/* Background image */}
         <div 
           className="absolute inset-0 z-0"
@@ -35,10 +73,10 @@ const FeaturesSection = () => {
         />
         
         {/* Top gradient overlay - fades from background to transparent */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-background via-transparent to-transparent h-1/3" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-background via-background/60 to-transparent" />
         
         {/* Bottom gradient overlay - fades from transparent to background */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-transparent to-transparent" style={{ top: '50%' }} />
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </div>
 
       {/* How It Works Section */}
