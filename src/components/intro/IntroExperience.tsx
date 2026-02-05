@@ -34,14 +34,25 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-50 bg-background overflow-hidden"
+          className="fixed inset-0 z-50 overflow-hidden"
         >
+          {/* Background color transition */}
+          <motion.div
+            className="absolute inset-0"
+            initial={{ backgroundColor: "hsl(222, 47%, 6%)" }}
+            animate={{ 
+              backgroundColor: phase === "split" ? "#eeebe3" : "hsl(222, 47%, 6%)" 
+            }}
+            transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
+          />
+
           {/* Particle background */}
           <div className="absolute inset-0">
             {[...Array(50)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-1 h-1 rounded-full bg-primary/30"
+                className="absolute w-1 h-1 rounded-full"
+                style={{ backgroundColor: phase === "split" ? "rgba(0,0,0,0.2)" : "rgba(14, 165, 233, 0.3)" }}
                 initial={{
                   x: Math.random() * window.innerWidth,
                   y: Math.random() * window.innerHeight,
@@ -102,12 +113,12 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
                   ease: [0.76, 0, 0.24, 1],
                 }}
               >
-                <svg width="40" height="40" viewBox="0 0 40 40" className="text-primary">
+                <svg width="56" height="56" viewBox="0 0 56 56" className="text-primary">
                   <path
-                    d="M25 10 L10 20 L25 30"
+                    d="M35 14 L14 28 L35 42"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="3"
+                    strokeWidth="4"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
@@ -121,13 +132,15 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
                 animate={{
                   opacity: 1,
                   x: phase === "split" ? -100 : 0,
+                  color: phase === "split" ? "#1a1a1a" : "hsl(210, 40%, 98%)",
                 }}
                 transition={{
                   opacity: { duration: 0.5 },
                   x: { duration: 1.2, ease: [0.76, 0, 0.24, 1] },
+                  color: { duration: 1, ease: [0.76, 0, 0.24, 1] },
                 }}
               >
-                <span className="text-gradient">NEXT</span>
+                NEXT
               </motion.span>
             </motion.div>
 
@@ -168,12 +181,12 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
                   ease: [0.76, 0, 0.24, 1],
                 }}
               >
-                <svg width="40" height="40" viewBox="0 0 40 40" className="text-primary">
+                <svg width="56" height="56" viewBox="0 0 56 56" className="text-primary">
                   <path
-                    d="M15 10 L30 20 L15 30"
+                    d="M21 14 L42 28 L21 42"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="3"
+                    strokeWidth="4"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
@@ -187,13 +200,15 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
                 animate={{
                   opacity: 1,
                   x: phase === "split" ? 100 : 0,
+                  color: phase === "split" ? "#1a1a1a" : "hsl(210, 40%, 98%)",
                 }}
                 transition={{
                   opacity: { duration: 0.5 },
                   x: { duration: 1.2, ease: [0.76, 0, 0.24, 1] },
+                  color: { duration: 1, ease: [0.76, 0, 0.24, 1] },
                 }}
               >
-                <span className="text-foreground">BLOCK</span>
+                BLOCK
               </motion.span>
             </motion.div>
 
@@ -211,11 +226,12 @@ const IntroExperience = ({ onComplete }: IntroExperienceProps) => {
 
           {/* Tagline */}
           <motion.p
-            className="absolute bottom-20 left-1/2 -translate-x-1/2 text-muted-foreground text-sm md:text-base tracking-widest uppercase"
+            className="absolute bottom-20 left-1/2 -translate-x-1/2 text-sm md:text-base tracking-widest uppercase"
             initial={{ opacity: 0, y: 20 }}
             animate={{
               opacity: phase === "split" ? 0 : 1,
               y: phase === "split" ? -20 : 0,
+              color: phase === "split" ? "#1a1a1a" : "hsl(215, 20%, 65%)",
             }}
             transition={{ duration: 0.5, delay: phase === "initial" ? 0.8 : 0 }}
           >
