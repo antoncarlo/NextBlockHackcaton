@@ -24,15 +24,15 @@ const Footer = () => {
               Privacy
             </a>
             <a href="#" className="hover:text-foreground transition-colors">
-              Termini
+              Terms
             </a>
             <a href="#" className="hover:text-foreground transition-colors">
-              Contatti
+              Contact
             </a>
           </div>
 
           <p className="text-sm text-muted-foreground">
-            © 2025 NextBlock. Tutti i diritti riservati.
+            © 2025 NextBlock. All rights reserved.
           </p>
         </div>
       </div>

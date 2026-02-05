@@ -19,14 +19,14 @@ const Header = () => {
         </div>
         
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-            Features
-          </a>
           <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-            About
+            Market
+          </a>
+          <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+            How It Works
           </a>
           <a href="#waitlist" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-            Join Waitlist
+            Request Access
           </a>
         </nav>
       </div>

@@ -13,28 +13,29 @@ const WaitlistSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Unisciti alla
-              <br />
-              <span className="text-gradient">Rivoluzione</span>
+              Be Part of the New Capital Market
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Entra a far parte della nostra community esclusiva. Riceverai 
-              accesso anticipato, aggiornamenti esclusivi e la possibilità 
-              di influenzare lo sviluppo del prodotto.
+              We are currently in private beta, working with leading reinsurers and asset managers. Request early access to join the waitlist as a curator or investor.
             </p>
             
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary" />
-                <span className="text-muted-foreground">Accesso anticipato garantito</span>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  For Curators
+                </h3>
+                <p className="text-muted-foreground">
+                  Are you a reinsurer looking to access DeFi liquidity? Or an asset manager with expertise in insurance-linked securities? NextBlock provides the tools to build, manage, and scale your on-chain strategy.
+                </p>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary" />
-                <span className="text-muted-foreground">Aggiornamenti settimanali esclusivi</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary" />
-                <span className="text-muted-foreground">Nessuno spam, solo contenuti di valore</span>
+              
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  For Investors
+                </h3>
+                <p className="text-muted-foreground">
+                  Diversify your portfolio with a truly uncorrelated, real-world asset class. Insurance risk offers stable, predictable yields backed by centuries of actuarial data.
+                </p>
               </div>
             </div>
           </motion.div>
