@@ -14,6 +14,7 @@ const FeaturesSection = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
+            filter: "blur(2px)",
           }}
         />
         
