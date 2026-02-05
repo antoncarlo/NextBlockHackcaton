@@ -37,16 +37,12 @@
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --cream: 40 23% 92%;
-    --cream-foreground: 30 10% 15%;
     --gradient-hero: linear-gradient(180deg, rgba(10, 14, 26, 0) 0%, rgba(10, 14, 26, 0.8) 100%);
     --gradient-card: linear-gradient(135deg, hsl(222, 30%, 12%) 0%, hsl(222, 30%, 8%) 100%);
-    --gradient-card-cream: linear-gradient(135deg, hsl(40, 20%, 88%) 0%, hsl(40, 23%, 92%) 100%);
     --gradient-cta: linear-gradient(135deg, hsl(199, 89%, 48%) 0%, hsl(210, 100%, 60%) 100%);
     --gradient-text: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 85%) 100%);
     --shadow-glow: 0 0 60px rgba(14, 165, 233, 0.15);
     --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
-    --shadow-card-cream: 0 4px 24px rgba(0, 0, 0, 0.08);
     
     --sidebar-background: 222 47% 6%;
     --sidebar-foreground: 210 40% 98%;
