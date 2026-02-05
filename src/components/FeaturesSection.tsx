@@ -19,7 +19,7 @@ const FeaturesSection = () => {
         </motion.div>
 
         {/* Diagonal Layout with Background Image */}
-        <div className="relative mb-24 min-h-[500px] md:min-h-[600px] rounded-3xl overflow-hidden">
+        <div className="relative mb-24 min-h-[500px] md:min-h-[600px] rounded-3xl overflow-hidden bg-secondary">
           {/* Background Image */}
           <div 
             className="absolute inset-0 z-0"
