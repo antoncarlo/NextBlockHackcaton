@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <a href="#" className="flex items-center">
-            <img src={logoWhite} alt="NextBlock" className="h-10 md:h-12" />
+            <img src={logoWhite} alt="NextBlock" className="h-20 md:h-24" />
           </a>
 
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
