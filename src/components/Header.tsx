@@ -11,7 +11,7 @@ const Header = () => {
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between">
         <a href="#" className="flex items-center">
-          <img src={logoWhite} alt="NextBlock" className="h-12 md:h-14" />
+          <img src={logoWhite} alt="NextBlock" className="h-24 md:h-28" />
         </a>
         
         <nav className="hidden md:flex items-center gap-8">
