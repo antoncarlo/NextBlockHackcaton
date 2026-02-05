@@ -10,11 +10,13 @@ const Footer = () => {
     >
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-cta flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">W</span>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-cta flex items-center justify-center">
+              <span className="text-primary-foreground font-bold text-xs">NB</span>
             </div>
-            <span className="text-foreground font-semibold">Waitlist</span>
+            <span className="text-foreground font-semibold">
+              Next<span className="text-primary">Block</span>
+            </span>
           </div>
 
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
@@ -30,7 +32,7 @@ const Footer = () => {
           </div>
 
           <p className="text-sm text-muted-foreground">
-            © 2025 Waitlist. Tutti i diritti riservati.
+            © 2025 NextBlock. Tutti i diritti riservati.
           </p>
         </div>
       </div>
