@@ -8,21 +8,23 @@ const Footer = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="relative w-full"
+      className="w-full"
     >
-      {/* Background image - defines footer size */}
-      <img 
-        src={footerBg} 
-        alt="" 
-        className="w-full h-auto block"
-      />
+      {/* Image section - cropped with max-height and object-cover */}
+      <div className="w-full h-48 md:h-64 lg:h-80 overflow-hidden">
+        <img 
+          src={footerBg} 
+          alt="" 
+          className="w-full h-full object-cover object-top"
+        />
+      </div>
       
-      {/* Content overlaid on the image */}
-      <div className="absolute inset-0 flex items-center">
-        <div className="mx-auto max-w-7xl w-full px-6">
+      {/* Content below the image */}
+      <div className="bg-[#eeebe3] py-8 px-6">
+        <div className="mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <a href="#" className="flex items-center">
-              <img src={logoBlack} alt="NextBlock" className="h-16 md:h-20" />
+              <img src={logoBlack} alt="NextBlock" className="h-14 md:h-16" />
             </a>
 
             <div className="flex items-center gap-6 text-sm text-black font-medium">
