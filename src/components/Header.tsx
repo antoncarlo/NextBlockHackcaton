@@ -45,7 +45,7 @@ const Header = () => {
           <img 
             src={logoBlack} 
             alt="NextBlock" 
-            style={{ height: '60px', width: 'auto' }}
+            style={{ height: '100px', width: 'auto' }}
           />
         </motion.a>
         
