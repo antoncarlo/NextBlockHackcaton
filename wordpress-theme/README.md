@@ -46,11 +46,12 @@ A premium institutional finance WordPress theme for insurance-linked assets mark
 
 ### Images
 Copy the following images to `/assets/images/`:
-- `footer-frieze.png` - Decorative frieze for footer
+- `protocol-stack-lion.png` - Winged Lion of Saint Mark (Protocol Stack section)
 - `our-vision-venice.png` - Vision section illustration
 
 ### Video
-Upload your hero background video via the Customizer.
+Upload your hero background video via the Customizer (no overlay applied).
+The footer also uses a decorative video frieze.
 
 ## File Structure
 
