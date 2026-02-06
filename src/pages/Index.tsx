@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import IntroExperience from "@/components/intro/IntroExperience";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import BuiltWithSection from "@/components/BuiltWithSection";
 import KeyBenefitsSection from "@/components/KeyBenefitsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import AboutSection from "@/components/AboutSection";
@@ -31,7 +30,6 @@ const Index = () => {
       >
         <Header />
         <HeroSection />
-        <BuiltWithSection />
         <KeyBenefitsSection />
         <FeaturesSection />
         <AboutSection />
