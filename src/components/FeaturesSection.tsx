@@ -51,21 +51,21 @@ const FeaturesSection = () => {
       <div 
         className="relative overflow-hidden"
         style={{ 
-          backgroundColor: '#0F1218',
+          backgroundColor: '#FFFFFF',
           minHeight: '500px',
         }}
       >
         {/* Section connector */}
-        <SectionConnector fromSide="left" isDark={true} />
+        <SectionConnector fromSide="left" isDark={false} />
         
         {/* Decorative grid */}
-        <DecorativeGrid variant="dark" position="bottom" />
+        <DecorativeGrid variant="light" position="bottom" />
 
         {/* Subtle gradient overlay for depth */}
         <div 
           className="absolute inset-0"
           style={{
-            background: 'radial-gradient(ellipse at 50% 0%, rgba(27, 58, 107, 0.15) 0%, transparent 60%)',
+            background: 'radial-gradient(ellipse at 50% 0%, rgba(27, 58, 107, 0.03) 0%, transparent 60%)',
           }}
         />
 
@@ -87,7 +87,7 @@ const FeaturesSection = () => {
                   fontWeight: 500,
                   letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  color: 'rgba(255, 255, 255, 0.5)',
+                  color: 'rgba(27, 58, 107, 0.5)',
                 }}
               >
                 The Opportunity
@@ -96,7 +96,7 @@ const FeaturesSection = () => {
                 style={{ 
                   fontSize: 'clamp(28px, 5vw, 42px)',
                   fontWeight: 500,
-                  color: '#FFFFFF',
+                  color: '#0F1218',
                   lineHeight: 1.2,
                 }}
               >
@@ -111,25 +111,25 @@ const FeaturesSection = () => {
               {solutionCards.map((card, index) => {
                 const isActive = activeIndex === index;
                 
-                return (
+                  return (
                   <motion.div
                     key={card.id}
                     onClick={() => handleCardClick(index)}
                     className="relative cursor-pointer overflow-hidden"
                     style={{
                       borderRadius: '16px',
-                      backdropFilter: isActive ? 'none' : 'blur(8px)',
+                      backdropFilter: 'blur(8px)',
                     }}
                     initial={false}
                     animate={{
                       flex: isActive ? 2 : 1,
-                      backgroundColor: isActive ? '#FFFFFF' : 'rgba(255, 255, 255, 0.05)',
-                      borderColor: isActive ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)',
+                      backgroundColor: isActive ? 'rgba(27, 58, 107, 0.06)' : 'rgba(27, 58, 107, 0.02)',
+                      borderColor: isActive ? 'rgba(27, 58, 107, 0.15)' : 'rgba(27, 58, 107, 0.08)',
                       opacity: isActive ? 1 : 0.85,
                     }}
                     whileHover={{
                       opacity: 1,
-                      borderColor: isActive ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.2)',
+                      borderColor: isActive ? 'rgba(27, 58, 107, 0.15)' : 'rgba(27, 58, 107, 0.15)',
                     }}
                     transition={{
                       duration: 0.5,
@@ -140,8 +140,8 @@ const FeaturesSection = () => {
                       className="absolute inset-0 border"
                       style={{
                         borderRadius: '16px',
-                        borderColor: isActive ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)',
-                        boxShadow: isActive ? '0 8px 32px rgba(0, 0, 0, 0.12)' : 'none',
+                        borderColor: isActive ? 'rgba(27, 58, 107, 0.15)' : 'rgba(27, 58, 107, 0.08)',
+                        boxShadow: isActive ? '0 8px 32px rgba(27, 58, 107, 0.08)' : 'none',
                         transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                       }}
                     />
@@ -150,7 +150,7 @@ const FeaturesSection = () => {
                       {/* Icon */}
                       <motion.div
                         animate={{
-                          color: isActive ? '#1B3A6B' : 'rgba(255, 255, 255, 0.6)',
+                          color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.5)',
                         }}
                         transition={{ duration: 0.4 }}
                         style={{ 
@@ -169,7 +169,7 @@ const FeaturesSection = () => {
                       {/* Label */}
                       <motion.span
                         animate={{
-                          color: isActive ? '#8A8A8A' : 'rgba(255, 255, 255, 0.4)',
+                          color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.5)',
                         }}
                         style={{
                           fontSize: '12px',
@@ -186,7 +186,7 @@ const FeaturesSection = () => {
                       <motion.div
                         animate={{
                           width: isActive ? '48px' : '40px',
-                          backgroundColor: isActive ? '#1B3A6B' : 'rgba(255, 255, 255, 0.15)',
+                          backgroundColor: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.15)',
                         }}
                         transition={{ duration: 0.4 }}
                         style={{
@@ -198,7 +198,7 @@ const FeaturesSection = () => {
                       {/* Title */}
                       <motion.h3
                         animate={{
-                          color: isActive ? '#0F1218' : 'rgba(255, 255, 255, 0.8)',
+                          color: isActive ? '#0F1218' : 'rgba(15, 18, 24, 0.7)',
                           fontSize: isActive ? '20px' : '16px',
                           fontWeight: isActive ? 600 : 500,
                         }}
@@ -248,19 +248,19 @@ const FeaturesSection = () => {
                   width: '40px',
                   height: '40px',
                   borderRadius: '50%',
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  background: 'rgba(27, 58, 107, 0.06)',
+                  border: '1px solid rgba(27, 58, 107, 0.12)',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                  e.currentTarget.style.background = 'rgba(27, 58, 107, 0.12)';
+                  e.currentTarget.style.borderColor = 'rgba(27, 58, 107, 0.25)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+                  e.currentTarget.style.background = 'rgba(27, 58, 107, 0.06)';
+                  e.currentTarget.style.borderColor = 'rgba(27, 58, 107, 0.12)';
                 }}
               >
-                <ChevronLeft size={18} style={{ color: 'rgba(255, 255, 255, 0.6)' }} />
+                <ChevronLeft size={18} style={{ color: 'rgba(27, 58, 107, 0.6)' }} />
               </button>
               <button
                 onClick={handleNext}
@@ -269,19 +269,19 @@ const FeaturesSection = () => {
                   width: '40px',
                   height: '40px',
                   borderRadius: '50%',
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  background: 'rgba(27, 58, 107, 0.06)',
+                  border: '1px solid rgba(27, 58, 107, 0.12)',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                  e.currentTarget.style.background = 'rgba(27, 58, 107, 0.12)';
+                  e.currentTarget.style.borderColor = 'rgba(27, 58, 107, 0.25)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+                  e.currentTarget.style.background = 'rgba(27, 58, 107, 0.06)';
+                  e.currentTarget.style.borderColor = 'rgba(27, 58, 107, 0.12)';
                 }}
               >
-                <ChevronRight size={18} style={{ color: 'rgba(255, 255, 255, 0.6)' }} />
+                <ChevronRight size={18} style={{ color: 'rgba(27, 58, 107, 0.6)' }} />
               </button>
             </div>
 
@@ -298,13 +298,13 @@ const FeaturesSection = () => {
                     style={{
                       borderRadius: '12px',
                       border: '1px solid',
-                      borderColor: isActive ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)',
-                      backgroundColor: isActive ? '#FFFFFF' : 'rgba(255, 255, 255, 0.05)',
-                      backdropFilter: isActive ? 'none' : 'blur(8px)',
+                      borderColor: isActive ? 'rgba(27, 58, 107, 0.15)' : 'rgba(27, 58, 107, 0.08)',
+                      backgroundColor: isActive ? 'rgba(27, 58, 107, 0.06)' : 'rgba(27, 58, 107, 0.02)',
+                      backdropFilter: 'blur(8px)',
                     }}
                     initial={false}
                     animate={{
-                      backgroundColor: isActive ? '#FFFFFF' : 'rgba(255, 255, 255, 0.05)',
+                      backgroundColor: isActive ? 'rgba(27, 58, 107, 0.06)' : 'rgba(27, 58, 107, 0.02)',
                     }}
                     transition={{ duration: 0.4 }}
                   >
@@ -315,7 +315,7 @@ const FeaturesSection = () => {
                     >
                       <motion.div
                         animate={{
-                          color: isActive ? '#1B3A6B' : 'rgba(255, 255, 255, 0.6)',
+                          color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.5)',
                         }}
                         transition={{ duration: 0.3 }}
                         style={{ width: '24px', height: '24px', flexShrink: 0 }}
@@ -325,7 +325,7 @@ const FeaturesSection = () => {
                       <div className="flex-1">
                         <motion.span
                           animate={{
-                            color: isActive ? '#8A8A8A' : 'rgba(255, 255, 255, 0.4)',
+                            color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.5)',
                           }}
                           style={{
                             fontSize: '11px',
@@ -340,7 +340,7 @@ const FeaturesSection = () => {
                         </motion.span>
                         <motion.h3
                           animate={{
-                            color: isActive ? '#0F1218' : 'rgba(255, 255, 255, 0.8)',
+                            color: isActive ? '#0F1218' : 'rgba(15, 18, 24, 0.7)',
                           }}
                           style={{
                             fontSize: '15px',
@@ -358,7 +358,7 @@ const FeaturesSection = () => {
                         <ChevronRight 
                           size={18} 
                           style={{ 
-                            color: isActive ? '#1B3A6B' : 'rgba(255, 255, 255, 0.4)',
+                            color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.4)',
                             transform: 'rotate(90deg)',
                           }} 
                         />
