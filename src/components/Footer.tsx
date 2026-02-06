@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import logoBlack from "@/assets/logo-black.svg";
 import footerBg from "@/assets/footer-bg.svg";
 import WaitlistSection from "./WaitlistSection";
 
@@ -35,7 +34,9 @@ const Footer = () => {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <a href="#" className="flex items-center">
-              <img src={logoBlack} alt="NextBlock" className="h-14 md:h-16" />
+              <span className="logo-text text-black">
+                NEXTBLOCK
+              </span>
             </a>
 
             <div className="flex items-center gap-6 text-sm text-black font-medium">

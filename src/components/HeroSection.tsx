@@ -25,7 +25,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-3xl"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-foreground">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium leading-tight text-foreground">
             The Universal Marketplace for Insurance-Linked Assets.
           </h1>
           
