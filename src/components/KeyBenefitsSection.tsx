@@ -68,14 +68,14 @@ const KeyBenefitsSection = () => {
               {item.type === 'keyword' ? (
                 <span 
                   className="text-2xl font-medium transition-colors whitespace-nowrap tracking-wide"
-                  style={{ color: 'rgba(27, 58, 107, 0.2)' }}
+                  style={{ color: '#1B3A6B' }}
                 >
                   {item.value}
                 </span>
               ) : (
                 <span 
                   className="flex items-center gap-2 transition-colors whitespace-nowrap"
-                  style={{ color: 'rgba(27, 58, 107, 0.2)' }}
+                  style={{ color: '#1B3A6B' }}
                 >
                   {item.icon}
                   <span className="text-base font-medium tracking-wide">
