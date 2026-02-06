@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shield, Compass, Key, LayoutGrid, Layers, ChevronLeft, ChevronRight } from "lucide-react";
 import veniceImage from "@/assets/our-vision-venice.png";
+import { FlowchartMarker, FlowchartMobileMarker } from "./FlowchartLines";
 
 interface CardData {
   id: string;
@@ -54,7 +55,6 @@ const ProtocolStackCards = () => {
 
   const handleCardClick = (index: number) => {
     if (activeIndex === index) {
-      // Clicking active card keeps it active (or could collapse - keeping active for better UX)
       return;
     }
     setActiveIndex(index);
@@ -74,8 +74,19 @@ const ProtocolStackCards = () => {
       className="relative overflow-hidden"
       style={{ 
         minHeight: '600px',
+        zIndex: 1,
       }}
     >
+      {/* Flowchart markers */}
+      <FlowchartMarker 
+        sectionId="protocol-stack" 
+        isDark={true}
+        branches={[
+          { direction: "left", width: "22%" },
+          { direction: "right", width: "22%" },
+        ]}
+      />
+      <FlowchartMobileMarker isDark={true} />
       {/* Background Image */}
       <div 
         className="absolute inset-0"

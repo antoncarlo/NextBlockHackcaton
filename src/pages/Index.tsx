@@ -8,6 +8,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import AboutSection from "@/components/AboutSection";
 import OurVisionSection from "@/components/OurVisionSection";
 import Footer from "@/components/Footer";
+import FlowchartLines from "@/components/FlowchartLines";
 
 const Index = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -27,8 +28,11 @@ const Index = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: showIntro ? 0 : 1 }}
         transition={{ duration: 0.8 }}
-        className="min-h-screen bg-background"
+        className="min-h-screen bg-background relative"
       >
+        {/* Flowchart vertical lines */}
+        <FlowchartLines />
+        
         <Header />
         <HeroSection />
         <KeyBenefitsSection />
