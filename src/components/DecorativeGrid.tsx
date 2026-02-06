@@ -13,9 +13,9 @@ const DecorativeGrid = ({
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const isDark = variant === "dark";
-  const baseColor = isDark ? "rgba(255, 255, 255, 0.03)" : "rgba(27, 58, 107, 0.04)";
-  const accentColor = isDark ? "rgba(74, 108, 247, 0.06)" : "rgba(74, 108, 247, 0.05)";
-  const lineColor = isDark ? "rgba(255, 255, 255, 0.04)" : "rgba(27, 58, 107, 0.05)";
+  const baseColor = isDark ? "rgba(255, 255, 255, 0.06)" : "rgba(27, 58, 107, 0.08)";
+  const accentColor = isDark ? "rgba(74, 108, 247, 0.12)" : "rgba(74, 108, 247, 0.1)";
+  const lineColor = isDark ? "rgba(255, 255, 255, 0.08)" : "rgba(27, 58, 107, 0.1)";
 
   const positionStyles: Record<string, React.CSSProperties> = {
     bottom: { bottom: 0, height: '300px' },
