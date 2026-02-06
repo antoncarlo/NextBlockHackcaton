@@ -98,7 +98,7 @@ const ProtocolStackCards = () => {
       <div 
         className="absolute inset-0"
         style={{
-          background: 'rgba(15, 18, 24, 0.1)',
+          background: 'rgba(15, 18, 24, 0.2)',
         }}
       />
 
