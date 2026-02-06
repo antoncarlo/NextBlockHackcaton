@@ -66,12 +66,7 @@ const Footer = () => {
         }}
       >
         {/* Decorative frieze at top */}
-        <div 
-          className="relative w-full overflow-hidden"
-          style={{
-            borderTop: '1px solid rgba(0,0,0,0.06)',
-          }}
-        >
+        <div className="relative w-full overflow-hidden">
           <video
             src={footerFriezeVideo}
             autoPlay
