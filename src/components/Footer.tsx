@@ -1,24 +1,54 @@
 import { motion } from "framer-motion";
-import footerBg from "@/assets/footer-bg.svg";
+import { Twitter, MessageCircle, Send, Linkedin } from "lucide-react";
 import WaitlistSection from "./WaitlistSection";
 
 const Footer = () => {
+  const protocolLinks = [
+    { label: "Protocol Overview", href: "#" },
+    { label: "Documentation", href: "#" },
+    { label: "GitHub", href: "#" },
+    { label: "Security Audits", href: "#" },
+    { label: "Bug Bounty", href: "#" },
+  ];
+
+  const resourceLinks = [
+    { label: "Blog", href: "#" },
+    { label: "FAQ", href: "#" },
+    { label: "Brand Kit", href: "#" },
+    { label: "Careers", href: "#" },
+  ];
+
+  const legalLinks = [
+    { label: "Terms of Service", href: "#" },
+    { label: "Privacy Policy", href: "#" },
+    { label: "Cookie Policy", href: "#" },
+    { label: "Risk Disclaimer", href: "#" },
+  ];
+
+  const socialLinks = [
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: MessageCircle, href: "#", label: "Discord" },
+    { icon: Send, href: "#", label: "Telegram" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+  ];
+
+  const linkStyle = {
+    fontSize: '14px',
+    color: 'rgba(255,255,255,0.5)',
+    transition: 'color 0.2s ease',
+  };
+
+  const headerStyle = {
+    fontSize: '12px',
+    fontWeight: 500,
+    letterSpacing: '0.1em',
+    textTransform: 'uppercase' as const,
+    color: 'rgba(255,255,255,0.3)',
+    marginBottom: '20px',
+  };
+
   return (
     <div className="relative">
-      {/* Background image spanning both sections */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${footerBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center bottom",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
-      
-      {/* Gradient overlay for readability on top section */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-background via-background/80 to-transparent" />
-      
       {/* Waitlist Section */}
       <div className="relative z-10">
         <WaitlistSection />
@@ -29,30 +59,155 @@ const Footer = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="relative z-10 py-8 px-6"
+        style={{
+          backgroundColor: '#060911',
+          borderTop: '1px solid rgba(255,255,255,0.06)',
+        }}
       >
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <a href="#" className="flex items-center">
-              <span className="logo-text text-black">
-                NEXTBLOCK
-              </span>
-            </a>
-
-            <div className="flex items-center gap-6 text-sm text-black font-medium">
-              <a href="#" className="hover:opacity-70 transition-opacity">
-                Privacy
+        {/* ROW 1 - Main footer content */}
+        <div 
+          className="mx-auto"
+          style={{ 
+            maxWidth: '1200px', 
+            padding: '80px 40px 48px 40px',
+          }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+            {/* Column 1 - Brand */}
+            <div className="lg:col-span-1">
+              <a href="#" className="inline-block mb-4">
+                <span className="logo-text text-foreground">
+                  NEXTBLOCK
+                </span>
               </a>
-              <a href="#" className="hover:opacity-70 transition-opacity">
-                Terms
-              </a>
-              <a href="#" className="hover:opacity-70 transition-opacity">
-                Contact
-              </a>
+              <p 
+                className="mb-6"
+                style={{ 
+                  fontSize: '14px', 
+                  color: 'rgba(255,255,255,0.5)',
+                  lineHeight: 1.6,
+                }}
+              >
+                The Universal Marketplace for Insurance-Linked Assets
+              </p>
+              <div className="flex items-center gap-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    aria-label={social.label}
+                    className="transition-colors duration-200 hover:text-white"
+                    style={{ color: 'rgba(255,255,255,0.4)' }}
+                  >
+                    <social.icon size={20} />
+                  </a>
+                ))}
+              </div>
             </div>
 
-            <p className="text-sm text-black">
+            {/* Column 2 - Protocol */}
+            <div>
+              <h4 style={headerStyle}>Protocol</h4>
+              <ul className="space-y-3">
+                {protocolLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      style={linkStyle}
+                      className="hover:text-white"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 3 - Resources */}
+            <div>
+              <h4 style={headerStyle}>Resources</h4>
+              <ul className="space-y-3">
+                {resourceLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      style={linkStyle}
+                      className="hover:text-white"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 4 - Legal */}
+            <div>
+              <h4 style={headerStyle}>Legal</h4>
+              <ul className="space-y-3">
+                {legalLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      style={linkStyle}
+                      className="hover:text-white"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* ROW 2 - Disclaimer */}
+        <div 
+          className="mx-auto text-center"
+          style={{ 
+            maxWidth: '800px', 
+            padding: '0 40px 32px 40px',
+          }}
+        >
+          <p
+            style={{
+              fontSize: '12px',
+              color: 'rgba(255,255,255,0.3)',
+              lineHeight: 1.7,
+            }}
+          >
+            NextBlock is an open-source protocol. The information provided on this website does not constitute investment advice, financial advice, trading advice, or any other sort of advice. You should not treat any of the content as such. Insurance-linked assets involve significant risk. Past performance is not indicative of future results.
+          </p>
+        </div>
+
+        {/* ROW 3 - Bottom bar */}
+        <div
+          style={{
+            borderTop: '1px solid rgba(255,255,255,0.06)',
+          }}
+        >
+          <div 
+            className="mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+            style={{ 
+              maxWidth: '1200px', 
+              padding: '24px 40px',
+            }}
+          >
+            <p
+              style={{
+                fontSize: '13px',
+                color: 'rgba(255,255,255,0.3)',
+              }}
+            >
               © 2025 NextBlock. All rights reserved.
+            </p>
+            <p
+              style={{
+                fontSize: '13px',
+                color: 'rgba(255,255,255,0.3)',
+              }}
+            >
+              Built on Base · Secured by Ethereum
             </p>
           </div>
         </div>
