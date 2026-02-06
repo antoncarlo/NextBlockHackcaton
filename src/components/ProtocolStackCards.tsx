@@ -94,6 +94,14 @@ const ProtocolStackCards = () => {
       />
       
 
+      {/* Light Overlay */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'rgba(15, 18, 24, 0.1)',
+        }}
+      />
+
       {/* Content */}
       <div className="relative z-10 px-6 py-24 md:py-32">
         <div className="mx-auto" style={{ maxWidth: '1200px' }}>
