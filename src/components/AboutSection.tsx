@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FlowchartMarker, FlowchartMobileMarker } from "./FlowchartLines";
 
 const AboutSection = () => {
   const stats = [
@@ -26,8 +27,19 @@ const AboutSection = () => {
       style={{ 
         padding: '100px 24px',
         backgroundColor: '#F2F1EE',
+        zIndex: 1,
       }}
     >
+      {/* Flowchart markers */}
+      <FlowchartMarker 
+        sectionId="stats" 
+        branches={[
+          { direction: "left", width: "28%" },
+          { direction: "right", width: "28%" },
+        ]}
+      />
+      <FlowchartMobileMarker />
+
       <div className="mx-auto relative z-10" style={{ maxWidth: '1100px' }}>
         {/* Main heading */}
         <motion.div

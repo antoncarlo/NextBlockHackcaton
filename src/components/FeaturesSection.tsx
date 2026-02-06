@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Lock, Unlock, ChevronLeft, ChevronRight } from "lucide-react";
 import ProtocolStackCards from "./ProtocolStackCards";
+import { FlowchartMarker, FlowchartMobileMarker } from "./FlowchartLines";
 
 interface SolutionCardData {
   id: string;
@@ -44,7 +45,7 @@ const FeaturesSection = () => {
   };
 
   return (
-    <section className="relative">
+    <section className="relative" style={{ zIndex: 1 }}>
       {/* From Silos to Liquid Marketplace Section */}
       <div 
         className="relative overflow-hidden"
@@ -53,6 +54,17 @@ const FeaturesSection = () => {
           minHeight: '500px',
         }}
       >
+        {/* Flowchart markers */}
+        <FlowchartMarker 
+          sectionId="silos-marketplace" 
+          isDark={true}
+          branches={[
+            { direction: "left", width: "25%" },
+            { direction: "right", width: "25%" },
+          ]}
+        />
+        <FlowchartMobileMarker isDark={true} />
+
         {/* Subtle gradient overlay for depth */}
         <div 
           className="absolute inset-0"
