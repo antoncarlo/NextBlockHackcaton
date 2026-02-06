@@ -20,7 +20,7 @@ const Header = () => {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-300 ${
         isScrolled 
-          ? "py-4 bg-background/80 backdrop-blur-xl border-b border-primary/20 shadow-lg shadow-primary/5" 
+          ? "py-4 bg-background/80 backdrop-blur-xl border-b border-[rgba(74,108,247,0.15)] shadow-lg shadow-[rgba(74,108,247,0.05)]" 
           : "py-6"
       }`}
     >

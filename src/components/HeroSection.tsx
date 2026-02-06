@@ -46,13 +46,13 @@ const HeroSection = () => {
           >
             <a
               href="#waitlist"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-gradient-cta text-primary-foreground font-semibold text-sm transition-all hover:opacity-90 hover:scale-105 shadow-glow"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-md btn-institutional font-medium text-sm transition-all hover:scale-[1.02]"
             >
               Request Early Access
             </a>
             <a
               href="#how-it-works"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg border border-border text-foreground font-medium text-sm transition-all hover:bg-secondary"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-md border border-[rgba(255,255,255,0.1)] text-foreground font-medium text-sm transition-all hover:bg-secondary hover:border-[rgba(255,255,255,0.15)]"
             >
               Learn More
             </a>

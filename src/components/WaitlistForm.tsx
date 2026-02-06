@@ -88,9 +88,9 @@ const WaitlistForm = () => {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", delay: 0.2 }}
-          className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6"
+          className="w-20 h-20 rounded-full bg-[rgba(74,108,247,0.15)] flex items-center justify-center mx-auto mb-6"
         >
-          <CheckCircle className="w-10 h-10 text-primary" />
+          <CheckCircle className="w-10 h-10 text-[#4A6CF7]" />
         </motion.div>
         <h3 className="text-2xl font-bold text-foreground mb-2">
           You're on the list!
@@ -197,7 +197,7 @@ const WaitlistForm = () => {
         disabled={isLoading}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-gradient-cta text-primary-foreground font-semibold transition-all hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed shadow-glow"
+        className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-md btn-institutional font-medium transition-all hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isLoading ? (
           <motion.div

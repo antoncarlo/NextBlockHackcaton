@@ -26,7 +26,7 @@ const AboutSection = () => {
         {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 rounded-full bg-primary/30"
+            className="absolute w-1 h-1 rounded-full bg-[rgba(74,108,247,0.3)]"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -48,7 +48,7 @@ const AboutSection = () => {
       <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <motion.path
           d="M 10% 50% Q 30% 30%, 50% 50% T 90% 50%"
-          stroke="hsl(var(--primary) / 0.15)"
+          stroke="rgba(74, 108, 247, 0.15)"
           strokeWidth="1"
           fill="none"
           initial={{ pathLength: 0 }}
@@ -58,7 +58,7 @@ const AboutSection = () => {
         />
         <motion.path
           d="M 20% 20% Q 50% 40%, 80% 20%"
-          stroke="hsl(var(--primary) / 0.1)"
+          stroke="rgba(74, 108, 247, 0.1)"
           strokeWidth="1"
           fill="none"
           initial={{ pathLength: 0 }}
@@ -68,7 +68,7 @@ const AboutSection = () => {
         />
         <motion.path
           d="M 15% 80% Q 50% 60%, 85% 80%"
-          stroke="hsl(var(--primary) / 0.1)"
+          stroke="rgba(74, 108, 247, 0.1)"
           strokeWidth="1"
           fill="none"
           initial={{ pathLength: 0 }}
@@ -107,7 +107,7 @@ const AboutSection = () => {
         <div className="relative">
           {/* Vertical connection line */}
           <motion.div 
-            className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent hidden md:block"
+            className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[rgba(74,108,247,0.3)] to-transparent hidden md:block"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
@@ -127,14 +127,14 @@ const AboutSection = () => {
             >
               {/* Connection node */}
               <motion.div 
-                className="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-primary hidden md:block"
+                className="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#4A6CF7] hidden md:block"
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 + index * 0.2 }}
               >
                 <motion.div 
-                  className="absolute inset-0 rounded-full bg-primary"
+                  className="absolute inset-0 rounded-full bg-[#4A6CF7]"
                   animate={{ scale: [1, 2, 1], opacity: [0.5, 0, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
@@ -143,7 +143,7 @@ const AboutSection = () => {
               {/* Stat content */}
               <div className={`flex-1 ${index % 2 === 0 ? "md:text-right md:pr-16" : "md:text-left md:pl-16"} text-center`}>
                 <motion.div 
-                  className="text-5xl md:text-7xl stat-number text-primary mb-2"
+                  className="text-5xl md:text-7xl stat-number text-[#4A6CF7] mb-2"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
