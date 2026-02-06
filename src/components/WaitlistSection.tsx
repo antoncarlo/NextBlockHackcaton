@@ -51,22 +51,15 @@ const WaitlistSection = () => {
       className="relative overflow-hidden"
       style={{ 
         minHeight: '700px',
-        backgroundColor: '#0F1218',
+        backgroundColor: '#FFFFFF',
         zIndex: 1,
       }}
     >
       {/* Section connector */}
-      <SectionConnector fromSide="left" isDark={true} />
+      <SectionConnector fromSide="left" isDark={false} />
       
       {/* Decorative grid */}
-      <DecorativeGrid variant="dark" position="bottom" />
-      {/* Subtle gradient overlay for depth */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(27, 58, 107, 0.15) 0%, transparent 60%)',
-        }}
-      />
+      <DecorativeGrid variant="light" position="bottom" />
 
       {/* Content */}
       <div className="relative z-10 px-6 py-24 md:py-32">
@@ -86,7 +79,7 @@ const WaitlistSection = () => {
                 fontWeight: 500,
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
-                color: 'rgba(255, 255, 255, 0.5)',
+                color: 'rgba(27, 58, 107, 0.5)',
               }}
             >
               Join the Waitlist
@@ -95,7 +88,7 @@ const WaitlistSection = () => {
               style={{ 
                 fontSize: 'clamp(28px, 5vw, 42px)',
                 fontWeight: 500,
-                color: '#FFFFFF',
+                color: '#0F1218',
                 lineHeight: 1.2,
               }}
             >
@@ -109,7 +102,7 @@ const WaitlistSection = () => {
                 maxWidth: '600px',
                 fontSize: '17px',
                 lineHeight: 1.7,
-                color: 'rgba(255, 255, 255, 0.6)',
+                color: '#4A4A4A',
               }}
             >
               We are currently in private beta, working with leading reinsurers and asset managers. 
@@ -135,11 +128,11 @@ const WaitlistSection = () => {
                     }}
                     initial={false}
                     animate={{
-                      backgroundColor: isActive ? '#FFFFFF' : 'rgba(255, 255, 255, 0.05)',
-                      borderColor: isActive ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)',
+                      backgroundColor: isActive ? '#FFFFFF' : 'rgba(27, 58, 107, 0.04)',
+                      borderColor: isActive ? 'rgba(0, 0, 0, 0.08)' : 'rgba(27, 58, 107, 0.1)',
                     }}
                     whileHover={{
-                      borderColor: isActive ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.2)',
+                      borderColor: isActive ? 'rgba(0, 0, 0, 0.08)' : 'rgba(27, 58, 107, 0.2)',
                     }}
                     transition={{
                       duration: 0.5,
@@ -150,7 +143,7 @@ const WaitlistSection = () => {
                       className="absolute inset-0 border"
                       style={{
                         borderRadius: '16px',
-                        borderColor: isActive ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)',
+                        borderColor: isActive ? 'rgba(0, 0, 0, 0.08)' : 'rgba(27, 58, 107, 0.1)',
                         boxShadow: isActive ? '0 8px 32px rgba(0, 0, 0, 0.12)' : 'none',
                         transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                       }}
@@ -161,7 +154,7 @@ const WaitlistSection = () => {
                         {/* Icon */}
                         <motion.div
                           animate={{
-                            color: isActive ? '#1B3A6B' : 'rgba(255, 255, 255, 0.6)',
+                            color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.6)',
                           }}
                           transition={{ duration: 0.4 }}
                           className="flex-shrink-0"
@@ -174,7 +167,7 @@ const WaitlistSection = () => {
                           {/* Label */}
                           <motion.span
                             animate={{
-                              color: isActive ? '#8A8A8A' : 'rgba(255, 255, 255, 0.4)',
+                              color: isActive ? '#8A8A8A' : 'rgba(27, 58, 107, 0.5)',
                             }}
                             style={{
                               fontSize: '12px',
@@ -191,7 +184,7 @@ const WaitlistSection = () => {
                           {/* Title */}
                           <motion.h3
                             animate={{
-                              color: isActive ? '#0F1218' : 'rgba(255, 255, 255, 0.8)',
+                              color: isActive ? '#0F1218' : '#1B3A6B',
                             }}
                             transition={{ duration: 0.4 }}
                             style={{
@@ -241,7 +234,7 @@ const WaitlistSection = () => {
                         {/* Arrow indicator */}
                         <motion.div
                           animate={{
-                            color: isActive ? '#1B3A6B' : 'rgba(255, 255, 255, 0.3)',
+                            color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.4)',
                             rotate: isActive ? 90 : 0,
                           }}
                           transition={{ duration: 0.3 }}
@@ -291,13 +284,13 @@ const WaitlistSection = () => {
                       style={{
                         borderRadius: '12px',
                         border: '1px solid',
-                        borderColor: isActive ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.08)',
-                        backgroundColor: isActive ? '#FFFFFF' : 'rgba(255, 255, 255, 0.05)',
+                        borderColor: isActive ? 'rgba(0, 0, 0, 0.08)' : 'rgba(27, 58, 107, 0.1)',
+                        backgroundColor: isActive ? '#FFFFFF' : 'rgba(27, 58, 107, 0.04)',
                         backdropFilter: isActive ? 'none' : 'blur(8px)',
                       }}
                       initial={false}
                       animate={{
-                        backgroundColor: isActive ? '#FFFFFF' : 'rgba(255, 255, 255, 0.05)',
+                        backgroundColor: isActive ? '#FFFFFF' : 'rgba(27, 58, 107, 0.04)',
                       }}
                       transition={{ duration: 0.4 }}
                     >
@@ -308,7 +301,7 @@ const WaitlistSection = () => {
                       >
                         <motion.div
                           animate={{
-                            color: isActive ? '#1B3A6B' : 'rgba(255, 255, 255, 0.6)',
+                            color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.6)',
                           }}
                           transition={{ duration: 0.3 }}
                           style={{ width: '24px', height: '24px', flexShrink: 0 }}
@@ -318,7 +311,7 @@ const WaitlistSection = () => {
                         <div className="flex-1">
                           <motion.span
                             animate={{
-                              color: isActive ? '#8A8A8A' : 'rgba(255, 255, 255, 0.4)',
+                              color: isActive ? '#8A8A8A' : 'rgba(27, 58, 107, 0.5)',
                             }}
                             style={{
                               fontSize: '11px',
@@ -333,7 +326,7 @@ const WaitlistSection = () => {
                           </motion.span>
                           <motion.h3
                             animate={{
-                              color: isActive ? '#0F1218' : 'rgba(255, 255, 255, 0.8)',
+                              color: isActive ? '#0F1218' : '#1B3A6B',
                             }}
                             style={{
                               fontSize: '15px',
@@ -351,7 +344,7 @@ const WaitlistSection = () => {
                           <ChevronRight 
                             size={18} 
                             style={{ 
-                              color: isActive ? '#1B3A6B' : 'rgba(255, 255, 255, 0.4)',
+                              color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.4)',
                               transform: 'rotate(90deg)',
                             }} 
                           />
