@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import veniceImage from "@/assets/our-vision-venice.png";
-import { FlowchartMarker, FlowchartMobileMarker } from "./FlowchartLines";
+import { SectionConnector } from "./FlowchartLines";
+import DecorativeGrid from "./DecorativeGrid";
 
 const OurVisionSection = () => {
   return (
@@ -13,14 +14,11 @@ const OurVisionSection = () => {
         zIndex: 1,
       }}
     >
-      {/* Flowchart markers */}
-      <FlowchartMarker 
-        sectionId="vision" 
-        branches={[
-          { direction: "right", width: "30%" },
-        ]}
-      />
-      <FlowchartMobileMarker />
+      {/* Section connector */}
+      <SectionConnector fromSide="right" />
+      
+      {/* Decorative grid */}
+      <DecorativeGrid variant="light" position="bottom" />
       <div
         className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
         style={{ maxWidth: '1200px' }}

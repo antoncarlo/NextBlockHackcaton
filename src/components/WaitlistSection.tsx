@@ -2,7 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Compass, Key, Handshake, ChevronRight } from "lucide-react";
 import WaitlistForm from "./WaitlistForm";
-import { FlowchartMarker, FlowchartMobileMarker } from "./FlowchartLines";
+import { SectionConnector } from "./FlowchartLines";
+import DecorativeGrid from "./DecorativeGrid";
 
 interface RoleCardData {
   id: string;
@@ -54,12 +55,11 @@ const WaitlistSection = () => {
         zIndex: 1,
       }}
     >
-      {/* Flowchart markers */}
-      <FlowchartMarker 
-        sectionId="waitlist" 
-        isDark={true}
-      />
-      <FlowchartMobileMarker isDark={true} />
+      {/* Section connector */}
+      <SectionConnector fromSide="left" isDark={true} />
+      
+      {/* Decorative grid */}
+      <DecorativeGrid variant="dark" position="bottom" />
       {/* Subtle gradient overlay for depth */}
       <div 
         className="absolute inset-0"

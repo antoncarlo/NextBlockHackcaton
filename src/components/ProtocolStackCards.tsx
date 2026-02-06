@@ -2,7 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shield, Compass, Key, LayoutGrid, Layers, ChevronLeft, ChevronRight } from "lucide-react";
 import veniceImage from "@/assets/our-vision-venice.png";
-import { FlowchartMarker, FlowchartMobileMarker } from "./FlowchartLines";
+import { SectionConnector } from "./FlowchartLines";
+import DecorativeGrid from "./DecorativeGrid";
 
 interface CardData {
   id: string;
@@ -77,16 +78,11 @@ const ProtocolStackCards = () => {
         zIndex: 1,
       }}
     >
-      {/* Flowchart markers */}
-      <FlowchartMarker 
-        sectionId="protocol-stack" 
-        isDark={true}
-        branches={[
-          { direction: "left", width: "22%" },
-          { direction: "right", width: "22%" },
-        ]}
-      />
-      <FlowchartMobileMarker isDark={true} />
+      {/* Section connector */}
+      <SectionConnector fromSide="right" isDark={true} />
+      
+      {/* Decorative grid */}
+      <DecorativeGrid variant="dark" position="bottom" />
       {/* Background Image */}
       <div 
         className="absolute inset-0"
