@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Twitter, MessageCircle, Send, Linkedin } from "lucide-react";
 import WaitlistSection from "./WaitlistSection";
 import footerFrieze from "@/assets/footer-frieze.png";
-import logoWhite from "@/assets/logo-white.svg";
+import logoBlack from "@/assets/logo-black.svg";
 
 const Footer = () => {
   const protocolLinks = [
@@ -36,7 +36,7 @@ const Footer = () => {
 
   const linkStyle = {
     fontSize: '14px',
-    color: 'rgba(255,255,255,0.5)',
+    color: '#8A8A8A',
     transition: 'color 0.2s ease',
   };
 
@@ -45,7 +45,7 @@ const Footer = () => {
     fontWeight: 500,
     letterSpacing: '0.1em',
     textTransform: 'uppercase' as const,
-    color: 'rgba(255,255,255,0.3)',
+    color: '#9A9A9A',
     marginBottom: '20px',
   };
 
@@ -62,14 +62,14 @@ const Footer = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         style={{
-          backgroundColor: '#0F1218',
+          backgroundColor: '#FFFFFF',
         }}
       >
         {/* Decorative frieze at top */}
         <div 
           className="relative w-full overflow-hidden"
           style={{
-            borderTop: '1px solid rgba(255,255,255,0.06)',
+            borderTop: '1px solid rgba(0,0,0,0.06)',
           }}
         >
           <img
@@ -80,6 +80,7 @@ const Footer = () => {
               width: '100%',
               height: 'auto',
               display: 'block',
+              opacity: 0.6,
             }}
           />
         </div>
@@ -96,7 +97,7 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <a href="#" className="inline-block mb-4">
                 <img 
-                  src={logoWhite} 
+                  src={logoBlack} 
                   alt="NextBlock" 
                   style={{ height: '100px', width: 'auto' }}
                 />
@@ -105,7 +106,7 @@ const Footer = () => {
                 className="mb-6"
                 style={{ 
                   fontSize: '14px', 
-                  color: 'rgba(255,255,255,0.5)',
+                  color: '#8A8A8A',
                   lineHeight: 1.6,
                 }}
               >
@@ -117,8 +118,10 @@ const Footer = () => {
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
-                    className="transition-colors duration-200 hover:text-white"
-                    style={{ color: 'rgba(255,255,255,0.4)' }}
+                    className="transition-colors duration-200"
+                    style={{ color: '#8A8A8A' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#1B3A6B'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#8A8A8A'}
                   >
                     <social.icon size={20} />
                   </a>
@@ -135,7 +138,9 @@ const Footer = () => {
                     <a
                       href={link.href}
                       style={linkStyle}
-                      className="hover:text-white"
+                      className="hover:text-foreground"
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#0F1218'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = '#8A8A8A'}
                     >
                       {link.label}
                     </a>
@@ -153,7 +158,9 @@ const Footer = () => {
                     <a
                       href={link.href}
                       style={linkStyle}
-                      className="hover:text-white"
+                      className="hover:text-foreground"
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#0F1218'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = '#8A8A8A'}
                     >
                       {link.label}
                     </a>
@@ -171,7 +178,9 @@ const Footer = () => {
                     <a
                       href={link.href}
                       style={linkStyle}
-                      className="hover:text-white"
+                      className="hover:text-foreground"
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#0F1218'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = '#8A8A8A'}
                     >
                       {link.label}
                     </a>
@@ -193,7 +202,7 @@ const Footer = () => {
           <p
             style={{
               fontSize: '12px',
-              color: 'rgba(255,255,255,0.3)',
+              color: '#9A9A9A',
               lineHeight: 1.7,
             }}
           >
@@ -204,7 +213,7 @@ const Footer = () => {
         {/* ROW 3 - Bottom bar */}
         <div
           style={{
-            borderTop: '1px solid rgba(255,255,255,0.06)',
+            borderTop: '1px solid rgba(0,0,0,0.06)',
           }}
         >
           <div 
@@ -217,7 +226,7 @@ const Footer = () => {
             <p
               style={{
                 fontSize: '13px',
-                color: 'rgba(255,255,255,0.3)',
+                color: '#9A9A9A',
               }}
             >
               © 2025 NextBlock. All rights reserved.
@@ -225,7 +234,7 @@ const Footer = () => {
             <p
               style={{
                 fontSize: '13px',
-                color: 'rgba(255,255,255,0.3)',
+                color: '#9A9A9A',
               }}
             >
               Built on Base · Secured by Ethereum
