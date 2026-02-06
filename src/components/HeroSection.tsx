@@ -18,6 +18,13 @@ const HeroSection = () => {
         >
           <source src="/videos/hero-background.mp4" type="video/mp4" />
         </video>
+        {/* Light overlay for text readability */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(10, 14, 26, 0.3) 0%, rgba(10, 14, 26, 0.5) 50%, rgba(10, 14, 26, 0.7) 100%)'
+          }}
+        />
       </div>
 
       {/* Content */}
