@@ -26,21 +26,30 @@ const Header = () => {
       }}
     >
       <div 
-        className="mx-auto flex items-center justify-between"
+        className="mx-auto flex items-center justify-center relative"
         style={{
           maxWidth: '1280px',
         }}
       >
-        {/* Left: Logo - Outside container */}
-        <a href="#" className="flex items-center">
+        {/* Left: Logo - Outside container, hidden on scroll */}
+        <motion.a 
+          href="#" 
+          className="flex items-center absolute left-0"
+          initial={{ opacity: 1 }}
+          animate={{ 
+            opacity: isScrolled ? 0 : 1,
+            pointerEvents: isScrolled ? 'none' : 'auto',
+          }}
+          transition={{ duration: 0.3 }}
+        >
           <img 
             src={logoBlack} 
             alt="NextBlock" 
             style={{ height: '60px', width: 'auto' }}
           />
-        </a>
+        </motion.a>
         
-        {/* Right: Navigation container */}
+        {/* Center: Navigation container */}
         <div
           className="hidden md:flex items-center gap-10"
           style={{
