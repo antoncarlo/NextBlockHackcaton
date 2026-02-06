@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Twitter, MessageCircle, Send, Linkedin } from "lucide-react";
 import WaitlistSection from "./WaitlistSection";
+import footerFrieze from "@/assets/footer-frieze.png";
 
 const Footer = () => {
   const protocolLinks = [
@@ -61,9 +62,41 @@ const Footer = () => {
         viewport={{ once: true }}
         style={{
           backgroundColor: '#060911',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
         }}
       >
+        {/* Decorative frieze at top */}
+        <div 
+          className="relative w-full overflow-hidden"
+          style={{
+            borderTop: '1px solid rgba(255,255,255,0.06)',
+          }}
+        >
+          <img
+            src={footerFrieze}
+            alt=""
+            aria-hidden="true"
+            style={{
+              width: '100%',
+              height: 'auto',
+              display: 'block',
+              filter: 'brightness(0.7)',
+              opacity: 0.6,
+            }}
+          />
+          {/* Gradient overlays to blend with footer */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(6, 9, 17, 0.3) 0%, rgba(6, 9, 17, 0.8) 100%)',
+            }}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to right, rgba(6, 9, 17, 0.5) 0%, transparent 10%, transparent 90%, rgba(6, 9, 17, 0.5) 100%)',
+            }}
+          />
+        </div>
         {/* ROW 1 - Main footer content */}
         <div 
           className="mx-auto"
