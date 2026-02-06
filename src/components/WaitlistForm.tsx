@@ -7,19 +7,13 @@ import { supabase } from "@/integrations/supabase/client";
 
 const waitlistSchema = z.object({
   fullName: z.string().trim().min(1, { message: "Full name is required" }).max(100),
-  company: z.string().trim().min(1, { message: "Company is required" }).max(200),
   email: z.string().trim().email({ message: "Please enter a valid email" }).max(255),
-  interest: z.enum(["curator", "investor", "partner"], { message: "Please select your interest" }),
-  message: z.string().trim().max(1000, { message: "Message must be under 1000 characters" }).optional(),
 });
 
 const WaitlistForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
-    company: "",
     email: "",
-    interest: "",
-    message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -30,11 +24,7 @@ const WaitlistForm = () => {
     e.preventDefault();
     setErrors({});
     
-    const result = waitlistSchema.safeParse({
-      ...formData,
-      interest: formData.interest || undefined,
-      message: formData.message || undefined,
-    });
+    const result = waitlistSchema.safeParse(formData);
     
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
@@ -52,10 +42,10 @@ const WaitlistForm = () => {
         .from('waitlist_submissions')
         .insert({
           full_name: result.data.fullName,
-          company: result.data.company,
+          company: 'N/A',
           email: result.data.email,
-          interest: result.data.interest,
-          message: result.data.message || null,
+          interest: 'investor',
+          message: null,
         });
 
       if (error) throw error;
@@ -135,34 +125,10 @@ const WaitlistForm = () => {
           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
           placeholder="John Doe"
           className="w-full px-4 py-3 transition-colors focus:outline-none"
-          style={{
-            ...inputStyle,
-          }}
+          style={inputStyle}
         />
         {errors.fullName && (
           <p className="mt-2 text-sm text-red-600">{errors.fullName}</p>
-        )}
-      </div>
-
-      <div>
-        <label 
-          htmlFor="company" 
-          className="block text-sm mb-2"
-          style={labelStyle}
-        >
-          Company / Organization *
-        </label>
-        <input
-          type="text"
-          id="company"
-          value={formData.company}
-          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-          placeholder="Your Company"
-          className="w-full px-4 py-3 transition-colors focus:outline-none"
-          style={inputStyle}
-        />
-        {errors.company && (
-          <p className="mt-2 text-sm text-red-600">{errors.company}</p>
         )}
       </div>
 
@@ -185,53 +151,6 @@ const WaitlistForm = () => {
         />
         {errors.email && (
           <p className="mt-2 text-sm text-red-600">{errors.email}</p>
-        )}
-      </div>
-
-      <div>
-        <label 
-          htmlFor="interest" 
-          className="block text-sm mb-2"
-          style={labelStyle}
-        >
-          I am interested as a... *
-        </label>
-        <select
-          id="interest"
-          value={formData.interest}
-          onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-          className="w-full px-4 py-3 transition-colors focus:outline-none"
-          style={inputStyle}
-        >
-          <option value="">Select your role</option>
-          <option value="curator">Curator</option>
-          <option value="investor">Investor</option>
-          <option value="partner">Partner</option>
-        </select>
-        {errors.interest && (
-          <p className="mt-2 text-sm text-red-600">{errors.interest}</p>
-        )}
-      </div>
-
-      <div>
-        <label 
-          htmlFor="message" 
-          className="block text-sm mb-2"
-          style={labelStyle}
-        >
-          Message (optional)
-        </label>
-        <textarea
-          id="message"
-          value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          placeholder="Tell us about your interest in NextBlock..."
-          rows={3}
-          className="w-full px-4 py-3 transition-colors resize-none focus:outline-none"
-          style={inputStyle}
-        />
-        {errors.message && (
-          <p className="mt-2 text-sm text-red-600">{errors.message}</p>
         )}
       </div>
 
