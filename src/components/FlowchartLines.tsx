@@ -30,8 +30,8 @@ const FlowchartLines = () => {
 
   if (dimensions.width < 768) return null; // Hide on mobile
 
-  const lineColor = "rgba(27, 58, 107, 0.08)";
-  const accentColor = "rgba(74, 108, 247, 0.15)";
+  const lineColor = "rgba(27, 58, 107, 0.18)";
+  const accentColor = "rgba(74, 108, 247, 0.25)";
 
   return (
     <div 
@@ -42,7 +42,7 @@ const FlowchartLines = () => {
       {/* Dot grid pattern background */}
       <svg 
         className="absolute inset-0 w-full h-full"
-        style={{ opacity: 0.4 }}
+        style={{ opacity: 0.6 }}
       >
         <defs>
           <pattern 
@@ -51,7 +51,7 @@ const FlowchartLines = () => {
             height="40" 
             patternUnits="userSpaceOnUse"
           >
-            <circle cx="1" cy="1" r="0.8" fill="rgba(27, 58, 107, 0.08)" />
+            <circle cx="1" cy="1" r="0.8" fill="rgba(27, 58, 107, 0.12)" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#dotGrid)" />
@@ -66,22 +66,22 @@ const FlowchartLines = () => {
         <defs>
           {/* Gradient for main curves */}
           <linearGradient id="curveGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgba(27, 58, 107, 0.12)" />
-            <stop offset="50%" stopColor="rgba(74, 108, 247, 0.08)" />
-            <stop offset="100%" stopColor="rgba(27, 58, 107, 0.04)" />
+            <stop offset="0%" stopColor="rgba(27, 58, 107, 0.22)" />
+            <stop offset="50%" stopColor="rgba(74, 108, 247, 0.18)" />
+            <stop offset="100%" stopColor="rgba(27, 58, 107, 0.1)" />
           </linearGradient>
           
           <linearGradient id="curveGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="transparent" />
-            <stop offset="20%" stopColor="rgba(27, 58, 107, 0.1)" />
-            <stop offset="80%" stopColor="rgba(27, 58, 107, 0.1)" />
+            <stop offset="20%" stopColor="rgba(27, 58, 107, 0.2)" />
+            <stop offset="80%" stopColor="rgba(27, 58, 107, 0.2)" />
             <stop offset="100%" stopColor="transparent" />
           </linearGradient>
 
           <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="transparent" />
-            <stop offset="30%" stopColor="rgba(74, 108, 247, 0.12)" />
-            <stop offset="70%" stopColor="rgba(74, 108, 247, 0.12)" />
+            <stop offset="30%" stopColor="rgba(74, 108, 247, 0.25)" />
+            <stop offset="70%" stopColor="rgba(74, 108, 247, 0.25)" />
             <stop offset="100%" stopColor="transparent" />
           </linearGradient>
         </defs>
@@ -97,7 +97,7 @@ const FlowchartLines = () => {
           `}
           fill="none"
           stroke="url(#curveGradient1)"
-          strokeWidth="1.5"
+          strokeWidth="2"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 1 }}
           transition={{ duration: 2, delay: 0.5, ease: "easeInOut" }}
@@ -114,7 +114,7 @@ const FlowchartLines = () => {
           `}
           fill="none"
           stroke="url(#curveGradient1)"
-          strokeWidth="1"
+          strokeWidth="1.5"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 1 }}
           transition={{ duration: 2.5, delay: 0.8, ease: "easeInOut" }}
@@ -129,7 +129,7 @@ const FlowchartLines = () => {
           `}
           fill="none"
           stroke="url(#accentGradient)"
-          strokeWidth="1.5"
+          strokeWidth="2"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 1 }}
           transition={{ duration: 1.5, delay: 1.2, ease: "easeInOut" }}
@@ -145,7 +145,7 @@ const FlowchartLines = () => {
           `}
           fill="none"
           stroke={lineColor}
-          strokeWidth="1"
+          strokeWidth="1.5"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 1 }}
           transition={{ duration: 2, delay: 1.5, ease: "easeInOut" }}
@@ -159,8 +159,8 @@ const FlowchartLines = () => {
             S ${dimensions.width * 0.55} 1920, ${dimensions.width * 0.5} 2000
           `}
           fill="none"
-          stroke="rgba(74, 108, 247, 0.1)"
-          strokeWidth="1.5"
+          stroke="rgba(74, 108, 247, 0.2)"
+          strokeWidth="2"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 1 }}
           transition={{ duration: 1.8, delay: 1.8, ease: "easeInOut" }}
@@ -170,9 +170,9 @@ const FlowchartLines = () => {
         <motion.circle
           cx={dimensions.width * 0.5}
           cy={950}
-          r={4}
+          r={5}
           fill="none"
-          stroke="rgba(27, 58, 107, 0.15)"
+          stroke="rgba(27, 58, 107, 0.25)"
           strokeWidth="1"
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -182,8 +182,8 @@ const FlowchartLines = () => {
         <motion.circle
           cx={dimensions.width * 0.65}
           cy={1100}
-          r={3}
-          fill="rgba(74, 108, 247, 0.1)"
+          r={4}
+          fill="rgba(74, 108, 247, 0.2)"
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, delay: 2 }}
@@ -192,9 +192,9 @@ const FlowchartLines = () => {
         <motion.circle
           cx={dimensions.width * 0.35}
           cy={1480}
-          r={5}
+          r={6}
           fill="none"
-          stroke="rgba(27, 58, 107, 0.12)"
+          stroke="rgba(27, 58, 107, 0.2)"
           strokeWidth="1.5"
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -204,8 +204,8 @@ const FlowchartLines = () => {
         <motion.circle
           cx={dimensions.width * 0.75}
           cy={1000}
-          r={4}
-          fill="rgba(27, 58, 107, 0.08)"
+          r={5}
+          fill="rgba(27, 58, 107, 0.15)"
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, delay: 2.1 }}
@@ -226,8 +226,8 @@ export const SectionConnector = ({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   
-  const strokeColor = isDark ? "rgba(255, 255, 255, 0.08)" : "rgba(27, 58, 107, 0.1)";
-  const accentColor = isDark ? "rgba(74, 108, 247, 0.15)" : "rgba(74, 108, 247, 0.12)";
+  const strokeColor = isDark ? "rgba(255, 255, 255, 0.15)" : "rgba(27, 58, 107, 0.18)";
+  const accentColor = isDark ? "rgba(74, 108, 247, 0.25)" : "rgba(74, 108, 247, 0.2)";
 
   return (
     <div 
@@ -256,7 +256,7 @@ export const SectionConnector = ({
           }
           fill="none"
           stroke={`url(#sectionGrad-${fromSide}-${isDark})`}
-          strokeWidth="1"
+          strokeWidth="1.5"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={isInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -299,7 +299,7 @@ export const FlowingConnection = ({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   
-  const strokeColor = isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(27, 58, 107, 0.12)";
+  const strokeColor = isDark ? "rgba(255, 255, 255, 0.18)" : "rgba(27, 58, 107, 0.2)";
 
   const paths: Record<string, string> = {
     "left-to-center": "M 0 50 Q 80 30, 150 50 T 300 40 Q 400 35, 500 50",
@@ -325,7 +325,7 @@ export const FlowingConnection = ({
           d={paths[direction]}
           fill="none"
           stroke={strokeColor}
-          strokeWidth="1"
+          strokeWidth="1.5"
           strokeLinecap="round"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={isInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
