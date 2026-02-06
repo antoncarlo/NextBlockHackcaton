@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Twitter, MessageCircle, Send, Linkedin } from "lucide-react";
 import WaitlistSection from "./WaitlistSection";
-import footerFrieze from "@/assets/footer-frieze.png";
+import footerFriezeVideo from "@/assets/footer-frieze.mp4";
 import logoBlack from "@/assets/logo-black.svg";
 
 const Footer = () => {
@@ -72,9 +72,12 @@ const Footer = () => {
             borderTop: '1px solid rgba(0,0,0,0.06)',
           }}
         >
-          <img
-            src={footerFrieze}
-            alt=""
+          <video
+            src={footerFriezeVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
             aria-hidden="true"
             style={{
               width: '100%',
