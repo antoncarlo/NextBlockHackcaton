@@ -36,11 +36,18 @@ const partners = [
 ];
 
 const KeyBenefitsSection = () => {
-  // Combine keywords and partners for scrolling
-  const scrollItems = [
-    ...benefits.map(b => ({ type: 'keyword' as const, value: b })),
-    ...partners.map(p => ({ type: 'partner' as const, ...p })),
-  ];
+  // Alternate between keywords and partners
+  const scrollItems: Array<{ type: 'keyword'; value: string } | { type: 'partner'; name: string; icon: JSX.Element }> = [];
+  const maxLength = Math.max(benefits.length, partners.length);
+  
+  for (let i = 0; i < maxLength; i++) {
+    if (i < benefits.length) {
+      scrollItems.push({ type: 'keyword', value: benefits[i] });
+    }
+    if (i < partners.length) {
+      scrollItems.push({ type: 'partner', ...partners[i] });
+    }
+  }
 
   return (
     <section className="py-12 border-y border-[rgba(255,255,255,0.06)] bg-[#0D1221] overflow-hidden">
