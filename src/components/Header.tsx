@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import logoBlack from "@/assets/logo-black.svg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,9 +36,11 @@ const Header = () => {
       >
         {/* Left: Logo */}
         <a href="#" className="flex items-center">
-          <span className="logo-text" style={{ color: '#0F1218' }}>
-            NEXTBLOCK
-          </span>
+          <img 
+            src={logoBlack} 
+            alt="NextBlock" 
+            style={{ height: '28px', width: 'auto' }}
+          />
         </a>
         
         {/* Center: Navigation Links */}

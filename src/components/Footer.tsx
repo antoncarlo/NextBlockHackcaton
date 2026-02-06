@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Twitter, MessageCircle, Send, Linkedin } from "lucide-react";
 import WaitlistSection from "./WaitlistSection";
 import footerFrieze from "@/assets/footer-frieze.png";
+import logoWhite from "@/assets/logo-white.svg";
 
 const Footer = () => {
   const protocolLinks = [
@@ -94,9 +95,11 @@ const Footer = () => {
             {/* Column 1 - Brand */}
             <div className="lg:col-span-1">
               <a href="#" className="inline-block mb-4">
-                <span className="logo-text" style={{ color: '#FFFFFF' }}>
-                  NEXTBLOCK
-                </span>
+                <img 
+                  src={logoWhite} 
+                  alt="NextBlock" 
+                  style={{ height: '28px', width: 'auto' }}
+                />
               </a>
               <p 
                 className="mb-6"
