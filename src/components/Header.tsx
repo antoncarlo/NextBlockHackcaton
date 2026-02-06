@@ -39,7 +39,7 @@ const Header = () => {
           <img 
             src={logoBlack} 
             alt="NextBlock" 
-            style={{ height: '40px', width: 'auto' }}
+            style={{ height: '64px', width: 'auto' }}
           />
         </a>
         
