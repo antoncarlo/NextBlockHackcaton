@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { FlowchartMarker, FlowchartMobileMarker } from "./FlowchartLines";
+import { SectionConnector } from "./FlowchartLines";
+import DecorativeGrid from "./DecorativeGrid";
 
 const AboutSection = () => {
   const stats = [
@@ -30,15 +31,11 @@ const AboutSection = () => {
         zIndex: 1,
       }}
     >
-      {/* Flowchart markers */}
-      <FlowchartMarker 
-        sectionId="stats" 
-        branches={[
-          { direction: "left", width: "28%" },
-          { direction: "right", width: "28%" },
-        ]}
-      />
-      <FlowchartMobileMarker />
+      {/* Section connector */}
+      <SectionConnector fromSide="left" />
+      
+      {/* Decorative grid at bottom */}
+      <DecorativeGrid variant="light" position="bottom" />
 
       <div className="mx-auto relative z-10" style={{ maxWidth: '1100px' }}>
         {/* Main heading */}

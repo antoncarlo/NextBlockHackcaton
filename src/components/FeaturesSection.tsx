@@ -2,7 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Lock, Unlock, ChevronLeft, ChevronRight } from "lucide-react";
 import ProtocolStackCards from "./ProtocolStackCards";
-import { FlowchartMarker, FlowchartMobileMarker } from "./FlowchartLines";
+import { SectionConnector } from "./FlowchartLines";
+import DecorativeGrid from "./DecorativeGrid";
 
 interface SolutionCardData {
   id: string;
@@ -54,16 +55,11 @@ const FeaturesSection = () => {
           minHeight: '500px',
         }}
       >
-        {/* Flowchart markers */}
-        <FlowchartMarker 
-          sectionId="silos-marketplace" 
-          isDark={true}
-          branches={[
-            { direction: "left", width: "25%" },
-            { direction: "right", width: "25%" },
-          ]}
-        />
-        <FlowchartMobileMarker isDark={true} />
+        {/* Section connector */}
+        <SectionConnector fromSide="left" isDark={true} />
+        
+        {/* Decorative grid */}
+        <DecorativeGrid variant="dark" position="bottom" />
 
         {/* Subtle gradient overlay for depth */}
         <div 
