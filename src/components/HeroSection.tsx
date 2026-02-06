@@ -3,17 +3,9 @@ const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <video autoPlay muted playsInline className="w-full h-full object-cover" ref={el => {
-        if (el) {
-          el.playbackRate = 0.5;
-        }
-      }}>
+        <video autoPlay muted loop playsInline className="w-full h-full object-cover">
           <source src="/videos/hero-background.mp4" type="video/mp4" />
         </video>
-        {/* Very subtle overlay for text readability */}
-        <div className="absolute inset-0" style={{
-        background: 'linear-gradient(to bottom, rgba(250, 250, 248, 0.1) 0%, rgba(250, 250, 248, 0.2) 50%, rgba(250, 250, 248, 0.4) 100%)'
-      }} />
       </div>
 
       {/* Content */}
