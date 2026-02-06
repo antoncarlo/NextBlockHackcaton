@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import curatorsImage from "@/assets/curators-building.png";
+import investorsImage from "@/assets/investors-ship.png";
 
 const FeaturesSection = () => {
   const features = [
@@ -9,6 +10,7 @@ const FeaturesSection = () => {
       description: "A simple, immutable, and open-source set of smart contracts on Base. The core protocol allows for the permissionless creation of tokenized insurance risk vaults, setting the standard for this new asset class.",
       icon: "⬡",
       image: null,
+      imagePosition: null,
     },
     {
       title: "The Curators",
@@ -16,13 +18,15 @@ const FeaturesSection = () => {
       description: "Reinsurers, asset managers, and specialized funds act as Curators. They source insurance risk (from partners like Klapton Re or on-chain protocols), define the strategy, and launch their own unique vaults on the NextBlock protocol.",
       icon: "◈",
       image: curatorsImage,
+      imagePosition: 'right' as const,
     },
     {
       title: "The Investors",
       subtitle: "Investors: Access to Curated Yield",
       description: "Institutional and accredited investors can now access a diverse marketplace of insurance-linked vaults. They can choose the strategy that fits their risk/return profile, gaining exposure to a stable, real-world yield source, entirely on-chain.",
       icon: "◇",
-      image: null,
+      image: investorsImage,
+      imagePosition: 'left' as const,
     },
   ];
 
@@ -200,7 +204,43 @@ const FeaturesSection = () => {
                   </motion.div>
 
                   {/* Content */}
-                  <div className="flex-1 pt-2 flex flex-col md:flex-row items-start gap-6">
+                  <div className={`flex-1 pt-2 flex flex-col lg:flex-row items-start gap-6 ${feature.imagePosition === 'left' ? 'lg:flex-row-reverse' : ''}`}>
+                    {/* Left-positioned image (for Investors) */}
+                    {feature.image && feature.imagePosition === 'left' && (
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className="flex-shrink-0 hidden lg:block"
+                        style={{ maxWidth: '280px' }}
+                      >
+                        <div
+                          className="relative overflow-hidden"
+                          style={{
+                            borderRadius: '12px',
+                            border: '1px solid rgba(255,255,255,0.06)',
+                          }}
+                        >
+                          <img
+                            src={feature.image}
+                            alt="Ship illustration"
+                            style={{
+                              width: '100%',
+                              display: 'block',
+                              filter: 'brightness(0.85)',
+                            }}
+                          />
+                          <div
+                            className="absolute inset-0 pointer-events-none"
+                            style={{
+                              background: 'linear-gradient(to bottom, rgba(10, 14, 26, 0.15) 0%, rgba(10, 14, 26, 0.35) 100%)',
+                            }}
+                          />
+                        </div>
+                      </motion.div>
+                    )}
+
                     <div className="flex-1">
                       <motion.span 
                         className="inline-block text-sm font-medium mb-2 px-3 py-1 rounded-md badge-institutional"
@@ -219,8 +259,8 @@ const FeaturesSection = () => {
                       </p>
                     </div>
                     
-                    {/* Decorative image for Curators */}
-                    {feature.image && (
+                    {/* Right-positioned image (for Curators) */}
+                    {feature.image && feature.imagePosition === 'right' && (
                       <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -245,7 +285,6 @@ const FeaturesSection = () => {
                               filter: 'brightness(0.85)',
                             }}
                           />
-                          {/* Dark overlay */}
                           <div
                             className="absolute inset-0 pointer-events-none"
                             style={{
