@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import featuresDivider from "@/assets/features-divider.svg";
 
 const FeaturesSection = () => {
   const features = [
@@ -25,23 +24,9 @@ const FeaturesSection = () => {
 
   return (
     <section id="how-it-works" className="relative">
-      {/* Problem & Solution Section with Background Image */}
-      <div className="relative py-24 px-6">
-        {/* Background image */}
-        <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${featuresDivider})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
-        
-        {/* Gradient overlay for readability */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-background/70 via-background/50 to-background/70" />
-        
-        <div className="mx-auto max-w-7xl relative z-10">
+      {/* Problem & Solution Section */}
+      <div className="relative py-24 px-6 bg-[#0D1221]">
+        <div className="mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +34,7 @@ const FeaturesSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4 drop-shadow-lg">
+            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
               From Silos to a Liquid Marketplace
             </h2>
           </motion.div>
@@ -60,15 +45,22 @@ const FeaturesSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="p-8 rounded-3xl liquid-glass liquid-glass-hover"
+              className="p-10 rounded-xl transition-all duration-300"
+              style={{
+                background: 'rgba(255, 255, 255, 0.03)',
+                border: '1px solid rgba(255, 255, 255, 0.06)',
+              }}
+              whileHover={{
+                borderColor: 'rgba(74, 108, 247, 0.2)',
+              }}
             >
-              <h3 className="text-xl font-medium text-foreground mb-4 relative z-10">
+              <h3 className="text-xl font-medium text-foreground mb-4">
                 The Problem
               </h3>
-              <p className="text-lg font-medium text-[#4A6CF7] mb-3 relative z-10">
+              <p className="text-lg font-medium text-[#4A6CF7] mb-3">
                 Trapped Capital, Opaque Risk
               </p>
-              <p className="text-muted-foreground leading-relaxed relative z-10">
+              <p className="text-muted-foreground leading-relaxed">
                 The traditional reinsurance market is capital-intensive, illiquid, and inaccessible. For reinsurers, billions in capital are trapped in inefficient structures. For investors, access to this stable, uncorrelated asset class is restricted to a select few.
               </p>
             </motion.div>
@@ -78,15 +70,22 @@ const FeaturesSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="p-8 rounded-3xl liquid-glass liquid-glass-hover border-primary/20"
+              className="p-10 rounded-xl transition-all duration-300"
+              style={{
+                background: 'rgba(255, 255, 255, 0.03)',
+                border: '1px solid rgba(255, 255, 255, 0.06)',
+              }}
+              whileHover={{
+                borderColor: 'rgba(74, 108, 247, 0.2)',
+              }}
             >
-              <h3 className="text-xl font-medium text-foreground mb-4 relative z-10">
+              <h3 className="text-xl font-medium text-foreground mb-4">
                 The Solution
               </h3>
-              <p className="text-lg font-medium text-[#4A6CF7] mb-3 relative z-10">
+              <p className="text-lg font-medium text-[#4A6CF7] mb-3">
                 Permissionless Vaults, Composable Risk
               </p>
-              <p className="text-muted-foreground leading-relaxed relative z-10">
+              <p className="text-muted-foreground leading-relaxed">
                 NextBlock provides the open-source infrastructure to change this. We enable any entity—from established reinsurers to specialized asset managers—to curate and launch their own tokenized risk vaults. This transforms illiquid reinsurance risk into a liquid, transparent, and composable on-chain asset.
               </p>
             </motion.div>
