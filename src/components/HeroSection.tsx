@@ -8,12 +8,23 @@ const HeroSection = () => {
         <video
           autoPlay
           muted
-          loop
           playsInline
           className="w-full h-full object-cover"
+          ref={(el) => {
+            if (el) {
+              el.playbackRate = 0.5;
+            }
+          }}
         >
           <source src="/videos/hero-background.mp4" type="video/mp4" />
         </video>
+        {/* Darker overlay gradient */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(10, 14, 26, 0.6) 0%, rgba(10, 14, 26, 0.85) 60%, #0A0E1A 100%)'
+          }}
+        />
         {/* Darker overlay gradient */}
         <div 
           className="absolute inset-0"
