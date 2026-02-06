@@ -25,21 +25,25 @@ const FeaturesSection = () => {
   return (
     <section id="how-it-works" className="relative">
       {/* Problem & Solution Section */}
-      <div className="relative py-24 px-6 bg-[#0D1221]">
-        <div className="mx-auto max-w-7xl">
+      <div 
+        className="relative px-6 bg-[#0D1221]"
+        style={{ padding: '100px 24px' }}
+      >
+        <div className="mx-auto" style={{ maxWidth: '1100px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center"
+            style={{ marginBottom: '48px' }}
           >
             <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
               From Silos to a Liquid Marketplace
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2" style={{ gap: '32px' }}>
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -79,104 +83,48 @@ const FeaturesSection = () => {
         </div>
       </div>
 
-      {/* The Insurance-Linked Section - Ondo Style */}
-      <div className="relative py-32 px-6 overflow-hidden">
-        {/* Animated particles */}
-        <div className="absolute inset-0 z-0">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1.5 h-1.5 rounded-full bg-[rgba(74,108,247,0.4)]"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                opacity: [0.3, 0.7, 0.3],
-                scale: [1, 1.3, 1],
-              }}
-              transition={{
-                duration: 2 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
+      {/* The Insurance-Linked Section */}
+      <div 
+        className="relative px-6 overflow-hidden"
+        style={{ padding: '100px 24px' }}
+      >
+        {/* Minimal decorative dots - only 4, very subtle */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <motion.div
+            className="absolute w-1.5 h-1.5 rounded-full bg-[rgba(74,108,247,0.1)]"
+            style={{ left: '10%', top: '20%' }}
+            animate={{ opacity: [0.05, 0.15, 0.05] }}
+            transition={{ duration: 4, repeat: Infinity }}
+          />
+          <motion.div
+            className="absolute w-1.5 h-1.5 rounded-full bg-[rgba(74,108,247,0.1)]"
+            style={{ right: '15%', top: '40%' }}
+            animate={{ opacity: [0.05, 0.15, 0.05] }}
+            transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+          />
+          <motion.div
+            className="absolute w-1.5 h-1.5 rounded-full bg-[rgba(74,108,247,0.1)]"
+            style={{ left: '20%', bottom: '30%' }}
+            animate={{ opacity: [0.05, 0.15, 0.05] }}
+            transition={{ duration: 4, repeat: Infinity, delay: 2 }}
+          />
+          <motion.div
+            className="absolute w-1.5 h-1.5 rounded-full bg-[rgba(74,108,247,0.1)]"
+            style={{ right: '10%', bottom: '20%' }}
+            animate={{ opacity: [0.05, 0.15, 0.05] }}
+            transition={{ duration: 4, repeat: Infinity, delay: 3 }}
+          />
         </div>
 
-        {/* Connection lines */}
-        <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-          {/* Horizontal flowing lines */}
-          <motion.path
-            d="M 0 30% Q 25% 20%, 50% 30% T 100% 30%"
-            stroke="rgba(74, 108, 247, 0.15)"
-            strokeWidth="1"
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{ pathLength: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 2.5, ease: "easeInOut" }}
-          />
-          <motion.path
-            d="M 0 70% Q 25% 80%, 50% 70% T 100% 70%"
-            stroke="rgba(74, 108, 247, 0.15)"
-            strokeWidth="1"
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{ pathLength: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 2.5, delay: 0.3, ease: "easeInOut" }}
-          />
-          {/* Connecting vertical lines */}
-          <motion.line
-            x1="25%"
-            y1="30%"
-            x2="25%"
-            y2="70%"
-            stroke="rgba(74, 108, 247, 0.1)"
-            strokeWidth="1"
-            strokeDasharray="5,5"
-            initial={{ pathLength: 0 }}
-            whileInView={{ pathLength: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 0.8 }}
-          />
-          <motion.line
-            x1="50%"
-            y1="30%"
-            x2="50%"
-            y2="70%"
-            stroke="rgba(74, 108, 247, 0.1)"
-            strokeWidth="1"
-            strokeDasharray="5,5"
-            initial={{ pathLength: 0 }}
-            whileInView={{ pathLength: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 1 }}
-          />
-          <motion.line
-            x1="75%"
-            y1="30%"
-            x2="75%"
-            y2="70%"
-            stroke="rgba(74, 108, 247, 0.1)"
-            strokeWidth="1"
-            strokeDasharray="5,5"
-            initial={{ pathLength: 0 }}
-            whileInView={{ pathLength: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 1.2 }}
-          />
-        </svg>
-
-        <div className="mx-auto max-w-5xl relative z-10">
+        <div className="mx-auto relative z-10" style={{ maxWidth: '1100px' }}>
           {/* Main heading */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-24"
+            className="text-center"
+            style={{ marginBottom: '48px' }}
           >
             <motion.span 
               className="section-label mb-4 block"
@@ -187,91 +135,87 @@ const FeaturesSection = () => {
             >
               How It Works
             </motion.span>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium text-foreground leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-tight">
               The Insurance-Linked
               <br />
               <span className="text-gradient">Protocol Stack</span>
             </h2>
           </motion.div>
 
-          {/* Features in flowing layout */}
-          <div className="space-y-20">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.15 }}
-                className={`flex flex-col md:flex-row items-center gap-8 ${
-                  index % 2 === 1 ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                {/* Icon/Symbol */}
-                <motion.div 
-                  className="flex-shrink-0 w-24 h-24 flex items-center justify-center"
-                  whileHover={{ scale: 1.1, rotate: 10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+          {/* Features with vertical timeline connector */}
+          <div className="relative">
+            {/* Vertical timeline line */}
+            <motion.div 
+              className="absolute left-8 md:left-12 top-0 bottom-0 w-px hidden md:block"
+              style={{ background: 'linear-gradient(to bottom, transparent, rgba(74,108,247,0.3) 10%, rgba(74,108,247,0.3) 90%, transparent)' }}
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2 }}
+            />
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="relative flex items-start gap-6 md:gap-8"
                 >
-                  <div className="relative">
+                  {/* Timeline node */}
+                  <div className="relative flex-shrink-0 hidden md:flex flex-col items-center">
                     <motion.div 
-                      className="text-6xl text-[#4A6CF7]"
-                      animate={{ rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                      className="w-6 h-6 rounded-full flex items-center justify-center"
+                      style={{ 
+                        background: 'rgba(74,108,247,0.15)',
+                        border: '2px solid rgba(74,108,247,0.4)'
+                      }}
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 + index * 0.1 }}
                     >
-                      {feature.icon}
+                      <div className="w-2 h-2 rounded-full bg-[#4A6CF7]" />
                     </motion.div>
-                    <motion.div 
-                      className="absolute inset-0 blur-xl bg-[rgba(74,108,247,0.3)] rounded-full"
-                      animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-                      transition={{ duration: 3, repeat: Infinity }}
-                    />
+                  </div>
+
+                  {/* Icon */}
+                  <motion.div 
+                    className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 flex items-center justify-center"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="relative">
+                      <span className="text-4xl md:text-5xl text-[#4A6CF7]">
+                        {feature.icon}
+                      </span>
+                      <div className="absolute inset-0 blur-xl bg-[rgba(74,108,247,0.2)] rounded-full" />
+                    </div>
+                  </motion.div>
+
+                  {/* Content */}
+                  <div className="flex-1 pt-2">
+                    <motion.span 
+                      className="inline-block text-sm font-medium mb-2 px-3 py-1 rounded-md badge-institutional"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 + index * 0.1 }}
+                    >
+                      {feature.title}
+                    </motion.span>
+                    <h3 className="text-xl md:text-2xl font-medium text-foreground mb-3">
+                      {feature.subtitle}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed" style={{ maxWidth: '600px' }}>
+                      {feature.description}
+                    </p>
                   </div>
                 </motion.div>
-
-                {/* Content */}
-                <div className={`flex-1 ${index % 2 === 1 ? "md:text-right" : "md:text-left"} text-center`}>
-                <motion.span 
-                  className="inline-block text-sm font-medium mb-2 px-3 py-1 rounded-md badge-institutional"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + index * 0.15 }}
-                >
-                  {feature.title}
-                </motion.span>
-                  <h3 className="text-2xl md:text-3xl font-medium text-foreground mb-4">
-                    {feature.subtitle}
-                  </h3>
-                  <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
-                    {feature.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Floating connection nodes */}
-          <div className="absolute top-1/4 left-0 hidden lg:block">
-            <motion.div
-              className="w-2 h-2 rounded-full bg-[#4A6CF7]"
-              animate={{ y: [0, -10, 0], opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            />
-          </div>
-          <div className="absolute top-1/2 right-0 hidden lg:block">
-            <motion.div
-              className="w-2 h-2 rounded-full bg-[#4A6CF7]"
-              animate={{ y: [0, 10, 0], opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-            />
-          </div>
-          <div className="absolute bottom-1/4 left-1/4 hidden lg:block">
-            <motion.div
-              className="w-2 h-2 rounded-full bg-[#4A6CF7]"
-              animate={{ x: [0, 10, 0], opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-            />
+              ))}
+            </div>
           </div>
         </div>
       </div>
