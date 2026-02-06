@@ -9,6 +9,7 @@ import AboutSection from "@/components/AboutSection";
 import OurVisionSection from "@/components/OurVisionSection";
 import Footer from "@/components/Footer";
 import FlowchartLines from "@/components/FlowchartLines";
+import FloatingParallaxElements from "@/components/FloatingParallaxElements";
 
 const Index = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -32,6 +33,9 @@ const Index = () => {
       >
         {/* Flowchart vertical lines */}
         <FlowchartLines />
+        
+        {/* Floating parallax ink illustrations */}
+        <FloatingParallaxElements />
         
         <Header />
         <HeroSection />
