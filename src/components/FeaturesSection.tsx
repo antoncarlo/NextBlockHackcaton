@@ -45,22 +45,15 @@ const FeaturesSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="p-10 rounded-xl transition-all duration-300"
-              style={{
-                background: 'rgba(255, 255, 255, 0.03)',
-                border: '1px solid rgba(255, 255, 255, 0.06)',
-              }}
-              whileHover={{
-                borderColor: 'rgba(74, 108, 247, 0.2)',
-              }}
+              className="p-8 rounded-3xl liquid-glass liquid-glass-hover"
             >
-              <h3 className="text-xl font-medium text-foreground mb-4">
+              <h3 className="text-xl font-medium text-foreground mb-4 relative z-10">
                 The Problem
               </h3>
-              <p className="text-lg font-medium text-[#4A6CF7] mb-3">
+              <p className="text-lg font-medium text-[#4A6CF7] mb-3 relative z-10">
                 Trapped Capital, Opaque Risk
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed relative z-10">
                 The traditional reinsurance market is capital-intensive, illiquid, and inaccessible. For reinsurers, billions in capital are trapped in inefficient structures. For investors, access to this stable, uncorrelated asset class is restricted to a select few.
               </p>
             </motion.div>
@@ -70,22 +63,15 @@ const FeaturesSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="p-10 rounded-xl transition-all duration-300"
-              style={{
-                background: 'rgba(255, 255, 255, 0.03)',
-                border: '1px solid rgba(255, 255, 255, 0.06)',
-              }}
-              whileHover={{
-                borderColor: 'rgba(74, 108, 247, 0.2)',
-              }}
+              className="p-8 rounded-3xl liquid-glass liquid-glass-hover"
             >
-              <h3 className="text-xl font-medium text-foreground mb-4">
+              <h3 className="text-xl font-medium text-foreground mb-4 relative z-10">
                 The Solution
               </h3>
-              <p className="text-lg font-medium text-[#4A6CF7] mb-3">
+              <p className="text-lg font-medium text-[#4A6CF7] mb-3 relative z-10">
                 Permissionless Vaults, Composable Risk
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed relative z-10">
                 NextBlock provides the open-source infrastructure to change this. We enable any entity—from established reinsurers to specialized asset managers—to curate and launch their own tokenized risk vaults. This transforms illiquid reinsurance risk into a liquid, transparent, and composable on-chain asset.
               </p>
             </motion.div>
