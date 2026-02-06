@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import curatorsImage from "@/assets/curators-building.png";
 import investorsImage from "@/assets/investors-ship.png";
+import protocolImage from "@/assets/protocol-treasury.png";
 
 const FeaturesSection = () => {
   const features = [
@@ -9,8 +10,8 @@ const FeaturesSection = () => {
       subtitle: "NextBlock Core: The Foundational Layer",
       description: "A simple, immutable, and open-source set of smart contracts on Base. The core protocol allows for the permissionless creation of tokenized insurance risk vaults, setting the standard for this new asset class.",
       icon: "⬡",
-      image: null,
-      imagePosition: null,
+      image: protocolImage,
+      imagePosition: 'right' as const,
     },
     {
       title: "The Curators",
