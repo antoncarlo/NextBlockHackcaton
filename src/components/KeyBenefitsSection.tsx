@@ -50,7 +50,14 @@ const KeyBenefitsSection = () => {
   }
 
   return (
-    <section className="py-12 border-y border-[rgba(255,255,255,0.06)] bg-[#0D1221] overflow-hidden">
+    <section 
+      className="py-12 overflow-hidden"
+      style={{
+        backgroundColor: '#FAFAF8',
+        borderTop: '1px solid rgba(0,0,0,0.06)',
+        borderBottom: '1px solid rgba(0,0,0,0.06)',
+      }}
+    >
       <div className="relative">
         <div className="flex animate-scroll">
           {[...scrollItems, ...scrollItems].map((item, index) => (
@@ -59,11 +66,17 @@ const KeyBenefitsSection = () => {
               className="flex-shrink-0 px-12 py-4"
             >
               {item.type === 'keyword' ? (
-                <span className="text-2xl font-medium text-[rgba(74,108,247,0.5)] hover:text-[rgba(74,108,247,0.8)] transition-colors whitespace-nowrap tracking-wide">
+                <span 
+                  className="text-2xl font-medium transition-colors whitespace-nowrap tracking-wide"
+                  style={{ color: 'rgba(27, 58, 107, 0.2)' }}
+                >
                   {item.value}
                 </span>
               ) : (
-                <span className="flex items-center gap-2 text-[rgba(255,255,255,0.35)] hover:text-[rgba(255,255,255,0.7)] transition-colors whitespace-nowrap">
+                <span 
+                  className="flex items-center gap-2 transition-colors whitespace-nowrap"
+                  style={{ color: 'rgba(27, 58, 107, 0.2)' }}
+                >
                   {item.icon}
                   <span className="text-base font-medium tracking-wide">
                     {item.name}

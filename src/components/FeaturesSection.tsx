@@ -35,8 +35,11 @@ const FeaturesSection = () => {
     <section id="how-it-works" className="relative">
       {/* Problem & Solution Section */}
       <div 
-        className="relative px-6 bg-[#0D1221]"
-        style={{ padding: '100px 24px' }}
+        className="relative px-6"
+        style={{ 
+          padding: '100px 24px',
+          backgroundColor: '#FAFAF8',
+        }}
       >
         <div className="mx-auto" style={{ maxWidth: '1100px' }}>
           <motion.div
@@ -47,7 +50,10 @@ const FeaturesSection = () => {
             className="text-center"
             style={{ marginBottom: '48px' }}
           >
-            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
+            <h2 
+              className="text-3xl md:text-4xl font-medium mb-4"
+              style={{ color: '#0F1218' }}
+            >
               From Silos to a Liquid Marketplace
             </h2>
           </motion.div>
@@ -58,15 +64,21 @@ const FeaturesSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="p-8 rounded-3xl liquid-glass liquid-glass-hover"
+              className="p-8 card-institutional"
             >
-              <h3 className="text-xl font-medium text-foreground mb-4 relative z-10">
+              <h3 
+                className="text-xl font-medium mb-4"
+                style={{ color: '#1A1F2E' }}
+              >
                 The Problem
               </h3>
-              <p className="text-lg font-medium text-[#4A6CF7] mb-3 relative z-10">
+              <p 
+                className="text-lg font-medium mb-3"
+                style={{ color: '#1B3A6B' }}
+              >
                 Trapped Capital, Opaque Risk
               </p>
-              <p className="text-muted-foreground leading-relaxed relative z-10">
+              <p style={{ color: '#4A4A4A', lineHeight: 1.7 }}>
                 The traditional reinsurance market is capital-intensive, illiquid, and inaccessible. For reinsurers, billions in capital are trapped in inefficient structures. For investors, access to this stable, uncorrelated asset class is restricted to a select few.
               </p>
             </motion.div>
@@ -76,15 +88,21 @@ const FeaturesSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="p-8 rounded-3xl liquid-glass liquid-glass-hover"
+              className="p-8 card-institutional"
             >
-              <h3 className="text-xl font-medium text-foreground mb-4 relative z-10">
+              <h3 
+                className="text-xl font-medium mb-4"
+                style={{ color: '#1A1F2E' }}
+              >
                 The Solution
               </h3>
-              <p className="text-lg font-medium text-[#4A6CF7] mb-3 relative z-10">
+              <p 
+                className="text-lg font-medium mb-3"
+                style={{ color: '#1B3A6B' }}
+              >
                 Permissionless Vaults, Composable Risk
               </p>
-              <p className="text-muted-foreground leading-relaxed relative z-10">
+              <p style={{ color: '#4A4A4A', lineHeight: 1.7 }}>
                 NextBlock provides the open-source infrastructure to change this. We enable any entity—from established reinsurers to specialized asset managers—to curate and launch their own tokenized risk vaults. This transforms illiquid reinsurance risk into a liquid, transparent, and composable on-chain asset.
               </p>
             </motion.div>
@@ -95,36 +113,11 @@ const FeaturesSection = () => {
       {/* The Insurance-Linked Section */}
       <div 
         className="relative px-6 overflow-hidden"
-        style={{ padding: '100px 24px' }}
+        style={{ 
+          padding: '100px 24px',
+          backgroundColor: '#F2F1EE',
+        }}
       >
-        {/* Minimal decorative dots - only 4, very subtle */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <motion.div
-            className="absolute w-1.5 h-1.5 rounded-full bg-[rgba(74,108,247,0.1)]"
-            style={{ left: '10%', top: '20%' }}
-            animate={{ opacity: [0.05, 0.15, 0.05] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          />
-          <motion.div
-            className="absolute w-1.5 h-1.5 rounded-full bg-[rgba(74,108,247,0.1)]"
-            style={{ right: '15%', top: '40%' }}
-            animate={{ opacity: [0.05, 0.15, 0.05] }}
-            transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-          />
-          <motion.div
-            className="absolute w-1.5 h-1.5 rounded-full bg-[rgba(74,108,247,0.1)]"
-            style={{ left: '20%', bottom: '30%' }}
-            animate={{ opacity: [0.05, 0.15, 0.05] }}
-            transition={{ duration: 4, repeat: Infinity, delay: 2 }}
-          />
-          <motion.div
-            className="absolute w-1.5 h-1.5 rounded-full bg-[rgba(74,108,247,0.1)]"
-            style={{ right: '10%', bottom: '20%' }}
-            animate={{ opacity: [0.05, 0.15, 0.05] }}
-            transition={{ duration: 4, repeat: Infinity, delay: 3 }}
-          />
-        </div>
-
         <div className="mx-auto relative z-10" style={{ maxWidth: '1100px' }}>
           {/* Main heading */}
           <motion.div
@@ -144,10 +137,13 @@ const FeaturesSection = () => {
             >
               How It Works
             </motion.span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-tight">
+            <h2 
+              className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight"
+              style={{ color: '#0F1218' }}
+            >
               The Insurance-Linked
               <br />
-              <span className="text-gradient">Protocol Stack</span>
+              <span style={{ color: '#1B3A6B' }}>Protocol Stack</span>
             </h2>
           </motion.div>
 
@@ -156,7 +152,7 @@ const FeaturesSection = () => {
             {/* Vertical timeline line */}
             <motion.div 
               className="absolute left-8 md:left-12 top-0 bottom-0 w-px hidden md:block"
-              style={{ background: 'linear-gradient(to bottom, transparent, rgba(74,108,247,0.3) 10%, rgba(74,108,247,0.3) 90%, transparent)' }}
+              style={{ background: 'linear-gradient(to bottom, transparent, rgba(27,58,107,0.2) 10%, rgba(27,58,107,0.2) 90%, transparent)' }}
               initial={{ scaleY: 0 }}
               whileInView={{ scaleY: 1 }}
               viewport={{ once: true }}
@@ -178,15 +174,15 @@ const FeaturesSection = () => {
                     <motion.div 
                       className="w-6 h-6 rounded-full flex items-center justify-center"
                       style={{ 
-                        background: 'rgba(74,108,247,0.15)',
-                        border: '2px solid rgba(74,108,247,0.4)'
+                        background: 'rgba(27,58,107,0.1)',
+                        border: '2px solid rgba(27,58,107,0.3)'
                       }}
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.3 + index * 0.1 }}
                     >
-                      <div className="w-2 h-2 rounded-full bg-[#4A6CF7]" />
+                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#1B3A6B' }} />
                     </motion.div>
                   </div>
 
@@ -197,10 +193,12 @@ const FeaturesSection = () => {
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <div className="relative">
-                      <span className="text-4xl md:text-5xl text-[#4A6CF7]">
+                      <span 
+                        className="text-4xl md:text-5xl"
+                        style={{ color: '#1B3A6B' }}
+                      >
                         {feature.icon}
                       </span>
-                      <div className="absolute inset-0 blur-xl bg-[rgba(74,108,247,0.2)] rounded-full" />
                     </div>
                   </motion.div>
 
@@ -217,11 +215,8 @@ const FeaturesSection = () => {
                         style={{ maxWidth: '280px' }}
                       >
                         <div
-                          className="relative overflow-hidden"
-                          style={{
-                            borderRadius: '12px',
-                            border: '1px solid rgba(255,255,255,0.06)',
-                          }}
+                          className="relative overflow-hidden card-institutional"
+                          style={{ padding: 0 }}
                         >
                           <img
                             src={feature.image}
@@ -245,15 +240,21 @@ const FeaturesSection = () => {
                       >
                         {feature.title}
                       </motion.span>
-                      <h3 className="text-xl md:text-2xl font-medium text-foreground mb-3">
+                      <h3 
+                        className="text-xl md:text-2xl font-medium mb-3"
+                        style={{ color: '#1A1F2E' }}
+                      >
                         {feature.subtitle}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed" style={{ maxWidth: '600px' }}>
+                      <p 
+                        className="leading-relaxed" 
+                        style={{ maxWidth: '600px', color: '#4A4A4A' }}
+                      >
                         {feature.description}
                       </p>
                     </div>
                     
-                    {/* Right-positioned image (for Curators) */}
+                    {/* Right-positioned image (for Protocol & Curators) */}
                     {feature.image && feature.imagePosition === 'right' && (
                       <motion.div
                         initial={{ opacity: 0, x: 20 }}
@@ -264,11 +265,8 @@ const FeaturesSection = () => {
                         style={{ maxWidth: '280px' }}
                       >
                         <div
-                          className="relative overflow-hidden"
-                          style={{
-                            borderRadius: '12px',
-                            border: '1px solid rgba(255,255,255,0.06)',
-                          }}
+                          className="relative overflow-hidden card-institutional"
+                          style={{ padding: 0 }}
                         >
                           <img
                             src={feature.image}

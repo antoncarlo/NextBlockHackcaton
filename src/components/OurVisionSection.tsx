@@ -5,8 +5,8 @@ const OurVisionSection = () => {
   return (
     <section
       style={{
-        backgroundColor: '#0A0E1A',
-        borderTop: '1px solid rgba(255,255,255,0.04)',
+        backgroundColor: '#FAFAF8',
+        borderTop: '1px solid rgba(0,0,0,0.04)',
         padding: '120px 40px',
       }}
     >
@@ -30,7 +30,7 @@ const OurVisionSection = () => {
               fontWeight: 500,
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
-              color: 'rgba(255,255,255,0.4)',
+              color: '#9A9A9A',
               marginBottom: '16px',
             }}
           >
@@ -42,7 +42,7 @@ const OurVisionSection = () => {
             style={{
               fontSize: '40px',
               fontWeight: 500,
-              color: '#F0F0F5',
+              color: '#0F1218',
               marginBottom: '24px',
               lineHeight: 1.2,
             }}
@@ -55,7 +55,7 @@ const OurVisionSection = () => {
             style={{
               fontSize: '17px',
               lineHeight: 1.7,
-              color: 'rgba(255,255,255,0.6)',
+              color: '#4A4A4A',
               marginBottom: '24px',
             }}
           >
@@ -68,7 +68,7 @@ const OurVisionSection = () => {
             className="inline-flex items-center gap-1 transition-all hover:underline"
             style={{
               fontSize: '14px',
-              color: '#4A6CF7',
+              color: '#1B3A6B',
             }}
           >
             Read our thesis →
@@ -87,13 +87,16 @@ const OurVisionSection = () => {
             className="relative overflow-hidden transition-all duration-300"
             style={{
               borderRadius: '12px',
-              border: '1px solid rgba(255,255,255,0.08)',
+              border: '1px solid rgba(0,0,0,0.06)',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(74, 108, 247, 0.2)';
+              e.currentTarget.style.borderColor = 'rgba(27, 58, 107, 0.15)';
+              e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.06)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+              e.currentTarget.style.borderColor = 'rgba(0,0,0,0.06)';
+              e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)';
             }}
           >
             <img

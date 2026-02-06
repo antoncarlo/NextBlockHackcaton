@@ -18,11 +18,11 @@ const HeroSection = () => {
         >
           <source src="/videos/hero-background.mp4" type="video/mp4" />
         </video>
-        {/* Light overlay for text readability */}
+        {/* Light overlay for text readability on light theme */}
         <div 
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(10, 14, 26, 0.3) 0%, rgba(10, 14, 26, 0.5) 50%, rgba(10, 14, 26, 0.7) 100%)'
+            background: 'linear-gradient(to bottom, rgba(250, 250, 248, 0.7) 0%, rgba(250, 250, 248, 0.85) 50%, rgba(250, 250, 248, 0.95) 100%)'
           }}
         />
       </div>
@@ -44,7 +44,7 @@ const HeroSection = () => {
               fontWeight: 500,
               lineHeight: 1.1,
               letterSpacing: '-0.03em',
-              color: '#F0F0F5',
+              color: '#0F1218',
             }}
           >
             The Universal Marketplace for Insurance-Linked Assets.
@@ -59,7 +59,7 @@ const HeroSection = () => {
               maxWidth: '560px',
               fontSize: '17px',
               lineHeight: 1.7,
-              color: 'rgba(255,255,255,0.6)',
+              color: '#4A4A4A',
             }}
           >
             NextBlock is the permissionless, open-source protocol for curators to launch, and for investors to access, tokenized reinsurance vaults. We are building the foundational liquidity layer for a multi-trillion dollar global market.
@@ -76,10 +76,10 @@ const HeroSection = () => {
               href="#waitlist"
               className="inline-flex items-center justify-center transition-all hover:opacity-90"
               style={{
-                backgroundColor: '#4A6CF7',
+                backgroundColor: '#1B3A6B',
                 color: '#fff',
                 padding: '14px 32px',
-                borderRadius: '8px',
+                borderRadius: '6px',
                 fontWeight: 500,
                 fontSize: '15px',
               }}
@@ -91,20 +91,20 @@ const HeroSection = () => {
               className="inline-flex items-center justify-center transition-all"
               style={{
                 backgroundColor: 'transparent',
-                border: '1px solid rgba(255,255,255,0.2)',
-                color: 'rgba(255,255,255,0.7)',
+                border: '1px solid rgba(0,0,0,0.15)',
+                color: '#1A1F2E',
                 padding: '14px 32px',
-                borderRadius: '8px',
+                borderRadius: '6px',
                 fontWeight: 500,
                 fontSize: '15px',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)';
-                e.currentTarget.style.color = '#fff';
+                e.currentTarget.style.borderColor = 'rgba(0,0,0,0.3)';
+                e.currentTarget.style.color = '#0F1218';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
-                e.currentTarget.style.color = 'rgba(255,255,255,0.7)';
+                e.currentTarget.style.borderColor = 'rgba(0,0,0,0.15)';
+                e.currentTarget.style.color = '#1A1F2E';
               }}
             >
               Learn More
@@ -123,9 +123,10 @@ const HeroSection = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="w-6 h-10 rounded-full border-2 border-muted-foreground/50 flex items-start justify-center p-2"
+          className="w-6 h-10 rounded-full flex items-start justify-center p-2"
+          style={{ border: '2px solid rgba(0,0,0,0.2)' }}
         >
-          <div className="w-1 h-2 rounded-full bg-primary" />
+          <div className="w-1 h-2 rounded-full" style={{ backgroundColor: '#1B3A6B' }} />
         </motion.div>
       </motion.div>
     </section>
