@@ -106,13 +106,6 @@ const OurVisionSection = () => {
                 display: 'block',
               }}
             />
-            {/* Subtle overlay */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: 'linear-gradient(to bottom, rgba(10, 14, 26, 0.1) 0%, rgba(10, 14, 26, 0.3) 100%)',
-              }}
-            />
           </div>
         </motion.div>
       </div>
