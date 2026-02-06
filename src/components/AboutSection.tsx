@@ -23,30 +23,11 @@ const AboutSection = () => {
     <section 
       id="about" 
       className="relative px-6 overflow-hidden"
-      style={{ padding: '100px 24px' }}
+      style={{ 
+        padding: '100px 24px',
+        backgroundColor: '#F2F1EE',
+      }}
     >
-      {/* Minimal decorative dots - only 3, very subtle */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <motion.div
-          className="absolute w-1.5 h-1.5 rounded-full bg-[rgba(74,108,247,0.1)]"
-          style={{ left: '5%', top: '30%' }}
-          animate={{ opacity: [0.05, 0.15, 0.05] }}
-          transition={{ duration: 4, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute w-1.5 h-1.5 rounded-full bg-[rgba(74,108,247,0.1)]"
-          style={{ right: '8%', top: '50%' }}
-          animate={{ opacity: [0.05, 0.15, 0.05] }}
-          transition={{ duration: 4, repeat: Infinity, delay: 1.5 }}
-        />
-        <motion.div
-          className="absolute w-1.5 h-1.5 rounded-full bg-[rgba(74,108,247,0.1)]"
-          style={{ left: '15%', bottom: '25%' }}
-          animate={{ opacity: [0.05, 0.15, 0.05] }}
-          transition={{ duration: 4, repeat: Infinity, delay: 3 }}
-        />
-      </div>
-
       <div className="mx-auto relative z-10" style={{ maxWidth: '1100px' }}>
         {/* Main heading */}
         <motion.div
@@ -66,10 +47,13 @@ const AboutSection = () => {
           >
             The Market
           </motion.span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-tight">
+          <h2 
+            className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight"
+            style={{ color: '#0F1218' }}
+          >
             An Untapped
             <br />
-            <span className="text-gradient">Financial Primitive</span>
+            <span style={{ color: '#1B3A6B' }}>Financial Primitive</span>
           </h2>
         </motion.div>
 
@@ -78,7 +62,7 @@ const AboutSection = () => {
           {/* Vertical connection line */}
           <motion.div 
             className="absolute left-1/2 top-0 bottom-0 w-px hidden md:block"
-            style={{ background: 'linear-gradient(to bottom, transparent, rgba(74,108,247,0.3) 10%, rgba(74,108,247,0.3) 90%, transparent)' }}
+            style={{ background: 'linear-gradient(to bottom, transparent, rgba(27,58,107,0.2) 10%, rgba(27,58,107,0.2) 90%, transparent)' }}
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
@@ -109,12 +93,12 @@ const AboutSection = () => {
                   <div 
                     className="w-4 h-4 rounded-full"
                     style={{ 
-                      background: 'rgba(74,108,247,0.15)',
-                      border: '2px solid rgba(74,108,247,0.4)'
+                      background: 'rgba(27,58,107,0.1)',
+                      border: '2px solid rgba(27,58,107,0.3)'
                     }}
                   >
                     <div className="w-full h-full rounded-full flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#4A6CF7]" />
+                      <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#1B3A6B' }} />
                     </div>
                   </div>
                 </motion.div>
@@ -122,7 +106,7 @@ const AboutSection = () => {
                 {/* Stat content */}
                 <div className={`flex-1 ${index % 2 === 0 ? "md:text-right md:pr-12" : "md:text-left md:pl-12"} text-center`}>
                   <motion.div 
-                    className="text-4xl md:text-6xl stat-number text-[#4A6CF7] mb-2"
+                    className="text-4xl md:text-6xl stat-number mb-2"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -130,10 +114,16 @@ const AboutSection = () => {
                   >
                     {stat.value}
                   </motion.div>
-                  <div className="text-lg font-medium text-foreground mb-2">
+                  <div 
+                    className="text-lg font-medium mb-2"
+                    style={{ color: '#1A1F2E' }}
+                  >
                     {stat.label}
                   </div>
-                  <p className="text-muted-foreground max-w-sm mx-auto md:mx-0">
+                  <p 
+                    className="max-w-sm mx-auto md:mx-0"
+                    style={{ color: '#8A8A8A' }}
+                  >
                     {stat.description}
                   </p>
                 </div>

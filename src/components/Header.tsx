@@ -22,8 +22,8 @@ const Header = () => {
       style={{
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
-        backgroundColor: isScrolled ? 'rgba(10, 14, 26, 0.95)' : 'rgba(10, 14, 26, 0.8)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        backgroundColor: isScrolled ? 'rgba(250, 250, 248, 0.95)' : 'rgba(250, 250, 248, 0.9)',
+        borderBottom: '1px solid rgba(0,0,0,0.06)',
       }}
     >
       <div 
@@ -35,7 +35,7 @@ const Header = () => {
       >
         {/* Left: Logo */}
         <a href="#" className="flex items-center">
-          <span className="logo-text text-foreground">
+          <span className="logo-text" style={{ color: '#0F1218' }}>
             NEXTBLOCK
           </span>
         </a>
@@ -48,10 +48,10 @@ const Header = () => {
             style={{
               fontSize: '14px',
               fontWeight: 400,
-              color: 'rgba(255,255,255,0.6)',
+              color: '#4A4A4A',
             }}
-            onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
-            onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}
+            onMouseEnter={(e) => e.currentTarget.style.color = '#0F1218'}
+            onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}
           >
             Market
           </a>
@@ -61,10 +61,10 @@ const Header = () => {
             style={{
               fontSize: '14px',
               fontWeight: 400,
-              color: 'rgba(255,255,255,0.6)',
+              color: '#4A4A4A',
             }}
-            onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
-            onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}
+            onMouseEnter={(e) => e.currentTarget.style.color = '#0F1218'}
+            onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}
           >
             How It Works
           </a>
@@ -74,10 +74,10 @@ const Header = () => {
             style={{
               fontSize: '14px',
               fontWeight: 400,
-              color: 'rgba(255,255,255,0.6)',
+              color: '#4A4A4A',
             }}
-            onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
-            onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}
+            onMouseEnter={(e) => e.currentTarget.style.color = '#0F1218'}
+            onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}
           >
             Protocol
           </a>
@@ -88,12 +88,12 @@ const Header = () => {
           href="#waitlist"
           className="hidden md:inline-flex transition-all duration-200 hover:opacity-90"
           style={{
-            backgroundColor: '#4A6CF7',
-            borderRadius: '6px',
-            padding: '10px 24px',
-            fontSize: '14px',
-            fontWeight: 500,
+            backgroundColor: '#1B3A6B',
             color: '#fff',
+            padding: '10px 24px',
+            borderRadius: '6px',
+            fontWeight: 500,
+            fontSize: '14px',
           }}
         >
           Request Access

@@ -88,24 +88,44 @@ const WaitlistForm = () => {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", delay: 0.2 }}
-          className="w-20 h-20 rounded-full bg-[rgba(74,108,247,0.15)] flex items-center justify-center mx-auto mb-6"
+          className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+          style={{ backgroundColor: 'rgba(27, 58, 107, 0.1)' }}
         >
-          <CheckCircle className="w-10 h-10 text-[#4A6CF7]" />
+          <CheckCircle className="w-10 h-10" style={{ color: '#1B3A6B' }} />
         </motion.div>
-        <h3 className="text-2xl font-bold text-foreground mb-2">
+        <h3 
+          className="text-2xl font-bold mb-2"
+          style={{ color: '#0F1218' }}
+        >
           You're on the list!
         </h3>
-        <p className="text-muted-foreground">
+        <p style={{ color: '#8A8A8A' }}>
           Thank you for your interest. We'll keep you updated.
         </p>
       </motion.div>
     );
   }
 
+  const inputStyle = {
+    backgroundColor: '#FAFAF8',
+    border: '1px solid rgba(0,0,0,0.1)',
+    borderRadius: '8px',
+    color: '#1A1F2E',
+  };
+
+  const labelStyle = {
+    color: '#4A4A4A',
+    fontWeight: 500,
+  };
+
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label htmlFor="fullName" className="block text-sm font-medium text-foreground mb-2">
+        <label 
+          htmlFor="fullName" 
+          className="block text-sm mb-2"
+          style={labelStyle}
+        >
           Full Name *
         </label>
         <input
@@ -114,15 +134,22 @@ const WaitlistForm = () => {
           value={formData.fullName}
           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
           placeholder="John Doe"
-          className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:border-primary transition-colors"
+          className="w-full px-4 py-3 transition-colors focus:outline-none"
+          style={{
+            ...inputStyle,
+          }}
         />
         {errors.fullName && (
-          <p className="mt-2 text-sm text-destructive">{errors.fullName}</p>
+          <p className="mt-2 text-sm text-red-600">{errors.fullName}</p>
         )}
       </div>
 
       <div>
-        <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+        <label 
+          htmlFor="company" 
+          className="block text-sm mb-2"
+          style={labelStyle}
+        >
           Company / Organization *
         </label>
         <input
@@ -131,15 +158,20 @@ const WaitlistForm = () => {
           value={formData.company}
           onChange={(e) => setFormData({ ...formData, company: e.target.value })}
           placeholder="Your Company"
-          className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:border-primary transition-colors"
+          className="w-full px-4 py-3 transition-colors focus:outline-none"
+          style={inputStyle}
         />
         {errors.company && (
-          <p className="mt-2 text-sm text-destructive">{errors.company}</p>
+          <p className="mt-2 text-sm text-red-600">{errors.company}</p>
         )}
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+        <label 
+          htmlFor="email" 
+          className="block text-sm mb-2"
+          style={labelStyle}
+        >
           Email Address *
         </label>
         <input
@@ -148,22 +180,28 @@ const WaitlistForm = () => {
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           placeholder="you@company.com"
-          className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:border-primary transition-colors"
+          className="w-full px-4 py-3 transition-colors focus:outline-none"
+          style={inputStyle}
         />
         {errors.email && (
-          <p className="mt-2 text-sm text-destructive">{errors.email}</p>
+          <p className="mt-2 text-sm text-red-600">{errors.email}</p>
         )}
       </div>
 
       <div>
-        <label htmlFor="interest" className="block text-sm font-medium text-foreground mb-2">
+        <label 
+          htmlFor="interest" 
+          className="block text-sm mb-2"
+          style={labelStyle}
+        >
           I am interested as a... *
         </label>
         <select
           id="interest"
           value={formData.interest}
           onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground focus:border-primary transition-colors"
+          className="w-full px-4 py-3 transition-colors focus:outline-none"
+          style={inputStyle}
         >
           <option value="">Select your role</option>
           <option value="curator">Curator</option>
@@ -171,12 +209,16 @@ const WaitlistForm = () => {
           <option value="partner">Partner</option>
         </select>
         {errors.interest && (
-          <p className="mt-2 text-sm text-destructive">{errors.interest}</p>
+          <p className="mt-2 text-sm text-red-600">{errors.interest}</p>
         )}
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+        <label 
+          htmlFor="message" 
+          className="block text-sm mb-2"
+          style={labelStyle}
+        >
           Message (optional)
         </label>
         <textarea
@@ -185,10 +227,11 @@ const WaitlistForm = () => {
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           placeholder="Tell us about your interest in NextBlock..."
           rows={3}
-          className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:border-primary transition-colors resize-none"
+          className="w-full px-4 py-3 transition-colors resize-none focus:outline-none"
+          style={inputStyle}
         />
         {errors.message && (
-          <p className="mt-2 text-sm text-destructive">{errors.message}</p>
+          <p className="mt-2 text-sm text-red-600">{errors.message}</p>
         )}
       </div>
 
@@ -197,13 +240,17 @@ const WaitlistForm = () => {
         disabled={isLoading}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-md btn-institutional font-medium transition-all hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-md font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+        style={{
+          backgroundColor: '#1B3A6B',
+          color: '#FFFFFF',
+        }}
       >
         {isLoading ? (
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-            className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full"
+            className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
           />
         ) : (
           <>
@@ -213,7 +260,10 @@ const WaitlistForm = () => {
         )}
       </motion.button>
 
-      <p className="text-xs text-muted-foreground text-center">
+      <p 
+        className="text-xs text-center"
+        style={{ color: '#8A8A8A' }}
+      >
         By submitting, you agree to our terms of service and privacy policy.
       </p>
     </form>

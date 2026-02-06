@@ -61,7 +61,7 @@ const Footer = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         style={{
-          backgroundColor: '#060911',
+          backgroundColor: '#0F1218',
         }}
       >
         {/* Decorative frieze at top */}
@@ -94,7 +94,7 @@ const Footer = () => {
             {/* Column 1 - Brand */}
             <div className="lg:col-span-1">
               <a href="#" className="inline-block mb-4">
-                <span className="logo-text text-foreground">
+                <span className="logo-text" style={{ color: '#FFFFFF' }}>
                   NEXTBLOCK
                 </span>
               </a>
