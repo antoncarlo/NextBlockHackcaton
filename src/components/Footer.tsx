@@ -83,7 +83,6 @@ const Footer = () => {
               width: '100%',
               height: 'auto',
               display: 'block',
-              opacity: 0.6,
             }}
           />
         </div>
