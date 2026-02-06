@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shield, Compass, Key, LayoutGrid, Layers, ChevronLeft, ChevronRight } from "lucide-react";
-import veniceImage from "@/assets/our-vision-venice.png";
+import lionImage from "@/assets/protocol-stack-lion.png";
 import { SectionConnector } from "./FlowchartLines";
 import DecorativeGrid from "./DecorativeGrid";
 
@@ -83,13 +83,15 @@ const ProtocolStackCards = () => {
       
       {/* Decorative grid */}
       <DecorativeGrid variant="dark" position="bottom" />
-      {/* Background Image */}
+      {/* Background Image - Winged Lion of Saint Mark */}
       <div 
         className="absolute inset-0"
         style={{
-          backgroundImage: `url(${veniceImage})`,
-          backgroundSize: 'cover',
+          backgroundImage: `url(${lionImage})`,
+          backgroundSize: 'contain',
           backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundColor: '#FAFAF8',
         }}
       />
       
