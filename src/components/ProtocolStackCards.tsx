@@ -93,13 +93,6 @@ const ProtocolStackCards = () => {
         }}
       />
       
-      {/* Dark Overlay */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(to bottom, rgba(15, 18, 24, 0.85) 0%, rgba(15, 18, 24, 0.92) 100%)',
-        }}
-      />
 
       {/* Content */}
       <div className="relative z-10 px-6 py-24 md:py-32">
