@@ -9,7 +9,7 @@ const benefits = [
 
 const KeyBenefitsSection = () => {
   return (
-    <section className="py-12 border-y border-border bg-secondary/30 overflow-hidden">
+    <section className="py-12 border-y border-[rgba(255,255,255,0.06)] bg-[#0D1221] overflow-hidden">
       <div className="relative">
         <div className="flex animate-scroll">
           {[...benefits, ...benefits].map((benefit, index) => (
@@ -17,7 +17,7 @@ const KeyBenefitsSection = () => {
               key={index}
               className="flex-shrink-0 px-12 py-4"
             >
-              <span className="text-2xl font-medium text-muted-foreground/60 hover:text-muted-foreground transition-colors whitespace-nowrap tracking-wide">
+              <span className="text-2xl font-medium text-[rgba(74,108,247,0.5)] hover:text-[rgba(74,108,247,0.8)] transition-colors whitespace-nowrap tracking-wide">
                 {benefit}
               </span>
             </div>

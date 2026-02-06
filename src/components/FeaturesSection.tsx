@@ -65,7 +65,7 @@ const FeaturesSection = () => {
               <h3 className="text-xl font-medium text-foreground mb-4 relative z-10">
                 The Problem
               </h3>
-              <p className="text-lg font-semibold text-primary mb-3 relative z-10">
+              <p className="text-lg font-medium text-[#4A6CF7] mb-3 relative z-10">
                 Trapped Capital, Opaque Risk
               </p>
               <p className="text-muted-foreground leading-relaxed relative z-10">
@@ -83,7 +83,7 @@ const FeaturesSection = () => {
               <h3 className="text-xl font-medium text-foreground mb-4 relative z-10">
                 The Solution
               </h3>
-              <p className="text-lg font-semibold text-primary mb-3 relative z-10">
+              <p className="text-lg font-medium text-[#4A6CF7] mb-3 relative z-10">
                 Permissionless Vaults, Composable Risk
               </p>
               <p className="text-muted-foreground leading-relaxed relative z-10">
@@ -101,7 +101,7 @@ const FeaturesSection = () => {
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1.5 h-1.5 rounded-full bg-primary/40"
+              className="absolute w-1.5 h-1.5 rounded-full bg-[rgba(74,108,247,0.4)]"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -124,7 +124,7 @@ const FeaturesSection = () => {
           {/* Horizontal flowing lines */}
           <motion.path
             d="M 0 30% Q 25% 20%, 50% 30% T 100% 30%"
-            stroke="hsl(var(--primary) / 0.15)"
+            stroke="rgba(74, 108, 247, 0.15)"
             strokeWidth="1"
             fill="none"
             initial={{ pathLength: 0, opacity: 0 }}
@@ -134,7 +134,7 @@ const FeaturesSection = () => {
           />
           <motion.path
             d="M 0 70% Q 25% 80%, 50% 70% T 100% 70%"
-            stroke="hsl(var(--primary) / 0.15)"
+            stroke="rgba(74, 108, 247, 0.15)"
             strokeWidth="1"
             fill="none"
             initial={{ pathLength: 0, opacity: 0 }}
@@ -148,7 +148,7 @@ const FeaturesSection = () => {
             y1="30%"
             x2="25%"
             y2="70%"
-            stroke="hsl(var(--primary) / 0.1)"
+            stroke="rgba(74, 108, 247, 0.1)"
             strokeWidth="1"
             strokeDasharray="5,5"
             initial={{ pathLength: 0 }}
@@ -161,7 +161,7 @@ const FeaturesSection = () => {
             y1="30%"
             x2="50%"
             y2="70%"
-            stroke="hsl(var(--primary) / 0.1)"
+            stroke="rgba(74, 108, 247, 0.1)"
             strokeWidth="1"
             strokeDasharray="5,5"
             initial={{ pathLength: 0 }}
@@ -174,7 +174,7 @@ const FeaturesSection = () => {
             y1="30%"
             x2="75%"
             y2="70%"
-            stroke="hsl(var(--primary) / 0.1)"
+            stroke="rgba(74, 108, 247, 0.1)"
             strokeWidth="1"
             strokeDasharray="5,5"
             initial={{ pathLength: 0 }}
@@ -230,14 +230,14 @@ const FeaturesSection = () => {
                 >
                   <div className="relative">
                     <motion.div 
-                      className="text-6xl text-primary"
+                      className="text-6xl text-[#4A6CF7]"
                       animate={{ rotate: [0, 5, -5, 0] }}
                       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                     >
                       {feature.icon}
                     </motion.div>
                     <motion.div 
-                      className="absolute inset-0 blur-xl bg-primary/30 rounded-full"
+                      className="absolute inset-0 blur-xl bg-[rgba(74,108,247,0.3)] rounded-full"
                       animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
                       transition={{ duration: 3, repeat: Infinity }}
                     />
@@ -246,15 +246,15 @@ const FeaturesSection = () => {
 
                 {/* Content */}
                 <div className={`flex-1 ${index % 2 === 1 ? "md:text-right" : "md:text-left"} text-center`}>
-                  <motion.span 
-                    className="inline-block text-sm font-medium text-primary mb-2 px-3 py-1 rounded-full border border-primary/30"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 + index * 0.15 }}
-                  >
-                    {feature.title}
-                  </motion.span>
+                <motion.span 
+                  className="inline-block text-sm font-medium mb-2 px-3 py-1 rounded-md badge-institutional"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + index * 0.15 }}
+                >
+                  {feature.title}
+                </motion.span>
                   <h3 className="text-2xl md:text-3xl font-medium text-foreground mb-4">
                     {feature.subtitle}
                   </h3>
@@ -269,21 +269,21 @@ const FeaturesSection = () => {
           {/* Floating connection nodes */}
           <div className="absolute top-1/4 left-0 hidden lg:block">
             <motion.div
-              className="w-2 h-2 rounded-full bg-primary"
+              className="w-2 h-2 rounded-full bg-[#4A6CF7]"
               animate={{ y: [0, -10, 0], opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
           </div>
           <div className="absolute top-1/2 right-0 hidden lg:block">
             <motion.div
-              className="w-2 h-2 rounded-full bg-primary"
+              className="w-2 h-2 rounded-full bg-[#4A6CF7]"
               animate={{ y: [0, 10, 0], opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 3, repeat: Infinity, delay: 1 }}
             />
           </div>
           <div className="absolute bottom-1/4 left-1/4 hidden lg:block">
             <motion.div
-              className="w-2 h-2 rounded-full bg-primary"
+              className="w-2 h-2 rounded-full bg-[#4A6CF7]"
               animate={{ x: [0, 10, 0], opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
             />
