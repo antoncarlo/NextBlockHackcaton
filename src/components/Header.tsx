@@ -93,7 +93,7 @@ const Header = () => {
             How It Works
           </a>
           <a 
-            href="#protocol" 
+            href="#protocol-stack" 
             className="transition-colors duration-200"
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
@@ -106,22 +106,6 @@ const Header = () => {
             onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}
           >
             Protocol
-          </a>
-
-          {/* CTA Button inside container */}
-          <a 
-            href="#waitlist"
-            className="transition-all duration-200 hover:opacity-90"
-            style={{
-              backgroundColor: '#1B3A6B',
-              color: '#fff',
-              padding: '10px 24px',
-              borderRadius: '50px',
-              fontWeight: 500,
-              fontSize: '14px',
-            }}
-          >
-            Request Access
           </a>
         </div>
       </div>
