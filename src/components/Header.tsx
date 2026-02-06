@@ -29,16 +29,9 @@ const Header = () => {
         className="mx-auto flex items-center justify-between"
         style={{
           maxWidth: '1280px',
-          padding: '12px 32px',
-          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.85)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-          borderRadius: '50px',
-          border: '1px solid rgba(0, 0, 0, 0.08)',
-          boxShadow: isScrolled ? '0 4px 24px rgba(0, 0, 0, 0.08)' : '0 2px 12px rgba(0, 0, 0, 0.04)',
         }}
       >
-        {/* Left: Logo */}
+        {/* Left: Logo - Outside container */}
         <a href="#" className="flex items-center">
           <img 
             src={logoBlack} 
@@ -47,8 +40,19 @@ const Header = () => {
           />
         </a>
         
-        {/* Center: Navigation Links */}
-        <nav className="hidden md:flex items-center gap-10">
+        {/* Right: Navigation container */}
+        <div
+          className="hidden md:flex items-center gap-10"
+          style={{
+            padding: '12px 32px',
+            backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.85)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            borderRadius: '50px',
+            border: '1px solid rgba(0, 0, 0, 0.08)',
+            boxShadow: isScrolled ? '0 4px 24px rgba(0, 0, 0, 0.08)' : '0 2px 12px rgba(0, 0, 0, 0.04)',
+          }}
+        >
           <a 
             href="#about" 
             className="transition-colors duration-200"
@@ -94,23 +98,23 @@ const Header = () => {
           >
             Protocol
           </a>
-        </nav>
 
-        {/* Right: CTA Button */}
-        <a 
-          href="#waitlist"
-          className="hidden md:inline-flex transition-all duration-200 hover:opacity-90"
-          style={{
-            backgroundColor: '#1B3A6B',
-            color: '#fff',
-            padding: '10px 24px',
-            borderRadius: '50px',
-            fontWeight: 500,
-            fontSize: '14px',
-          }}
-        >
-          Request Access
-        </a>
+          {/* CTA Button inside container */}
+          <a 
+            href="#waitlist"
+            className="transition-all duration-200 hover:opacity-90"
+            style={{
+              backgroundColor: '#1B3A6B',
+              color: '#fff',
+              padding: '10px 24px',
+              borderRadius: '50px',
+              fontWeight: 500,
+              fontSize: '14px',
+            }}
+          >
+            Request Access
+          </a>
+        </div>
       </div>
     </motion.header>
   );
