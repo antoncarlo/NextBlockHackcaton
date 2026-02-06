@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Compass, Key, Handshake, ChevronRight } from "lucide-react";
 import WaitlistForm from "./WaitlistForm";
-import veniceImage from "@/assets/our-vision-venice.png";
 
 interface RoleCardData {
   id: string;
@@ -48,23 +47,16 @@ const WaitlistSection = () => {
     <section 
       id="waitlist" 
       className="relative overflow-hidden"
-      style={{ minHeight: '700px' }}
+      style={{ 
+        minHeight: '700px',
+        backgroundColor: '#0F1218',
+      }}
     >
-      {/* Background Image */}
+      {/* Subtle gradient overlay for depth */}
       <div 
         className="absolute inset-0"
         style={{
-          backgroundImage: `url(${veniceImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center bottom',
-        }}
-      />
-      
-      {/* Dark Overlay */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(to bottom, rgba(15, 18, 24, 0.88) 0%, rgba(15, 18, 24, 0.95) 100%)',
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(27, 58, 107, 0.15) 0%, transparent 60%)',
         }}
       />
 
