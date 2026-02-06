@@ -17,7 +17,7 @@ const KeyBenefitsSection = () => {
               key={index}
               className="flex-shrink-0 px-12 py-4"
             >
-              <span className="text-2xl font-bold text-muted-foreground/60 hover:text-muted-foreground transition-colors whitespace-nowrap">
+              <span className="text-2xl font-medium text-muted-foreground/60 hover:text-muted-foreground transition-colors whitespace-nowrap tracking-wide">
                 {benefit}
               </span>
             </div>

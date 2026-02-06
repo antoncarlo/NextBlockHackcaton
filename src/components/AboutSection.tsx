@@ -88,7 +88,7 @@ const AboutSection = () => {
           className="text-center mb-24"
         >
           <motion.span 
-            className="text-sm font-medium text-primary uppercase tracking-widest mb-4 block"
+            className="section-label mb-4 block"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -96,7 +96,7 @@ const AboutSection = () => {
           >
             The Market
           </motion.span>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium text-foreground leading-tight">
             An Untapped
             <br />
             <span className="text-gradient">Financial Primitive</span>
@@ -143,7 +143,7 @@ const AboutSection = () => {
               {/* Stat content */}
               <div className={`flex-1 ${index % 2 === 0 ? "md:text-right md:pr-16" : "md:text-left md:pl-16"} text-center`}>
                 <motion.div 
-                  className="text-5xl md:text-7xl font-bold text-primary mb-2"
+                  className="text-5xl md:text-7xl stat-number text-primary mb-2"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -151,7 +151,7 @@ const AboutSection = () => {
                 >
                   {stat.value}
                 </motion.div>
-                <div className="text-xl font-semibold text-foreground mb-2">
+                <div className="text-xl font-medium text-foreground mb-2">
                   {stat.label}
                 </div>
                 <p className="text-muted-foreground max-w-md mx-auto md:mx-0">

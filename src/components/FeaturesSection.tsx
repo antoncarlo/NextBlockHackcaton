@@ -49,7 +49,7 @@ const FeaturesSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 drop-shadow-lg">
+            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4 drop-shadow-lg">
               From Silos to a Liquid Marketplace
             </h2>
           </motion.div>
@@ -62,7 +62,7 @@ const FeaturesSection = () => {
               transition={{ duration: 0.6 }}
               className="p-8 rounded-3xl liquid-glass liquid-glass-hover"
             >
-              <h3 className="text-xl font-bold text-foreground mb-4 relative z-10">
+              <h3 className="text-xl font-medium text-foreground mb-4 relative z-10">
                 The Problem
               </h3>
               <p className="text-lg font-semibold text-primary mb-3 relative z-10">
@@ -80,7 +80,7 @@ const FeaturesSection = () => {
               transition={{ duration: 0.6 }}
               className="p-8 rounded-3xl liquid-glass liquid-glass-hover border-primary/20"
             >
-              <h3 className="text-xl font-bold text-foreground mb-4 relative z-10">
+              <h3 className="text-xl font-medium text-foreground mb-4 relative z-10">
                 The Solution
               </h3>
               <p className="text-lg font-semibold text-primary mb-3 relative z-10">
@@ -194,7 +194,7 @@ const FeaturesSection = () => {
             className="text-center mb-24"
           >
             <motion.span 
-              className="text-sm font-medium text-primary uppercase tracking-widest mb-4 block"
+              className="section-label mb-4 block"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -202,7 +202,7 @@ const FeaturesSection = () => {
             >
               How It Works
             </motion.span>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium text-foreground leading-tight">
               The Insurance-Linked
               <br />
               <span className="text-gradient">Protocol Stack</span>
@@ -255,7 +255,7 @@ const FeaturesSection = () => {
                   >
                     {feature.title}
                   </motion.span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                  <h3 className="text-2xl md:text-3xl font-medium text-foreground mb-4">
                     {feature.subtitle}
                   </h3>
                   <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto md:mx-0">

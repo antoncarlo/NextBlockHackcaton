@@ -14,7 +14,7 @@ const WaitlistSection = () => {
             className="p-8 rounded-3xl liquid-glass"
           >
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 drop-shadow-lg">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-6 drop-shadow-lg">
                 Be Part of the New Capital Market
               </h2>
               <p className="text-lg text-foreground/90 mb-8 leading-relaxed">
@@ -23,7 +23,7 @@ const WaitlistSection = () => {
               
               <div className="space-y-6">
                 <div className="p-4 rounded-2xl bg-background/30 backdrop-blur-sm">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                  <h3 className="text-xl font-medium text-foreground mb-3">
                     For Curators
                   </h3>
                   <p className="text-foreground/80 leading-relaxed">
@@ -32,7 +32,7 @@ const WaitlistSection = () => {
                 </div>
                 
                 <div className="p-4 rounded-2xl bg-background/30 backdrop-blur-sm">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                  <h3 className="text-xl font-medium text-foreground mb-3">
                     For Investors
                   </h3>
                   <p className="text-foreground/80 leading-relaxed">

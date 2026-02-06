@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import logoWhite from "@/assets/logo-white.svg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,27 +20,25 @@ const Header = () => {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-300 ${
         isScrolled 
-          ? "py-3 bg-background/80 backdrop-blur-xl border-b border-primary/20 shadow-lg shadow-primary/5" 
-          : "py-4"
+          ? "py-4 bg-background/80 backdrop-blur-xl border-b border-primary/20 shadow-lg shadow-primary/5" 
+          : "py-6"
       }`}
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between">
         <a href="#" className="flex items-center">
-          <img 
-            src={logoWhite} 
-            alt="NextBlock" 
-            className={`transition-all duration-300 ${isScrolled ? "h-16 md:h-20" : "h-24 md:h-28"}`} 
-          />
+          <span className="logo-text text-foreground">
+            NEXTBLOCK
+          </span>
         </a>
         
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+          <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
             Market
           </a>
-          <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+          <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
             How It Works
           </a>
-          <a href="#waitlist" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+          <a href="#waitlist" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
             Request Access
           </a>
         </nav>
