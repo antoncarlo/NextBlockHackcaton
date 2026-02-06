@@ -22,7 +22,6 @@ get_header();
                 <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
             </video>
             <?php endif; ?>
-            <div class="nb-hero__overlay"></div>
         </div>
 
         <div class="nb-hero__content">
@@ -153,7 +152,7 @@ get_header();
     </section>
 
     <!-- Protocol Stack Section -->
-    <section id="how-it-works" class="nb-protocol nb-section nb-section--dark" style="background-image: url('<?php echo esc_url(NEXTBLOCK_URI . '/assets/images/our-vision-venice.png'); ?>');">
+    <section id="how-it-works" class="nb-protocol nb-section nb-section--dark" style="background-image: url('<?php echo esc_url(NEXTBLOCK_URI . '/assets/images/protocol-stack-lion.png'); ?>'); background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #FAFAF8;">>
         <div class="nb-protocol__overlay">
             <?php get_template_part('template-parts/decorative', 'grid', array('variant' => 'dark')); ?>
             
