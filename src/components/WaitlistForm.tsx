@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Send, CheckCircle } from "lucide-react";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const waitlistSchema = z.object({
   fullName: z.string().trim().min(1, { message: "Full name is required" }).max(100),
@@ -46,16 +47,34 @@ const WaitlistForm = () => {
     
     setIsLoading(true);
     
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setIsLoading(false);
-    setIsSubmitted(true);
-    
-    toast({
-      title: "Request Submitted!",
-      description: "We'll be in touch soon with exclusive updates.",
-    });
+    try {
+      const { error } = await supabase
+        .from('waitlist_submissions')
+        .insert({
+          full_name: result.data.fullName,
+          company: result.data.company,
+          email: result.data.email,
+          interest: result.data.interest,
+          message: result.data.message || null,
+        });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      toast({
+        title: "Request Submitted!",
+        description: "We'll be in touch soon with exclusive updates.",
+      });
+    } catch (error) {
+      console.error('Error submitting waitlist:', error);
+      toast({
+        title: "Submission Failed",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
