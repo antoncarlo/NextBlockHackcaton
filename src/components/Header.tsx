@@ -51,9 +51,9 @@ const Header = () => {
         
         {/* Center: Navigation container */}
         <div
-          className="hidden md:flex items-center gap-10"
+          className="flex items-center gap-6 md:gap-10"
           style={{
-            padding: '12px 32px',
+            padding: '10px 20px',
             backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.85)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
@@ -67,7 +67,7 @@ const Header = () => {
             className="transition-colors duration-200"
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: '15px',
+              fontSize: '13px',
               fontWeight: 400,
               color: '#4A4A4A',
               letterSpacing: '0.01em',
@@ -82,7 +82,7 @@ const Header = () => {
             className="transition-colors duration-200"
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: '15px',
+              fontSize: '13px',
               fontWeight: 400,
               color: '#4A4A4A',
               letterSpacing: '0.01em',
@@ -97,7 +97,7 @@ const Header = () => {
             className="transition-colors duration-200"
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: '15px',
+              fontSize: '13px',
               fontWeight: 400,
               color: '#4A4A4A',
               letterSpacing: '0.01em',
