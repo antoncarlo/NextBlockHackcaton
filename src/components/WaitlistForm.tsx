@@ -38,7 +38,8 @@ const WaitlistForm = () => {
     setIsLoading(true);
     
     try {
-      const { error } = await supabase
+      // Save to Supabase
+      const { error: dbError } = await supabase
         .from('waitlist_submissions')
         .insert({
           full_name: result.data.fullName,
@@ -48,7 +49,20 @@ const WaitlistForm = () => {
           message: null,
         });
 
-      if (error) throw error;
+      if (dbError) throw dbError;
+
+      // Subscribe to Mailchimp
+      const mailchimpResponse = await supabase.functions.invoke('mailchimp-subscribe', {
+        body: {
+          email: result.data.email,
+          fullName: result.data.fullName,
+        },
+      });
+
+      if (mailchimpResponse.error) {
+        console.error('Mailchimp subscription error:', mailchimpResponse.error);
+        // Don't fail the form if Mailchimp fails - user is already in database
+      }
 
       setIsSubmitted(true);
       toast({
