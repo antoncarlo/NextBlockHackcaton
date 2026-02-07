@@ -110,8 +110,8 @@ const WaitlistSection = () => {
             </p>
           </motion.div>
 
-          {/* Desktop Layout */}
-          <div className="hidden lg:grid lg:grid-cols-2 gap-8 items-start">
+          {/* Unified Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
             {/* Left: Role Cards */}
             <div className="flex flex-col gap-3">
               {roleCards.map((card, index) => {
@@ -149,7 +149,7 @@ const WaitlistSection = () => {
                       }}
                     />
                     
-                    <div className="relative p-6">
+                    <div className="relative p-5 md:p-6">
                       <div className="flex items-start gap-4">
                         {/* Icon */}
                         <motion.div
@@ -188,7 +188,7 @@ const WaitlistSection = () => {
                             }}
                             transition={{ duration: 0.4 }}
                             style={{
-                              fontSize: '18px',
+                              fontSize: '16px',
                               fontWeight: 500,
                               lineHeight: 1.3,
                             }}
@@ -261,177 +261,13 @@ const WaitlistSection = () => {
                 borderRadius: '16px',
                 border: '1px solid rgba(0, 0, 0, 0.08)',
                 boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
-                padding: '32px',
+                padding: '24px',
               }}
             >
               <WaitlistForm />
             </motion.div>
           </div>
 
-          {/* Mobile Layout */}
-          <div className="lg:hidden">
-            {/* Mobile Role Cards (Accordion) */}
-            {!showForm && (
-              <div className="flex flex-col gap-2 mb-8">
-                {roleCards.map((card, index) => {
-                  const isActive = activeCardIndex === index;
-                  
-                  return (
-                    <motion.div
-                      key={card.id}
-                      onClick={() => handleCardClick(index)}
-                      className="cursor-pointer overflow-hidden"
-                      style={{
-                        borderRadius: '12px',
-                        border: '1px solid',
-                        borderColor: isActive ? 'rgba(0, 0, 0, 0.08)' : 'rgba(27, 58, 107, 0.1)',
-                        backgroundColor: isActive ? '#FFFFFF' : 'rgba(27, 58, 107, 0.04)',
-                        backdropFilter: isActive ? 'none' : 'blur(8px)',
-                      }}
-                      initial={false}
-                      animate={{
-                        backgroundColor: isActive ? '#FFFFFF' : 'rgba(27, 58, 107, 0.04)',
-                      }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      {/* Header Row */}
-                      <div 
-                        className="flex items-center gap-4 p-4"
-                        style={{ minHeight: '64px' }}
-                      >
-                        <motion.div
-                          animate={{
-                            color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.6)',
-                          }}
-                          transition={{ duration: 0.3 }}
-                          style={{ width: '24px', height: '24px', flexShrink: 0 }}
-                        >
-                          {card.icon}
-                        </motion.div>
-                        <div className="flex-1">
-                          <motion.span
-                            animate={{
-                              color: isActive ? '#8A8A8A' : 'rgba(27, 58, 107, 0.5)',
-                            }}
-                            style={{
-                              fontSize: '11px',
-                              fontWeight: 500,
-                              letterSpacing: '0.08em',
-                              textTransform: 'uppercase',
-                              display: 'block',
-                              marginBottom: '2px',
-                            }}
-                          >
-                            {card.label}
-                          </motion.span>
-                          <motion.h3
-                            animate={{
-                              color: isActive ? '#0F1218' : '#1B3A6B',
-                            }}
-                            style={{
-                              fontSize: '15px',
-                              fontWeight: 500,
-                              lineHeight: 1.3,
-                            }}
-                          >
-                            {card.title}
-                          </motion.h3>
-                        </div>
-                        <motion.div
-                          animate={{ rotate: isActive ? 180 : 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          <ChevronRight 
-                            size={18} 
-                            style={{ 
-                              color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.4)',
-                              transform: 'rotate(90deg)',
-                            }} 
-                          />
-                        </motion.div>
-                      </div>
-
-                      {/* Expanded Content */}
-                      <motion.div
-                        initial={false}
-                        animate={{
-                          height: isActive ? 'auto' : 0,
-                          opacity: isActive ? 1 : 0,
-                        }}
-                        transition={{
-                          height: { duration: 0.4, ease: [0.4, 0, 0.2, 1] },
-                          opacity: { duration: 0.3, delay: isActive ? 0.1 : 0 },
-                        }}
-                        style={{ overflow: 'hidden' }}
-                      >
-                        <div className="px-4 pb-4 pt-0">
-                          <div 
-                            style={{ 
-                              width: '40px', 
-                              height: '1px', 
-                              backgroundColor: '#1B3A6B',
-                              marginBottom: '12px',
-                            }} 
-                          />
-                          <p
-                            style={{
-                              fontSize: '14px',
-                              lineHeight: 1.6,
-                              color: '#4A4A4A',
-                            }}
-                          >
-                            {card.content}
-                          </p>
-                        </div>
-                      </motion.div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            )}
-
-            {/* Mobile Form Toggle */}
-            {!showForm ? (
-              <motion.button
-                onClick={() => setShowForm(true)}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-medium"
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  color: '#1B3A6B',
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
-                }}
-              >
-                Request Early Access
-                <ChevronRight size={18} />
-              </motion.button>
-            ) : (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
-                  padding: '24px',
-                }}
-              >
-                <button
-                  onClick={() => setShowForm(false)}
-                  className="mb-4 flex items-center gap-2 text-sm"
-                  style={{ color: '#8A8A8A' }}
-                >
-                  <ChevronRight size={16} style={{ transform: 'rotate(180deg)' }} />
-                  Back to options
-                </button>
-                <WaitlistForm />
-              </motion.div>
-            )}
-          </div>
         </div>
       </div>
     </section>
