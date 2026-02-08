@@ -12,17 +12,23 @@ interface SolutionCardData {
   icon: React.ReactNode;
 }
 const solutionCards: SolutionCardData[] = [{
-  id: "problem",
-  label: "The Problem",
-  title: "Trapped Capital, Opaque Risk",
-  content: "The traditional reinsurance market is capital-intensive, illiquid, and inaccessible. For reinsurers, billions in capital are trapped in inefficient structures. For investors, access to this stable, uncorrelated asset class is restricted to a select few.",
+  id: "premium",
+  label: "💰 Premium Collection",
+  title: "8-12% Annual Yields",
+  content: "8-12% annual yields from real insurance premiums. Independent of equity markets and crypto.",
   icon: <Lock />
 }, {
-  id: "solution",
-  label: "The Solution",
-  title: "Permissionless Vaults, Composable Risk",
-  content: "NextBlock provides the open-source infrastructure to change this. We enable any entity—from established reinsurers to specialized asset managers—to curate and launch their own tokenized risk vaults. This transforms illiquid reinsurance risk into a liquid, transparent, and composable on-chain asset.",
+  id: "settlement",
+  label: "⚡ On-Chain Settlement",
+  title: "Real-Time & Transparent",
+  content: "Every premium, claim, and distribution settles on Base. Real-time. Transparent. Automated.",
   icon: <Unlock />
+}, {
+  id: "institutional",
+  label: "🏛️ Institutional Access",
+  title: "Compliant Custody",
+  content: "Qualified custody. Compliant. Built for institutional capital.",
+  icon: <Lock />
 }];
 const FeaturesSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -74,14 +80,21 @@ const FeaturesSection = () => {
               
               <h2 style={{
               fontSize: 'clamp(28px, 5vw, 42px)',
-              fontWeight: 500,
+              fontWeight: 600,
               color: '#0F1218',
-              lineHeight: 1.2
+              lineHeight: 1.2,
+              letterSpacing: '0.02em'
             }}>
-                From Silos to a
-                <br />
-                Liquid Marketplace
+                REAL ASSETS. REAL INCOME.
               </h2>
+              <p style={{
+                fontSize: 'clamp(16px, 3vw, 20px)',
+                color: '#4A4A4A',
+                marginTop: '16px',
+                fontWeight: 400
+              }}>
+                Uncorrelated Returns from Real Insurance Premiums
+              </p>
             </motion.div>
 
             {/* Cards - Unified layout */}
@@ -240,6 +253,24 @@ const FeaturesSection = () => {
               }} />
               </button>
             </div>
+
+            {/* Bottom tagline */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center mt-12 font-serif italic"
+              style={{
+                fontSize: 'clamp(14px, 2.5vw, 18px)',
+                color: '#4A4A4A',
+                lineHeight: 1.6,
+                maxWidth: '800px',
+                margin: '48px auto 0'
+              }}
+            >
+              Insurance risk premium is compensation for assuming real-world risk — hurricanes, earthquakes, mortality. Not financial engineering.
+            </motion.p>
 
           </div>
         </div>
