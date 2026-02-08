@@ -9,7 +9,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 text-center md:text-left" style={{
+      <div className="relative z-10 w-full max-w-7xl px-6 md:px-12 lg:px-24 text-left" style={{
       paddingTop: '160px',
       paddingBottom: '120px'
     }}>
