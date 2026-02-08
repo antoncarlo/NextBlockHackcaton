@@ -81,7 +81,8 @@ const AboutSection = () => {
               >
                 {/* Connection node */}
                 <motion.div 
-                  className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center"
+                  className="absolute left-1/2 hidden md:flex items-center justify-center"
+                  style={{ transform: 'translateX(calc(-50% - 12px))' }}
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
