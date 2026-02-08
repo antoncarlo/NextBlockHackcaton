@@ -14,7 +14,7 @@ const XIcon = ({ size = 20 }: { size?: number }) => (
 const Footer = () => {
   const protocolLinks = [
     { label: "Protocol Overview", href: "#" },
-    { label: "GitHub", href: "#" },
+    { label: "GitHub", href: "https://github.com/alessandromaci/nextblock" },
   ];
 
   const resourceLinks = [
