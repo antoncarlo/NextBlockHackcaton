@@ -1,23 +1,24 @@
 import { motion } from "framer-motion";
-import { Twitter, MessageCircle, Send, Linkedin } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 import WaitlistSection from "./WaitlistSection";
 import footerFriezeVideo from "@/assets/footer-frieze.mp4";
 import logoBlack from "@/assets/logo-black.svg";
 
+// Custom X (Twitter) icon since lucide doesn't have the new X logo
+const XIcon = ({ size = 20 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
 const Footer = () => {
   const protocolLinks = [
     { label: "Protocol Overview", href: "#" },
-    { label: "Documentation", href: "#" },
     { label: "GitHub", href: "#" },
-    { label: "Security Audits", href: "#" },
-    { label: "Bug Bounty", href: "#" },
   ];
 
   const resourceLinks = [
-    { label: "Blog", href: "#" },
     { label: "FAQ", href: "#" },
-    { label: "Brand Kit", href: "#" },
-    { label: "Careers", href: "#" },
   ];
 
   const legalLinks = [
@@ -28,10 +29,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: MessageCircle, href: "#", label: "Discord" },
-    { icon: Send, href: "#", label: "Telegram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: XIcon, href: "https://x.com/NBlock2040", label: "X" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/next-block", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:nextblock@financier.com", label: "Email" },
   ];
 
   const linkStyle = {
