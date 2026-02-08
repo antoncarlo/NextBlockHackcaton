@@ -16,24 +16,17 @@ interface RoleCardData {
 const roleCards: RoleCardData[] = [
   {
     id: "curator",
-    label: "For Curators",
-    title: "Build Your Strategy",
-    content: "Are you a reinsurer looking to access DeFi liquidity? Or an asset manager with expertise in insurance-linked securities? NextBlock provides the tools to build, manage, and scale your on-chain strategy.",
+    label: "For Vault Curators",
+    title: "Reinsurers · Insurers · Asset Managers",
+    content: "Deploy compliant vaults. Access global capital. You control underwriting — the protocol handles infrastructure.",
     icon: <Compass />,
   },
   {
-    id: "investor",
-    label: "For Investors",
-    title: "Diversify Your Portfolio",
-    content: "Diversify your portfolio with a truly uncorrelated, real-world asset class. Insurance risk offers stable, predictable yields backed by centuries of actuarial data.",
+    id: "allocator",
+    label: "For Allocators",
+    title: "Family Offices · Funds · Endowments",
+    content: "Access the only RWA uncorrelated to equities, bonds, and crypto.",
     icon: <Key />,
-  },
-  {
-    id: "partner",
-    label: "For Partners",
-    title: "Join the Ecosystem",
-    content: "Whether you're a technology provider, distribution platform, or strategic partner, NextBlock offers integration opportunities to expand the insurance-linked asset ecosystem.",
-    icon: <Handshake />,
   },
 ];
 
@@ -82,7 +75,7 @@ const WaitlistSection = () => {
                 color: 'rgba(27, 58, 107, 0.5)',
               }}
             >
-              Join the Waitlist
+              Early Access
             </span>
             <h2 
               style={{ 
@@ -92,22 +85,10 @@ const WaitlistSection = () => {
                 lineHeight: 1.2,
               }}
             >
-              Be Part of the New
+              NextBlock is onboarding a select cohort
               <br />
-              Capital Market
+              of institutional partners.
             </h2>
-            <p
-              className="mt-6 mx-auto"
-              style={{
-                maxWidth: '600px',
-                fontSize: '17px',
-                lineHeight: 1.7,
-                color: '#4A4A4A',
-              }}
-            >
-              We are currently in private beta, working with leading reinsurers and asset managers. 
-              Request early access to join as a curator, investor, or partner.
-            </p>
           </motion.div>
 
           {/* Unified Layout */}
