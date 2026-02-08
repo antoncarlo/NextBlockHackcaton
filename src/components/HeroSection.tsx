@@ -9,7 +9,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 text-center md:text-left" style={{
+      <div className="relative z-10 w-full max-w-7xl px-6 md:px-12 lg:px-24 text-left" style={{
       paddingTop: '160px',
       paddingBottom: '120px'
     }}>
@@ -22,24 +22,36 @@ const HeroSection = () => {
       }} transition={{
         duration: 0.8,
         delay: 0.2
-      }} className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl" style={{
-          fontWeight: 500,
-          lineHeight: 1.1,
-          letterSpacing: '-0.03em',
-          color: '#0F1218'
-        }}>Insurance is the world's largest real-world asset class  and the only one without blockchain infrastructure.          
-
-Until now           
-
-          
-
-          
-           
-
-          
-
-        </h1>
+       }} className="w-full">
+          <div className="flex flex-col">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl max-w-4xl font-serif" style={{
+              fontFamily: "'Playfair Display', serif",
+              fontWeight: 500,
+              lineHeight: 1.1,
+              letterSpacing: '-0.03em',
+              color: '#0F1218'
+            }}>Insurance is the world's largest real-world asset class and the only one without blockchain infrastructure.
+            </h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-right w-full max-w-4xl font-serif"
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                marginTop: '16px',
+                fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+                fontWeight: 500,
+                fontStyle: 'italic',
+                color: '#0F1218',
+                letterSpacing: '-0.03em',
+                lineHeight: 1.1
+              }}
+            >
+              Until Now
+            </motion.p>
+          </div>
           
           <motion.p initial={{
           opacity: 0,
@@ -81,23 +93,6 @@ Until now
             fontSize: '15px'
           }}>
               Request Early Access
-            </a>
-            <a href="#how-it-works" className="inline-flex items-center justify-center transition-all" style={{
-            backgroundColor: 'transparent',
-            border: '1px solid rgba(0,0,0,0.15)',
-            color: '#1A1F2E',
-            padding: '14px 32px',
-            borderRadius: '6px',
-            fontWeight: 500,
-            fontSize: '15px'
-          }} onMouseEnter={e => {
-            e.currentTarget.style.borderColor = 'rgba(0,0,0,0.3)';
-            e.currentTarget.style.color = '#0F1218';
-          }} onMouseLeave={e => {
-            e.currentTarget.style.borderColor = 'rgba(0,0,0,0.15)';
-            e.currentTarget.style.color = '#1A1F2E';
-          }}>
-              Learn More
             </a>
           </motion.div>
         </motion.div>
