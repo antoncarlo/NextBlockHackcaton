@@ -64,19 +64,7 @@ const ProtocolStackCards = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12 md:mb-16"
           >
-            <span 
-              className="block mb-4"
-              style={{ 
-                fontSize: '13px',
-                fontWeight: 500,
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                color: 'rgba(255, 255, 255, 0.5)',
-              }}
-            >
-              Diversification
-            </span>
-            <h2 
+            <h2
               style={{ 
                 fontSize: 'clamp(28px, 5vw, 42px)',
                 fontWeight: 500,
@@ -191,30 +179,14 @@ const ProtocolStackCards = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-center mt-12 font-serif italic"
             style={{
-              fontSize: 'clamp(18px, 3vw, 24px)',
+              fontSize: 'clamp(24px, 4vw, 36px)',
               color: '#FFFFFF',
               fontFamily: "'Playfair Display', serif",
-              maxWidth: '700px',
+              maxWidth: '800px',
               margin: '48px auto 0',
             }}
           >
             "Hurricanes don't care about Fed policy."
-          </motion.p>
-
-          {/* Source */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-center mt-4"
-            style={{
-              fontSize: '12px',
-              color: 'rgba(255, 255, 255, 0.4)',
-              letterSpacing: '0.05em',
-            }}
-          >
-            Source: Swiss Re Capital Markets, Guy Carpenter Analytics
           </motion.p>
 
         </div>
