@@ -89,23 +89,6 @@ const HeroSection = () => {
           }}>
               Request Early Access
             </a>
-            <a href="#how-it-works" className="inline-flex items-center justify-center transition-all" style={{
-            backgroundColor: 'transparent',
-            border: '1px solid rgba(0,0,0,0.15)',
-            color: '#1A1F2E',
-            padding: '14px 32px',
-            borderRadius: '6px',
-            fontWeight: 500,
-            fontSize: '15px'
-          }} onMouseEnter={e => {
-            e.currentTarget.style.borderColor = 'rgba(0,0,0,0.3)';
-            e.currentTarget.style.color = '#0F1218';
-          }} onMouseLeave={e => {
-            e.currentTarget.style.borderColor = 'rgba(0,0,0,0.15)';
-            e.currentTarget.style.color = '#1A1F2E';
-          }}>
-              Learn More
-            </a>
           </motion.div>
         </motion.div>
       </div>
