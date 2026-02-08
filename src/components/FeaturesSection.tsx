@@ -103,121 +103,123 @@ const FeaturesSection = () => {
 
             {/* Cards - Unified layout */}
             <div className="flex flex-col md:flex-row gap-3 md:gap-4" style={{
-            minHeight: '200px'
-          }}>
+              minHeight: '200px'
+            }}>
               {solutionCards.map((card, index) => {
-              const isActive = activeIndex === index;
-              return <motion.div key={card.id} onClick={() => handleCardClick(index)} className="relative cursor-pointer overflow-hidden" style={{
-                borderRadius: '16px',
-                backdropFilter: 'blur(8px)'
-              }} initial={false} animate={{
-                flex: isActive ? 2 : 1,
-                backgroundColor: isActive ? 'rgba(27, 58, 107, 0.06)' : 'rgba(27, 58, 107, 0.02)',
-                borderColor: isActive ? 'rgba(27, 58, 107, 0.15)' : 'rgba(27, 58, 107, 0.08)',
-                opacity: isActive ? 1 : 0.85
-              }} whileHover={{
-                opacity: 1,
-                borderColor: isActive ? 'rgba(27, 58, 107, 0.15)' : 'rgba(27, 58, 107, 0.15)'
-              }} transition={{
-                duration: 0.5,
-                ease: [0.4, 0, 0.2, 1]
-              }}>
-                    <div className="absolute inset-0 border" style={{
-                  borderRadius: '16px',
-                  borderColor: isActive ? 'rgba(27, 58, 107, 0.15)' : 'rgba(27, 58, 107, 0.08)',
-                  boxShadow: isActive ? '0 8px 32px rgba(27, 58, 107, 0.08)' : 'none',
-                  transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
-                }} />
+                const isActive = activeIndex === index;
+                return (
+                  <motion.div
+                    key={card.id}
+                    onClick={() => handleCardClick(index)}
+                    className="relative cursor-pointer overflow-hidden"
+                    style={{
+                      borderRadius: '16px',
+                      backdropFilter: 'blur(8px)',
+                      flex: isActive ? 2 : 1,
+                      transition: 'flex 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                    }}
+                    initial={false}
+                    animate={{
+                      backgroundColor: isActive ? 'rgba(27, 58, 107, 0.06)' : 'rgba(27, 58, 107, 0.02)',
+                      opacity: isActive ? 1 : 0.85
+                    }}
+                    whileHover={{
+                      opacity: 1
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: 'easeOut'
+                    }}
+                  >
+                    <div 
+                      className="absolute inset-0 border" 
+                      style={{
+                        borderRadius: '16px',
+                        borderColor: isActive ? 'rgba(27, 58, 107, 0.15)' : 'rgba(27, 58, 107, 0.08)',
+                        boxShadow: isActive ? '0 8px 32px rgba(27, 58, 107, 0.08)' : 'none',
+                        transition: 'all 0.3s ease-out'
+                      }} 
+                    />
                     
                     <div className="relative h-full p-5 md:p-7 flex flex-col">
                       {/* Icon */}
-                      <motion.div animate={{
-                    color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.5)'
-                  }} transition={{
-                    duration: 0.4
-                  }} style={{
-                    width: isActive ? '32px' : '28px',
-                    height: isActive ? '32px' : '28px'
-                  }}>
-                        <div style={{
-                      width: '100%',
-                      height: '100%'
-                    }}>
+                      <div
+                        style={{
+                          color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.5)',
+                          width: isActive ? '32px' : '28px',
+                          height: isActive ? '32px' : '28px',
+                          transition: 'all 0.3s ease-out'
+                        }}
+                      >
+                        <div style={{ width: '100%', height: '100%' }}>
                           {card.icon}
                         </div>
-                      </motion.div>
+                      </div>
 
                       {/* Spacer */}
                       <div className="flex-1 min-h-4" />
 
                       {/* Label */}
-                      <motion.span animate={{
-                    color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.5)'
-                  }} style={{
-                    fontSize: '12px',
-                    fontWeight: 500,
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
-                    marginBottom: '8px'
-                  }}>
+                      <span
+                        style={{
+                          color: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.5)',
+                          fontSize: '12px',
+                          fontWeight: 500,
+                          letterSpacing: '0.08em',
+                          textTransform: 'uppercase',
+                          marginBottom: '8px',
+                          transition: 'color 0.3s ease-out'
+                        }}
+                      >
                         {card.label}
-                      </motion.span>
+                      </span>
 
                       {/* Separator Line */}
-                      <motion.div animate={{
-                    width: isActive ? '48px' : '40px',
-                    backgroundColor: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.15)'
-                  }} transition={{
-                    duration: 0.4
-                  }} style={{
-                    height: '1px',
-                    marginBottom: '12px'
-                  }} />
+                      <div
+                        style={{
+                          width: isActive ? '48px' : '40px',
+                          backgroundColor: isActive ? '#1B3A6B' : 'rgba(27, 58, 107, 0.15)',
+                          height: '1px',
+                          marginBottom: '12px',
+                          transition: 'all 0.3s ease-out'
+                        }}
+                      />
 
                       {/* Title */}
-                      <motion.h3 animate={{
-                    color: isActive ? '#0F1218' : 'rgba(15, 18, 24, 0.7)',
-                    fontSize: isActive ? '18px' : '15px',
-                    fontWeight: isActive ? 600 : 500
-                  }} transition={{
-                    duration: 0.4
-                  }} style={{
-                    lineHeight: 1.3
-                  }}>
+                      <h3
+                        style={{
+                          color: isActive ? '#0F1218' : 'rgba(15, 18, 24, 0.7)',
+                          fontSize: isActive ? '18px' : '15px',
+                          fontWeight: isActive ? 600 : 500,
+                          lineHeight: 1.3,
+                          transition: 'all 0.3s ease-out'
+                        }}
+                      >
                         {card.title}
-                      </motion.h3>
+                      </h3>
 
                       {/* Expanded Content */}
-                      <motion.div initial={false} animate={{
-                    opacity: isActive ? 1 : 0,
-                    maxHeight: isActive ? '200px' : '0px',
-                    marginTop: isActive ? '16px' : '0px'
-                  }} transition={{
-                    opacity: {
-                      duration: 0.4,
-                      delay: isActive ? 0.15 : 0
-                    },
-                    maxHeight: {
-                      duration: 0.5,
-                      ease: [0.4, 0, 0.2, 1]
-                    },
-                    marginTop: {
-                      duration: 0.4
-                    }
-                  }} style={{
-                    overflow: 'hidden'
-                  }}>
+                      <div
+                        style={{
+                          opacity: isActive ? 1 : 0,
+                          maxHeight: isActive ? '200px' : '0px',
+                          marginTop: isActive ? '16px' : '0px',
+                          overflow: 'hidden',
+                          transition: 'opacity 0.3s ease-out, max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), margin-top 0.3s ease-out'
+                        }}
+                      >
                         <p style={{
-                      fontSize: '14px',
-                      lineHeight: 1.65,
-                      color: '#4A4A4A'
-                    }}>
+                          fontSize: '14px',
+                          lineHeight: 1.65,
+                          color: '#4A4A4A'
+                        }}>
                           {card.content}
                         </p>
-                      </motion.div>
+                      </div>
                     </div>
-                  </motion.div>;
-            })}
+                  </motion.div>
+                );
+              })}
             </div>
 
             {/* Navigation Arrows */}
