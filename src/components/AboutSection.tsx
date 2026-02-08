@@ -42,7 +42,7 @@ const AboutSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center"
-          style={{ marginBottom: '64px' }}
+          style={{ marginBottom: '48px' }}
         >
           <motion.span 
             className="section-label mb-4 block"
@@ -63,45 +63,81 @@ const AboutSection = () => {
           </h2>
         </motion.div>
 
-        {/* Stats in horizontal layout */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 text-center"
-          style={{ marginBottom: '64px' }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-            >
-              <motion.div 
-                className="text-5xl md:text-6xl lg:text-7xl stat-number mb-3"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+        {/* Stats in organic layout */}
+        <div className="relative">
+          {/* Vertical connection line */}
+          <motion.div 
+            className="absolute left-1/2 top-0 bottom-0 w-px hidden md:block"
+            style={{ background: 'linear-gradient(to bottom, transparent, rgba(27,58,107,0.2) 10%, rgba(27,58,107,0.2) 90%, transparent)' }}
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2 }}
+          />
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.4 + index * 0.1, type: "spring" }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                className={`relative flex items-center ${
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
+                style={{ gap: '32px' }}
               >
-                {stat.value}
+                {/* Connection node */}
+                <motion.div 
+                  className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + index * 0.15 }}
+                >
+                  <div 
+                    className="w-4 h-4 rounded-full"
+                    style={{ 
+                      background: 'rgba(27,58,107,0.1)',
+                      border: '2px solid rgba(27,58,107,0.3)'
+                    }}
+                  >
+                    <div className="w-full h-full rounded-full flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#1B3A6B' }} />
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Stat content */}
+                <div className={`flex-1 ${index % 2 === 0 ? "md:text-right md:pr-12" : "md:text-left md:pl-12"} text-center`}>
+                  <motion.div 
+                    className="text-4xl md:text-6xl stat-number mb-2"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + index * 0.15, type: "spring" }}
+                  >
+                    {stat.value}
+                  </motion.div>
+                  <div 
+                    className="text-lg font-medium mb-2"
+                    style={{ color: '#1A1F2E' }}
+                  >
+                    {stat.label}
+                  </div>
+                </div>
+
+                {/* Empty space for alternating layout */}
+                <div className="flex-1 hidden md:block" />
               </motion.div>
-              <div 
-                className="text-sm md:text-base font-medium"
-                style={{ color: '#1A1F2E' }}
-              >
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+            ))}
+          </div>
+        </div>
 
         {/* Bottom tagline */}
         <motion.p
-          className="text-center text-lg md:text-xl"
+          className="text-center text-lg md:text-xl mt-12"
           style={{ color: '#5A5A5A' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
