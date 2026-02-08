@@ -176,21 +176,8 @@ const ProtocolStackCards = () => {
                   fontWeight: row.isHighlighted ? 600 : 400,
                   color: row.isHighlighted ? '#4ADE80' : 'rgba(255, 255, 255, 0.7)',
                   textAlign: 'center',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '8px',
                 }}>
                   {row.vsCrypto}
-                  {row.isHighlighted && (
-                    <span style={{ 
-                      fontSize: '12px',
-                      color: '#4ADE80',
-                      marginLeft: '4px',
-                    }}>
-                      ← !!!
-                    </span>
-                  )}
                 </span>
               </motion.div>
             ))}
