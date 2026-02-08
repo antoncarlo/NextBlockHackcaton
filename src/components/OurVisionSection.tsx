@@ -43,7 +43,7 @@ const OurVisionSection = () => {
               marginBottom: '16px',
             }}
           >
-            Our Vision
+            Built for Institutions
           </span>
 
           {/* Heading */}
@@ -52,36 +52,94 @@ const OurVisionSection = () => {
               fontSize: '40px',
               fontWeight: 500,
               color: '#0F1218',
-              marginBottom: '24px',
+              marginBottom: '32px',
               lineHeight: 1.2,
             }}
           >
-            From Venice to the Blockchain
+            The Protocol
           </h2>
 
-          {/* Paragraph */}
+          {/* Feature Cards Grid */}
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            {/* Fully Compliant */}
+            <div
+              style={{
+                padding: '20px',
+                backgroundColor: 'rgba(0,0,0,0.02)',
+                borderRadius: '8px',
+                border: '1px solid rgba(0,0,0,0.06)',
+              }}
+            >
+              <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#0F1218', marginBottom: '8px' }}>
+                Fully Compliant
+              </h3>
+              <p style={{ fontSize: '13px', lineHeight: 1.5, color: '#6A6A6A' }}>
+                Regulatory compliance, whitelisting, transfer restrictions
+              </p>
+            </div>
+
+            {/* Automated Settlement */}
+            <div
+              style={{
+                padding: '20px',
+                backgroundColor: 'rgba(0,0,0,0.02)',
+                borderRadius: '8px',
+                border: '1px solid rgba(0,0,0,0.06)',
+              }}
+            >
+              <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#0F1218', marginBottom: '8px' }}>
+                Automated Settlement
+              </h3>
+              <p style={{ fontSize: '13px', lineHeight: 1.5, color: '#6A6A6A' }}>
+                90-day cycles → seconds. On Base.
+              </p>
+            </div>
+
+            {/* Transparent Accounting */}
+            <div
+              style={{
+                padding: '20px',
+                backgroundColor: 'rgba(0,0,0,0.02)',
+                borderRadius: '8px',
+                border: '1px solid rgba(0,0,0,0.06)',
+              }}
+            >
+              <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#0F1218', marginBottom: '8px' }}>
+                Transparent Accounting
+              </h3>
+              <p style={{ fontSize: '13px', lineHeight: 1.5, color: '#6A6A6A' }}>
+                Real-time NAV on-chain
+              </p>
+            </div>
+
+            {/* Qualified Custody */}
+            <div
+              style={{
+                padding: '20px',
+                backgroundColor: 'rgba(0,0,0,0.02)',
+                borderRadius: '8px',
+                border: '1px solid rgba(0,0,0,0.06)',
+              }}
+            >
+              <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#0F1218', marginBottom: '8px' }}>
+                Qualified Custody
+              </h3>
+              <p style={{ fontSize: '13px', lineHeight: 1.5, color: '#6A6A6A' }}>
+                Institutional asset segregation
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom Text */}
           <p
             style={{
-              fontSize: '17px',
+              fontSize: '15px',
               lineHeight: 1.7,
               color: '#4A4A4A',
-              marginBottom: '24px',
             }}
           >
-            The modern insurance market was born in the coffeehouses and trading houses of Venice, where merchants pooled capital to share maritime risk. Centuries later, NextBlock brings this foundational principle on-chain — permissionless, transparent, and composable. We are building the infrastructure for a new era of insurance-linked capital markets.
+            NextBlock is the open protocol enabling authorized reinsurers, insurers, and asset managers to tokenize real insurance portfolios.
           </p>
-
-          {/* Link */}
-          <a
-            href="#"
-            className="inline-flex items-center gap-1 transition-all hover:underline"
-            style={{
-              fontSize: '14px',
-              color: '#1B3A6B',
-            }}
-          >
-            Read our thesis →
-          </a>
         </motion.div>
 
         {/* Right Column - Image (45% on desktop) */}
