@@ -1,28 +1,14 @@
+import baseLogo from "@/assets/base-logo.webp";
+import ethereumLogo from "@/assets/ethereum-logo.png";
+
 const techBadges = [
   {
     name: "Base",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-        <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
+    icon: <img src={baseLogo} alt="Base" className="w-5 h-5 object-contain" />,
   },
   {
     name: "Ethereum",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-        <path d="M10 2L3 10L10 13L17 10L10 2Z" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M10 13L3 10L10 18L17 10L10 13Z" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
-  },
-  {
-    name: "Chainlink",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-        <path d="M10 2L17 6V14L10 18L3 14V6L10 2Z" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
+    icon: <img src={ethereumLogo} alt="Ethereum" className="w-5 h-5 object-contain" />,
   },
   {
     name: "Compliant Infrastructure",
