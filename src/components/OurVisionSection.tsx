@@ -6,6 +6,7 @@ import DecorativeGrid from "./DecorativeGrid";
 const OurVisionSection = () => {
   return (
     <section
+      id="protocol-stack"
       className="relative"
       style={{
         backgroundColor: '#FAFAF8',
