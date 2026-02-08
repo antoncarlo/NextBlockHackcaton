@@ -28,7 +28,10 @@ const HeroSection = () => {
           lineHeight: 1.1,
           letterSpacing: '-0.03em',
           color: '#0F1218'
-        }}>The Universal Marketplace for Insurance-Linked Assets.
+        }}>Insurance is the world's largest real-world asset class  and the only one without blockchain infrastructure.          
+           
+
+          
 
         </h1>
           
