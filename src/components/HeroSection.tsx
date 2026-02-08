@@ -48,7 +48,7 @@ const HeroSection = () => {
                 lineHeight: 1.1
               }}
             >
-              Until Now
+              Until<br />Now
             </motion.p>
           </div>
           
