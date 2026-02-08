@@ -23,8 +23,8 @@ const HeroSection = () => {
         duration: 0.8,
         delay: 0.2
        }} className="w-full">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl max-w-3xl font-serif" style={{
+          <div className="flex flex-col">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl max-w-4xl font-serif" style={{
               fontFamily: "'Playfair Display', serif",
               fontWeight: 500,
               lineHeight: 1.1,
@@ -37,9 +37,10 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-right md:text-right shrink-0 font-serif"
+              className="text-right w-full max-w-4xl font-serif"
               style={{
                 fontFamily: "'Playfair Display', serif",
+                marginTop: '16px',
                 fontSize: 'clamp(2rem, 5vw, 3.75rem)',
                 fontWeight: 500,
                 fontStyle: 'italic',
@@ -48,7 +49,7 @@ const HeroSection = () => {
                 lineHeight: 1.1
               }}
             >
-              Until<br />Now
+              Until Now
             </motion.p>
           </div>
           
