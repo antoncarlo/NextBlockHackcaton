@@ -22,31 +22,35 @@ const HeroSection = () => {
       }} transition={{
         duration: 0.8,
         delay: 0.2
-      }} className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl" style={{
-          fontWeight: 500,
-          lineHeight: 1.1,
-          letterSpacing: '-0.03em',
-          color: '#0F1218'
-        }}>Insurance is the world's largest real-world asset class and the only one without blockchain infrastructure.
-        </h1>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-right w-full"
-            style={{
-              marginTop: '24px',
-              fontSize: '28px',
-              fontWeight: 600,
-              fontStyle: 'italic',
-              color: '#1B3A6B',
-              letterSpacing: '-0.02em'
-            }}
-          >
-            Until Now
-          </motion.p>
+       }} className="w-full">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl max-w-3xl font-serif" style={{
+              fontFamily: "'Playfair Display', serif",
+              fontWeight: 500,
+              lineHeight: 1.1,
+              letterSpacing: '-0.03em',
+              color: '#0F1218'
+            }}>Insurance is the world's largest real-world asset class and the only one without blockchain infrastructure.
+            </h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-right md:text-right shrink-0 font-serif"
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+                fontWeight: 500,
+                fontStyle: 'italic',
+                color: '#0F1218',
+                letterSpacing: '-0.03em',
+                lineHeight: 1.1
+              }}
+            >
+              Until Now
+            </motion.p>
+          </div>
           
           <motion.p initial={{
           opacity: 0,
