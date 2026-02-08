@@ -28,12 +28,25 @@ const HeroSection = () => {
           lineHeight: 1.1,
           letterSpacing: '-0.03em',
           color: '#0F1218'
-        }}>Insurance is the world's largest real-world asset class  and the only one without blockchain infrastructure.          
-           
-
-          
-
+        }}>Insurance is the world's largest real-world asset class and the only one without blockchain infrastructure.
         </h1>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-right w-full"
+            style={{
+              marginTop: '24px',
+              fontSize: '28px',
+              fontWeight: 600,
+              fontStyle: 'italic',
+              color: '#1B3A6B',
+              letterSpacing: '-0.02em'
+            }}
+          >
+            Until Now
+          </motion.p>
           
           <motion.p initial={{
           opacity: 0,
