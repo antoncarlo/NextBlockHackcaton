@@ -59,9 +59,8 @@ const WaitlistForm = () => {
         },
       });
 
-      if (mailchimpResponse.error) {
+      if (mailchimpResponse.error && import.meta.env.DEV) {
         console.error('Mailchimp subscription error:', mailchimpResponse.error);
-        // Don't fail the form if Mailchimp fails - user is already in database
       }
 
       setIsSubmitted(true);
@@ -70,7 +69,9 @@ const WaitlistForm = () => {
         description: "We'll be in touch soon with exclusive updates.",
       });
     } catch (error) {
-      console.error('Error submitting waitlist:', error);
+      if (import.meta.env.DEV) {
+        console.error('Error submitting waitlist:', error);
+      }
       toast({
         title: "Submission Failed",
         description: "Please try again later.",
