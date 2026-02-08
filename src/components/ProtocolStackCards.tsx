@@ -166,7 +166,7 @@ const ProtocolStackCards = () => {
                 <span style={{ 
                   fontSize: row.isHighlighted ? '18px' : '14px', 
                   fontWeight: row.isHighlighted ? 600 : 400,
-                  color: row.isHighlighted ? '#4ADE80' : 'rgba(255, 255, 255, 0.7)',
+                  color: row.isHighlighted ? '#1B3A6B' : 'rgba(255, 255, 255, 0.7)',
                   textAlign: 'center',
                 }}>
                   {row.vsSP500}
@@ -174,7 +174,7 @@ const ProtocolStackCards = () => {
                 <span style={{ 
                   fontSize: row.isHighlighted ? '18px' : '14px', 
                   fontWeight: row.isHighlighted ? 600 : 400,
-                  color: row.isHighlighted ? '#4ADE80' : 'rgba(255, 255, 255, 0.7)',
+                  color: row.isHighlighted ? '#1B3A6B' : 'rgba(255, 255, 255, 0.7)',
                   textAlign: 'center',
                 }}>
                   {row.vsCrypto}
