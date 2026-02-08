@@ -137,8 +137,11 @@ const AboutSection = () => {
 
         {/* Bottom tagline */}
         <motion.p
-          className="text-center text-lg md:text-xl mt-12"
-          style={{ color: '#5A5A5A' }}
+          className="text-center text-xl md:text-2xl lg:text-3xl mt-12 font-serif italic"
+          style={{ 
+            color: '#0F1218',
+            fontFamily: "'Playfair Display', serif",
+          }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
