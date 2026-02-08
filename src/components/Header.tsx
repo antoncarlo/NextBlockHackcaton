@@ -107,6 +107,24 @@ const Header = () => {
           >
             Protocol
           </a>
+          <a 
+            href="#waitlist" 
+            className="transition-all duration-200"
+            style={{
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontSize: '13px',
+              fontWeight: 500,
+              color: '#fff',
+              letterSpacing: '0.01em',
+              backgroundColor: '#1B3A6B',
+              padding: '8px 20px',
+              borderRadius: '50px',
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.opacity = '0.9'}
+            onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+          >
+            Request Early Access
+          </a>
         </div>
       </div>
     </motion.header>
