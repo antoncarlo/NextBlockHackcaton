@@ -44,15 +44,6 @@ const AboutSection = () => {
           className="text-center"
           style={{ marginBottom: '48px' }}
         >
-          <motion.span 
-            className="section-label mb-4 block"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            The Market
-          </motion.span>
           <h2 
             className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight"
             style={{ color: '#0F1218' }}
