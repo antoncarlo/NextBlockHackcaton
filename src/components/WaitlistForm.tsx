@@ -51,18 +51,6 @@ const WaitlistForm = () => {
 
       if (dbError) throw dbError;
 
-      // Subscribe to Mailchimp
-      const mailchimpResponse = await supabase.functions.invoke('mailchimp-subscribe', {
-        body: {
-          email: result.data.email,
-          fullName: result.data.fullName,
-        },
-      });
-
-      if (mailchimpResponse.error && import.meta.env.DEV) {
-        console.error('Mailchimp subscription error:', mailchimpResponse.error);
-      }
-
       // Send welcome email via Resend
       const resendResponse = await supabase.functions.invoke('send-welcome-email', {
         body: {
