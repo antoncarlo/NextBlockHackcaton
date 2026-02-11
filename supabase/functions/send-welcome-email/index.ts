@@ -50,19 +50,22 @@ serve(async (req) => {
 
             <!-- Body -->
             <div style="padding: 0 32px 32px;">
-              <p style="font-size: 16px; line-height: 1.6;">Dear ${firstName},</p>
+              <p style="font-size: 16px; line-height: 1.6;">Hi ${firstName},</p>
               <p style="font-size: 16px; line-height: 1.6;">
-                Thank you for joining the NextBlock waitlist. We're building the universal marketplace for insurance-linked assets, and we're thrilled to have you on board.
+                Thank you for reaching out.
               </p>
               <p style="font-size: 16px; line-height: 1.6;">
-                You'll be among the first to receive exclusive updates on our progress, early access opportunities, and key milestones as we move toward launch.
+                We're building institutional infrastructure for the largest untokenized real-world asset class — insurance. You'll receive updates on protocol development, milestones, and early access opportunities as we approach launch.
               </p>
               <p style="font-size: 16px; line-height: 1.6;">
-                Stay tuned — exciting things are coming.
+                If you'd like to explore a partnership, integration, or institutional collaboration, feel free to contact us directly at <a href="mailto:nextblock@financier.com" style="color: #1B3A6B;">nextblock@financier.com</a>.
+              </p>
+              <p style="font-size: 16px; line-height: 1.6;">
+                More soon.
               </p>
               <p style="font-size: 16px; line-height: 1.6; margin-top: 32px;">
-                Best regards,<br/>
-                <strong>The NextBlock Team</strong>
+                <strong>NextBlock Team</strong><br/>
+                <a href="https://nextblock.finance" style="color: #1B3A6B;">nextblock.finance</a>
               </p>
             </div>
 
