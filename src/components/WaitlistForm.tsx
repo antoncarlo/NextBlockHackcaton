@@ -63,6 +63,18 @@ const WaitlistForm = () => {
         console.error('Mailchimp subscription error:', mailchimpResponse.error);
       }
 
+      // Send welcome email via Resend
+      const resendResponse = await supabase.functions.invoke('send-welcome-email', {
+        body: {
+          email: result.data.email,
+          fullName: result.data.fullName,
+        },
+      });
+
+      if (resendResponse.error && import.meta.env.DEV) {
+        console.error('Resend welcome email error:', resendResponse.error);
+      }
+
       setIsSubmitted(true);
       toast({
         title: "Request Submitted!",
