@@ -40,10 +40,29 @@ serve(async (req) => {
 
     const MAILCHIMP_API_KEY = Deno.env.get('MAILCHIMP_API_KEY');
     const MAILCHIMP_AUDIENCE_ID = Deno.env.get('MAILCHIMP_AUDIENCE_ID');
-    const MAILCHIMP_SERVER = 'us6';
 
-    if (!MAILCHIMP_API_KEY || !MAILCHIMP_AUDIENCE_ID) {
-      console.error('Missing Mailchimp configuration');
+    // Mailchimp API endpoint requires the correct datacenter (e.g. us6, us20) in the hostname.
+    // The datacenter is the suffix of the API key: "xxxx-us6".
+    const MAILCHIMP_SERVER = MAILCHIMP_API_KEY?.split('-')?.[1];
+
+    if (!MAILCHIMP_API_KEY) {
+      console.error('MAILCHIMP_API_KEY is not configured');
+      return new Response(
+        JSON.stringify({ error: 'Server configuration error' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    if (!MAILCHIMP_AUDIENCE_ID) {
+      console.error('MAILCHIMP_AUDIENCE_ID is not configured');
+      return new Response(
+        JSON.stringify({ error: 'Server configuration error' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    if (!MAILCHIMP_SERVER) {
+      console.error('MAILCHIMP_API_KEY is missing datacenter suffix (e.g. "-us6")');
       return new Response(
         JSON.stringify({ error: 'Server configuration error' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
