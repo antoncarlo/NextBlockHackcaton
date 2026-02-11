@@ -45,7 +45,7 @@ serve(async (req) => {
           <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1A1F2E; background-color: #ffffff;">
             <!-- Logo -->
             <div style="text-align: center; padding: 40px 20px 24px;">
-              <img src="https://landing-whisper-wave.lovable.app/images/email-logo.png" alt="NextBlock" style="height: 50px; width: auto;" />
+              <img src="https://landing-whisper-wave.lovable.app/images/email-logo.png" alt="NextBlock" style="height: 200px; width: auto;" />
             </div>
 
             <!-- Body -->
