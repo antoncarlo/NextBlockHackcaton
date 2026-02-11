@@ -42,29 +42,48 @@ serve(async (req) => {
         to: [email],
         subject: 'Thank you for your interest in NextBlock',
         html: `
-          <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #1A1F2E;">
-            <div style="text-align: center; margin-bottom: 32px;">
-              <h1 style="font-size: 24px; color: #1B3A6B; margin: 0;">NextBlock</h1>
+          <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1A1F2E; background-color: #ffffff;">
+            <!-- Logo -->
+            <div style="text-align: center; padding: 40px 20px 24px;">
+              <img src="https://landing-whisper-wave.lovable.app/images/email-logo.png" alt="NextBlock" style="height: 50px; width: auto;" />
             </div>
-            <p style="font-size: 16px; line-height: 1.6;">Dear ${firstName},</p>
-            <p style="font-size: 16px; line-height: 1.6;">
-              Thank you for joining the NextBlock waitlist. We're building the universal marketplace for insurance-linked assets, and we're thrilled to have you on board.
-            </p>
-            <p style="font-size: 16px; line-height: 1.6;">
-              You'll be among the first to receive exclusive updates on our progress, early access opportunities, and key milestones as we move toward launch.
-            </p>
-            <p style="font-size: 16px; line-height: 1.6;">
-              Stay tuned — exciting things are coming.
-            </p>
-            <p style="font-size: 16px; line-height: 1.6; margin-top: 32px;">
-              Best regards,<br/>
-              <strong>The NextBlock Team</strong>
-            </p>
-            <hr style="border: none; border-top: 1px solid #E5E5E5; margin: 32px 0;" />
-            <p style="font-size: 12px; color: #8A8A8A; text-align: center;">
-              NextBlock &mdash; The Universal Marketplace for Insurance-Linked Assets<br/>
-              <a href="https://nextblock.finance" style="color: #1B3A6B;">nextblock.finance</a>
-            </p>
+
+            <!-- Body -->
+            <div style="padding: 0 32px 32px;">
+              <p style="font-size: 16px; line-height: 1.6;">Dear ${firstName},</p>
+              <p style="font-size: 16px; line-height: 1.6;">
+                Thank you for joining the NextBlock waitlist. We're building the universal marketplace for insurance-linked assets, and we're thrilled to have you on board.
+              </p>
+              <p style="font-size: 16px; line-height: 1.6;">
+                You'll be among the first to receive exclusive updates on our progress, early access opportunities, and key milestones as we move toward launch.
+              </p>
+              <p style="font-size: 16px; line-height: 1.6;">
+                Stay tuned — exciting things are coming.
+              </p>
+              <p style="font-size: 16px; line-height: 1.6; margin-top: 32px;">
+                Best regards,<br/>
+                <strong>The NextBlock Team</strong>
+              </p>
+            </div>
+
+            <!-- Footer Image -->
+            <div style="width: 100%;">
+              <img src="https://landing-whisper-wave.lovable.app/images/email-footer.png" alt="" style="width: 100%; height: auto; display: block;" />
+            </div>
+
+            <!-- Social Links -->
+            <div style="background-color: #f8f8f8; padding: 24px 32px; text-align: center;">
+              <div style="margin-bottom: 16px;">
+                <a href="https://x.com/NBlock2040" style="color: #1B3A6B; text-decoration: none; margin: 0 12px; font-size: 14px;">X (Twitter)</a>
+                <a href="https://www.linkedin.com/company/next-block" style="color: #1B3A6B; text-decoration: none; margin: 0 12px; font-size: 14px;">LinkedIn</a>
+                <a href="mailto:nextblock@financier.com" style="color: #1B3A6B; text-decoration: none; margin: 0 12px; font-size: 14px;">Email</a>
+                <a href="https://github.com/alessandromaci/nextblock" style="color: #1B3A6B; text-decoration: none; margin: 0 12px; font-size: 14px;">GitHub</a>
+              </div>
+              <p style="font-size: 12px; color: #8A8A8A; margin: 0;">
+                NextBlock &mdash; The Universal Marketplace for Insurance-Linked Assets<br/>
+                <a href="https://nextblock.finance" style="color: #1B3A6B;">nextblock.finance</a>
+              </p>
+            </div>
           </div>
         `,
       }),
