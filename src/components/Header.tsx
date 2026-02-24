@@ -108,33 +108,6 @@ const Header = () => {
             Protocol
           </a>
           <a 
-            href="https://nextblock-zeta.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-all duration-200"
-            style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: '13px',
-              fontWeight: 500,
-              color: '#1B3A6B',
-              letterSpacing: '0.01em',
-              backgroundColor: 'transparent',
-              padding: '8px 20px',
-              borderRadius: '50px',
-              border: '1.5px solid #1B3A6B',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#1B3A6B';
-              e.currentTarget.style.color = '#fff';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = '#1B3A6B';
-            }}
-          >
-            Launch App
-          </a>
-          <a 
             href="#waitlist" 
             className="transition-all duration-200"
             style={{
