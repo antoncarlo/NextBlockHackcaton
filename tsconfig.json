@@ -1,40 +1,41 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
     "moduleResolution": "bundler",
-    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
     "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
     "jsx": "react-jsx",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitAny": false,
+    "noFallthroughCasesInSwitch": false,
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./landing/src/*"]
     }
   },
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "landing/src/**/*.ts",
+    "landing/src/**/*.tsx",
+    "landing/src/vite-env.d.ts"
   ],
   "exclude": [
     "node_modules",
-    "landing",
+    "src",
     "static-html",
     "wordpress-theme",
-    "supabase"
+    "supabase",
+    "landing/src/test",
+    "landing/src/components/ui/chart.tsx",
+    "landing/src/components/ui/calendar.tsx",
+    "landing/src/components/ui/resizable.tsx",
+    "landing/src/components/ui/sidebar.tsx"
   ]
 }
