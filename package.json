@@ -68,7 +68,7 @@
     "wagmi": "^2.19.5",
     "zod": "^4.3.6"
     "build": "vite build",
-    "build:dev": "vite build --mode development"
+    "build:dev": "vite build --mode development" ,
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
